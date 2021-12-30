@@ -6,3 +6,7 @@ export const MaxWidthWrapper = styled.div`
   padding-left: var(--page-padding);
   padding-right: var(--page-padding);
 `;
+
+export const PageTitleWrapper = styled.div`
+  padding: 20px 0 10px;
+`;

@@ -32,8 +32,35 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Merriweather', serif;
-    line-height: 1.5;
+    line-height: 1.75;
   }
+
+  p {
+    margin-bottom: 1rem;
+    max-width: 70ch;
+  }
+
+  h1, h2, h3, h4, h5 {
+    margin: 3rem 0 1.38rem;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  h1 {
+    margin-top: 0;
+    font-size: 2.488rem;
+  }
+
+  h2 {font-size: 2.074rem;}
+
+  h3 {font-size: 1.728rem;}
+
+  h4 {font-size: 1.44rem;}
+
+  h5 {font-size: 1.2rem;}
+
+  small, .text_small {font-size: 0.833rem;}
 `;
 
 export default GlobalStyles;
