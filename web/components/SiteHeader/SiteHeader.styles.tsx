@@ -8,10 +8,11 @@ export const Logo = styled.span`
 
   a {
     padding-left: 0;
+    color: var(--text-color);
   }
 `;
 
-export const Wrapper = styled.header`
+export const Wrapper = styled.div`
   padding: 0;
   display: flex;
   justify-content: space-between;

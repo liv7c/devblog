@@ -1,8 +1,11 @@
 import {createGlobalStyle} from 'styled-components';
 
+import {QUERIES} from './constants/Queries';
+
 const GlobalStyles = createGlobalStyle`
   :root {
     --bg-color: #fffffe;
+    --secondary-bg-color: #d1d1e9;
     --text-color: #2b2c34;
     --link-color: #6246ea;
 
@@ -35,6 +38,11 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1.75;
   }
 
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
   p {
     margin-bottom: 1rem;
     max-width: 70ch;
@@ -49,7 +57,11 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     margin-top: 0;
-    font-size: 2.488rem;
+    font-size: 2.1rem;
+
+    @media ${QUERIES.laptopAndUp} {
+      font-size: 2.488rem;
+    }
   }
 
   h2 {font-size: 2.074rem;}
