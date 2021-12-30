@@ -10,12 +10,19 @@ const SiteHeader = () => {
   return (
     <MaxWidthWrapper>
       <S.Wrapper>
-        <span>Olivia Coumans</span>
+        <S.Logo>
+          <Link href="/" passHref>
+            <S.NavLink>Olivia Coumans</S.NavLink>
+          </Link>
+        </S.Logo>
         <nav aria-label="Main">
-          <button onClick={() => setMenuVisible((currState) => !currState)}>
+          <S.NavMenuButton
+            onClick={() => setMenuVisible((currState) => !currState)}
+            aria-expanded={menuVisible}
+          >
             Menu
-          </button>
-          <S.NavList style={{display: menuVisible ? 'block' : 'none'}}>
+          </S.NavMenuButton>
+          <S.NavList isVisible={menuVisible}>
             <S.NavListItem>
               <Link href="/" passHref>
                 <S.NavLink>Home</S.NavLink>
