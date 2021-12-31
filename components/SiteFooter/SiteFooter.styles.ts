@@ -1,9 +1,19 @@
 import styled from 'styled-components';
 
+import { QUERIES } from '../../styles/constants/Queries';
+
 export const FooterWrapper = styled.footer`
   margin-top: auto;
   background-color: var(--secondary-bg-color);
-  padding: 20px;
+  padding: 10px 0;
+`;
+
+export const FooterContent = styled.div`
+  @media ${QUERIES.tabletAndUp} {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
 `;
 
 export const FooterLinkList = styled.ul`
@@ -19,7 +29,6 @@ export const FooterLinkListItem = styled.li`
 
   a {
     display: block;
-    padding: 20px 10px;
-    color: var(--text-color);
+    padding: 10px;
   }
 `;

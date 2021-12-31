@@ -1,6 +1,6 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-import {QUERIES} from './constants/Queries';
+import { QUERIES } from './constants/Queries';
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -36,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
     color: var(--text-color);
     font-family: 'Merriweather', serif;
     line-height: 1.75;
+    overflow-y: scroll;
   }
 
   img, picture, video, canvas, svg {
@@ -73,6 +74,12 @@ const GlobalStyles = createGlobalStyle`
   h5 {font-size: 1.2rem;}
 
   small, .text_small {font-size: 0.833rem;}
+
+  a,
+  a:link,
+  a:visited {
+    color: var(--text-color);
+  }
 `;
 
 export default GlobalStyles;
