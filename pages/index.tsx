@@ -1,13 +1,14 @@
-import matter from 'gray-matter';
 import type { NextPage } from 'next';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import PostList from '../components/PostList';
 import { PageTitleWrapper } from '../styles/Wrapper';
+import { Post } from '../types/Post';
+import { getAllPosts } from '../utils/posts';
 
 interface HomeProps {
-  posts: any[];
+  posts: Post[];
 }
 
 const Home: NextPage<HomeProps> = ({ posts }) => {
@@ -35,26 +36,11 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 };
 
 export async function getStaticProps() {
-  const posts = ((context) => {
-    const keys = context.keys();
-    const values = keys.map(context);
-
-    const data = keys.map((key: string, index: number) => {
-      let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3);
-      const value = values[index] as any;
-      const document = matter(value.default);
-      return {
-        frontmatter: document.data,
-        markdownBody: document.content,
-        slug,
-      };
-    });
-    return data;
-  })(require.context('../posts', true, /\.md$/));
+  const allPosts = getAllPosts();
 
   return {
     props: {
-      posts,
+      posts: allPosts.slice(0, 3),
     },
   };
 }

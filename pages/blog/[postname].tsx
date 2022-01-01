@@ -9,15 +9,8 @@ import { vscDarkPlus as dark } from 'react-syntax-highlighter/dist/cjs/styles/pr
 import styled from 'styled-components';
 
 import Layout from '../../components/Layout';
-
-interface PostProps {
-  frontmatter: {
-    title: string;
-    date: string;
-    image: string;
-  };
-  markdownBody: string;
-}
+import type { Post } from '../../types/Post';
+import { getFormattedDate } from '../../utils/date';
 
 const BackLink = styled.a`
   margin-bottom: 20px;
@@ -37,6 +30,11 @@ const PostContainer = styled.article`
   padding-bottom: 50px;
 `;
 
+interface PostProps {
+  frontmatter: Post['frontmatter'];
+  markdownBody: Post['markdownBody'];
+}
+
 function Post({ frontmatter, markdownBody }: PostProps) {
   if (!frontmatter) return null;
   const imageUrl = `/images/${frontmatter.image}`;
@@ -49,9 +47,7 @@ function Post({ frontmatter, markdownBody }: PostProps) {
       <PostContainer>
         <PostTitle>{frontmatter.title}</PostTitle>
         <PostDate dateTime={frontmatter.date}>
-          {new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(
-            new Date(frontmatter.date)
-          )}
+          {getFormattedDate(frontmatter.date, 'medium')}
         </PostDate>
         <Image
           src={imageUrl}

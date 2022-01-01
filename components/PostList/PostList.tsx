@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
+import type { Post } from '../../types/Post';
+import { getFormattedDate } from '../../utils/date';
+import * as S from './PostList.styles';
+
 interface PostListProps {
-  posts:
-    | { frontmatter: { title: string; date: string }; slug: string }[]
-    | undefined;
+  posts: Post[] | undefined;
 }
 
 export default function PostList({ posts }: PostListProps) {
@@ -20,6 +22,9 @@ export default function PostList({ posts }: PostListProps) {
                 <Link href={{ pathname: `/blog/${post.slug}` }}>
                   {post.frontmatter.title}
                 </Link>
+                <S.PostDate>
+                  {getFormattedDate(post.frontmatter.date)}
+                </S.PostDate>
               </li>
             );
           })}
