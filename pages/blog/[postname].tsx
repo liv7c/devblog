@@ -1,10 +1,12 @@
 import matter from 'gray-matter';
 import type { NextPage } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import { ReactMarkdownProps } from 'react-markdown/lib/ast-to-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus as dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import styled from 'styled-components';
 
 import Layout from '../../components/Layout';
 
@@ -12,19 +14,52 @@ interface PostProps {
   frontmatter: {
     title: string;
     date: string;
+    image: string;
   };
   markdownBody: string;
 }
 
+const BackLink = styled.a`
+  margin-bottom: 20px;
+  display: inline-block;
+`;
+
+const PostTitle = styled.h1`
+  margin-bottom: 3px;
+`;
+
+const PostDate = styled.time`
+  display: block;
+  margin-bottom: 15px;
+`;
+
+const PostContainer = styled.article`
+  padding-bottom: 50px;
+`;
+
 function Post({ frontmatter, markdownBody }: PostProps) {
   if (!frontmatter) return null;
+  const imageUrl = `/images/${frontmatter.image}`;
 
   return (
     <Layout pageTitle={frontmatter.title}>
-      <Link href="/">Back to post list</Link>
-      <article>
-        <h1>{frontmatter.title}</h1>
-        <p>{frontmatter.date}</p>
+      <Link href="/" passHref>
+        <BackLink>&larr; Back to the blog</BackLink>
+      </Link>
+      <PostContainer>
+        <PostTitle>{frontmatter.title}</PostTitle>
+        <PostDate dateTime={frontmatter.date}>
+          {new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(
+            new Date(frontmatter.date)
+          )}
+        </PostDate>
+        <Image
+          src={imageUrl}
+          alt=""
+          layout="responsive"
+          width={700}
+          height={475}
+        />
         <div>
           <ReactMarkdown
             components={{
@@ -45,7 +80,7 @@ function Post({ frontmatter, markdownBody }: PostProps) {
             {markdownBody}
           </ReactMarkdown>
         </div>
-      </article>
+      </PostContainer>
     </Layout>
   );
 }
@@ -73,7 +108,6 @@ export async function getStaticPaths() {
       return slug;
     });
     return data;
-    /* @ts-ignore */
   })(require.context('../../posts', true, /\.md$/));
 
   const paths = blogSlugs.map((slug: string) => `/blog/${slug}`);

@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
     --button-text: #fffffe;
     --button-bg: #6246ea;
 
-    --page-padding: 32px;
+    --page-padding: 20px;
   }
 
   html,
@@ -79,6 +79,22 @@ const GlobalStyles = createGlobalStyle`
   a:link,
   a:visited {
     color: var(--text-color);
+  }
+
+  ul {
+    padding-left: 10px;
+  }
+
+  code {
+    background-color: #dedede;
+    color: #1e1113;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  code[class^="language"] {
+    background-color: transparent;
+    padding: 0;
   }
 `;
 

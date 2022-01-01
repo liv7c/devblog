@@ -41,7 +41,7 @@ export async function getStaticProps() {
 
     const data = keys.map((key: string, index: number) => {
       let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3);
-      const value = values[index];
+      const value = values[index] as any;
       const document = matter(value.default);
       return {
         frontmatter: document.data,
@@ -50,7 +50,6 @@ export async function getStaticProps() {
       };
     });
     return data;
-    // @ts-ignore
   })(require.context('../posts', true, /\.md$/));
 
   return {
