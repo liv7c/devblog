@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 
 import Layout from '../../components/Layout';
-import PostGrid from '../../components/PostGrid';
+import PostList from '../../components/PostList';
 import { PageTitleWrapper } from '../../styles/Wrapper';
 import { Post } from '../../types/Post';
 import { getAllPosts } from '../../utils/posts';
@@ -15,7 +15,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
     <Layout pageTitle="Blog">
       <PageTitleWrapper>
         <h1>Blog</h1>
-        <PostGrid posts={posts} />
+        <PostList posts={posts} withTag={true} />
       </PageTitleWrapper>
     </Layout>
   );

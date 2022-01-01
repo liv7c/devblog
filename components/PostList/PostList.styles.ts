@@ -2,5 +2,9 @@ import styled from 'styled-components';
 
 export const PostDate = styled.time`
   font-size: 0.9rem;
-  display: block;
+  display: inline-block;
+
+  span + & {
+    margin-left: 20px;
+  }
 `;

@@ -1,6 +1,5 @@
 import matter from 'gray-matter';
 import type { NextPage } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import { ReactMarkdownProps } from 'react-markdown/lib/ast-to-react';
@@ -40,7 +39,10 @@ function Post({ frontmatter, markdownBody }: PostProps) {
   const imageUrl = `/images/${frontmatter.image}`;
 
   return (
-    <Layout pageTitle={frontmatter.title}>
+    <Layout
+      pageTitle={frontmatter.title}
+      pageDescription={frontmatter.description}
+    >
       <Link href="/" passHref>
         <BackLink>&larr; Back to the blog</BackLink>
       </Link>
@@ -49,13 +51,6 @@ function Post({ frontmatter, markdownBody }: PostProps) {
         <PostDate dateTime={frontmatter.date}>
           {getFormattedDate(frontmatter.date, 'medium')}
         </PostDate>
-        <Image
-          src={imageUrl}
-          alt=""
-          layout="responsive"
-          width={700}
-          height={475}
-        />
         <div>
           <ReactMarkdown
             components={{
