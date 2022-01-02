@@ -7,6 +7,11 @@ export const MaxWidthWrapper = styled.div`
   padding-right: var(--page-padding);
 `;
 
-export const PageTitleWrapper = styled.div`
-  padding: 20px 0 10px;
+interface PageTitleWrapperProps {
+  largeSpace?: boolean;
+}
+
+export const PageTitleWrapper = styled.div<PageTitleWrapperProps>`
+  padding: 10px 0;
+  padding-bottom: ${(props) => (props.largeSpace ? '70px' : '10px')};
 `;
