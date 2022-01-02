@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { ReactNode } from 'react';
 
+import { server } from '../../config';
 import { MaxWidthWrapper } from '../../styles/Wrapper';
 import SiteFooter from '../SiteFooter';
 import SiteHeader from '../SiteHeader';
@@ -10,11 +11,18 @@ interface LayoutProps {
   children: ReactNode;
   pageTitle: string;
   pageDescription?: string;
+  pageURL?: string;
 }
 
-const Layout = ({ children, pageTitle, pageDescription }: LayoutProps) => {
+const Layout = ({
+  children,
+  pageTitle,
+  pageDescription,
+  pageURL,
+}: LayoutProps) => {
   const title = `${pageTitle} | Olivia Coumans`;
   const description = pageDescription ?? "Olivia Coumans's website";
+  const currentURL = pageURL ?? server;
 
   return (
     <>
@@ -29,6 +37,7 @@ const Layout = ({ children, pageTitle, pageDescription }: LayoutProps) => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content="/blog-img.png" />
+        <meta property="og:url" content={currentURL} key="ogurl" />
         <meta property="og:image" content="/blog-img.png" key="ogimage" />
         <meta
           property="og:site_name"

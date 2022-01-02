@@ -36,6 +36,7 @@ interface PostProps {
 
 function Post({ frontmatter, markdownBody }: PostProps) {
   if (!frontmatter) return null;
+
   const imageUrl = `/images/${frontmatter.image}`;
 
   return (

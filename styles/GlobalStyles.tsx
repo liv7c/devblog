@@ -85,6 +85,10 @@ const GlobalStyles = createGlobalStyle`
     padding-left: 10px;
   }
 
+  li {
+    margin-bottom: 12px;
+  }
+
   code {
     background-color: #dedede;
     color: #1e1113;
