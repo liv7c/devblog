@@ -6,7 +6,7 @@ import { PageTitleWrapper } from '../styles/Wrapper';
 
 const NotFoundPage: NextPage = () => {
   return (
-    <Layout pageTitle="Home">
+    <Layout pageTitle="Page not found">
       <PageTitleWrapper>
         <h1>Page not found</h1>
         <p>
