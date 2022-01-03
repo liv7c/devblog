@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import {QUERIES} from '../../styles/constants/Queries';
+import { QUERIES } from '../../styles/constants/Queries';
 
 export const Logo = styled.span`
   font-size: 1.2rem;
 
-  a {
+  a,
+  a:link,
+  a:visited {
     padding-left: 0;
     color: var(--text-color);
   }
@@ -84,13 +86,22 @@ export const NavListItem = styled.li`
   }
 `;
 
-export const NavLink = styled.a`
-  color: var(--text-color);
-  text-decoration: none;
-  display: block;
-  padding: 25px var(--page-padding);
+interface NavLinkProps {
+  current?: boolean;
+}
 
-  @media ${QUERIES.tabletAndUp} {
-    padding: 15px;
+export const NavLink = styled.a<NavLinkProps>`
+  &,
+  &:link,
+  &:visited {
+    color: ${({ current }) =>
+      current ? 'var(--link-color)' : 'var(--text-color)'};
+    text-decoration: none;
+    display: block;
+    padding: 25px var(--page-padding);
+
+    @media ${QUERIES.tabletAndUp} {
+      padding: 15px;
+    }
   }
 `;

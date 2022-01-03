@@ -1,11 +1,14 @@
 import Link from 'next/link';
-import {useState} from 'react';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
-import {MaxWidthWrapper} from '../../styles/Wrapper';
+import { MaxWidthWrapper } from '../../styles/Wrapper';
 import * as S from './SiteHeader.styles';
 
 const SiteHeader = () => {
+  const { pathname } = useRouter();
   const [menuVisible, setMenuVisible] = useState(false);
+  console.log('pathname', pathname);
 
   return (
     <header>
@@ -26,17 +29,19 @@ const SiteHeader = () => {
             <S.NavList isVisible={menuVisible}>
               <S.NavListItem>
                 <Link href="/" passHref>
-                  <S.NavLink>Home</S.NavLink>
+                  <S.NavLink current={pathname === '/'}>Home</S.NavLink>
                 </Link>
               </S.NavListItem>
               <S.NavListItem>
                 <Link href="/blog" passHref>
-                  <S.NavLink>Blog</S.NavLink>
+                  <S.NavLink current={pathname.includes('blog')}>
+                    Blog
+                  </S.NavLink>
                 </Link>
               </S.NavListItem>
               <S.NavListItem>
                 <Link href="/about" passHref>
-                  <S.NavLink>About</S.NavLink>
+                  <S.NavLink current={pathname === '/about'}>About</S.NavLink>
                 </Link>
               </S.NavListItem>
             </S.NavList>

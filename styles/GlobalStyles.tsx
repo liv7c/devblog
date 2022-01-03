@@ -5,9 +5,10 @@ import { QUERIES } from './constants/Queries';
 const GlobalStyles = createGlobalStyle`
   :root {
     --bg-color: #fffffe;
-    --secondary-bg-color: #d1d1e9;
+    --secondary-bg-color: #ddd6fe;
     --text-color: #2b2c34;
-    --link-color: #6246ea;
+    --link-color: #5b21b6;
+
 
     --button-text: #fffffe;
     --button-bg: #6246ea;
