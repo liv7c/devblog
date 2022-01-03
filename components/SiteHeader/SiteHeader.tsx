@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import { MaxWidthWrapper } from '../../styles/Wrapper';
+import NavLink from '../NavLink';
 import * as S from './SiteHeader.styles';
 
 const SiteHeader = () => {
@@ -16,7 +17,7 @@ const SiteHeader = () => {
         <S.Wrapper>
           <S.Logo>
             <Link href="/" passHref>
-              <S.NavLink>Olivia Coumans</S.NavLink>
+              <S.LogoLink>Olivia Coumans</S.LogoLink>
             </Link>
           </S.Logo>
           <nav aria-label="Main">
@@ -28,21 +29,21 @@ const SiteHeader = () => {
             </S.NavMenuButton>
             <S.NavList isVisible={menuVisible}>
               <S.NavListItem>
-                <Link href="/" passHref>
-                  <S.NavLink current={pathname === '/'}>Home</S.NavLink>
-                </Link>
+                <NavLink href="/" name="Home" isCurrent={pathname === '/'} />
               </S.NavListItem>
               <S.NavListItem>
-                <Link href="/blog" passHref>
-                  <S.NavLink current={pathname.includes('blog')}>
-                    Blog
-                  </S.NavLink>
-                </Link>
+                <NavLink
+                  href="/blog"
+                  name="Blog"
+                  isCurrent={pathname.includes('blog')}
+                />
               </S.NavListItem>
               <S.NavListItem>
-                <Link href="/about" passHref>
-                  <S.NavLink current={pathname === '/about'}>About</S.NavLink>
-                </Link>
+                <NavLink
+                  href="/about"
+                  name="About"
+                  isCurrent={pathname === '/about'}
+                />
               </S.NavListItem>
             </S.NavList>
           </nav>

@@ -14,6 +14,15 @@ export const Logo = styled.span`
   }
 `;
 
+export const LogoLink = styled.a`
+  &,
+  &:link,
+  &:visited {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+`;
+
 export const Wrapper = styled.div`
   padding: 0;
   display: flex;
@@ -82,26 +91,6 @@ export const NavListItem = styled.li`
 
     &:last-child {
       border-bottom: none;
-    }
-  }
-`;
-
-interface NavLinkProps {
-  current?: boolean;
-}
-
-export const NavLink = styled.a<NavLinkProps>`
-  &,
-  &:link,
-  &:visited {
-    color: ${({ current }) =>
-      current ? 'var(--link-color)' : 'var(--text-color)'};
-    text-decoration: none;
-    display: block;
-    padding: 25px var(--page-padding);
-
-    @media ${QUERIES.tabletAndUp} {
-      padding: 15px;
     }
   }
 `;
