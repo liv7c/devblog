@@ -15,7 +15,7 @@ const SiteFooter = () => {
               <a href="https://www.linkedin.com/in/olivia-coumans/">Linkedin</a>
             </S.FooterLinkListItem>
             <S.FooterLinkListItem>
-              <a href="https://twitter.com/ocoumans7">Twitter</a>
+              <a href="https://twitter.com/liv_codes">Twitter</a>
             </S.FooterLinkListItem>
           </S.FooterLinkList>
         </S.FooterContent>
