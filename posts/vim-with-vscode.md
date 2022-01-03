@@ -1,46 +1,42 @@
 ---
-title: Getting started with vim with vscode
+title: Using vim with VSCode
 date: '2022-01-03'
 tags:
   - vim
-description: Blog post about how to get started with vim using the vim plugin in vscode
+description: Blog post sharing some tips about using vim with VSCode
 keywords:
   - vim
-  - vscode
 ---
 
-Using the vim plugin in vscode is a really good way to try out another way of editing code and get a feel for it. Among the reasons to get started with vim with the vscode plugin:
+The goal of this post is to share some tips about using the vim plugin in VSCode. The plugin is a really good option to try out another way of editing code and get a feel for it. It allows you to dive into using vim, its modes and motions with little to no configuration.  You do not have to spend hours making vim work with your linter, formatter or file extensions. By using vim consistently with VSCode, you will already have your favorite shortcuts and motions if you decide to move away from VSCode later on.
 
-* You get to dive into using vim, its modes and motions straight away with little to no configuration.  You do not have to spend hours making vim work with your linter and formatter.
-* You get comfortable with vim and its text editing experience. You will already have your favorite shortcuts if you decide to use vim as your main code editor.
-
-Nowadays, I use mostly neovim but spending time in vscode getting used to vim was very helpful. If you feel like taking this jump, let's get started!
+Nowadays I use mostly neovim, but using the plugin for a while was very helpful to make that transition smoother. If you feel like taking this jump, let's get started!
 
 ## Installation
 
 First, let's install the plugin: [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim). Once you relaunch your code editor and open a file, you will normally see on the bottom bar `NORMAL` which is one of vim modes. Your cursor will also look a little different.
 
-### Vim and its modes
+## Remember Vim and its modes
 
 Vim has several modes. Each mode has its own keyboard shortcuts and motions. The three most common:
 
-* `normal` (also called `command` mode): this is the mode you should use most of the time. In `normal` mode, you can move around your file using `g` and `gg`, go to a certain line (`:2` to go to line 2), search for a term (`/Gary` to search for that name), etc.
+* `normal` (also called `command` mode): this is the mode you should use most of the time. In `normal` mode, you can move around your file using `g` and `gg`, search for a term (`/Gary` to search for that name), etc.
 * `insert`: it is the mode you use for writing text. When you want to add some code, you enter the `insert` mode by typing `i`.
-* `visual`:  It is the equivalent to using your mouse to select some text. Just type `v` to enter it. `V` to select the whole line in visual mode.
+* `visual`:  It is the equivalent to using your mouse to select some text. Just type `v` to enter it. With `V`, you can select the whole line in visual mode.
 * `last line mode`: you enter it with the `:`. In this mode, you can do things like opening a file (`:e nameOfYourFile`), saving it (`:w`) and exiting vim (`:q`).
 
 
 ## Learning vim
 
-If you are unfamiliar with vim and its modes and motions, `vimtutor` is a great way to get started.
+If you are unfamiliar with vim, its modes and motions, `vimtutor` is a great way to get started.
 
 I also cannot recommend enough this [playlist on youtube](https://www.youtube.com/playlist?list=PLm323Lc7iSW_wuxqmKx_xxNtJC_hJbQ7R) by [the Primeagen](https://twitter.com/ThePrimeagen). In this series of videos, you will learn enough to get started using vim in a productive way. They are full of tips and make learning vim less overwhelming by teaching you just enough.
 
 ## Basic settings
 
-When using the plugin, you can first customize things like the `leader` key or set up relative line numbers. The `leader` key in vim is the key you use alongside one or more other keys to create a keyboard shortcut most of the time in normal mode. When you start configuring your `vimrc`, people add what is called `remaps`. The whole idea of remaps is to create shortcuts you are very comfortable with to do certain things. You can create a shortcut to toggle the sidebar, go back and forth between your last two files, etc.
+When using the plugin, you can first customize things like the `leader` key or set up relative line numbers. The `leader` key in vim is the key you use alongside one or more other keys to create a keyboard shortcut most of the time in normal mode. When you start configuring your `vimrc`, people add `remaps`. The whole idea of remaps is to create shortcuts you are very comfortable with to do certain things. You can create a shortcut to toggle the sidebar, go back and forth between your last two files, etc.
 
-In vscode, you can also create your own shortcuts and already choose your leader key. The `,` and `space` are very popular choices for the leader key. Once again, try out a few different keys and see what feels right.
+In VSCode, you can also create your own shortcuts and already choose your leader key. The `,` and `space` are very popular choices for the leader key. Once again, try out a few different keys and see what feels right.
 
 You can add some customizations directly in your `settings.json`. For example, my vim settings are:
 
@@ -59,9 +55,9 @@ You can add some customizations directly in your `settings.json`. For example, m
 * `vim.useSystemClipboard` is a must-have. It ensures that you can copy something in your file and it will store it in your system clipboard (same thing for pasting). By default, vim does not use the system clipboard and it can be a frustrating experience.  If you do not use this setting and want to copy something to your system clipboard, you will have to use `*y`.
 * `vim.smartRelativeLine`: this one was a life changer for me to get faster moving around in normal mode. Instead of line numbers, you only see the line number of your current line. The number before every other line is relative to your current position. You can go, for instance, to the line that is 2 lines above your current line doing `2k`.
 
-## Some custom shortcuts
+## Creating custom shortcuts
 
-Remaps are the secret sauce when you start using vim as your main code editor. You can associate whatever action you often do to a keyboard shortcut. In vscode, you can already get a feel for some of the customizations you can create.
+Remaps are the secret sauce when you start using vim as your main code editor. You can associate whatever action you often do to a keyboard shortcut. In VSCode, you can already get a feel for some of the customizations you can create.
 
 Some of my shortcuts:
 
@@ -90,12 +86,12 @@ Some of my shortcuts:
   ],
 ```
 
-`vi.normalModeKeyBindingsNonRecursive` is to set those shortcuts in vim normal mode only. The `before` property is the keyboard shortcut. You put your keyboard combination in an array. The `command` is what you want this combination to do. You can create shortcuts for some of vscode editor actions. I use the `rename` action a lot (normally works with `F2`) so I created a little shortcut that is easier for me. It can quickly become a little rabbit hole but there is a [whole documentation](https://code.visualstudio.com/docs/getstarted/keybindings) of all the existing keybindings. It is a good exercise to think of which one you commonly use and whether or not you could improve the existing keyboard shortcut.
+`vi.normalModeKeyBindingsNonRecursive` is to set those shortcuts in vim normal mode only. The `before` property is the keyboard shortcut. You put your keyboard combination in an array. The `command` is what you want this combination to do. You can create shortcuts for some of vscode editor actions. I use the `rename` action a lot (normally works with `F2`) so I created a little shortcut that is easier for me. It can quickly become a little rabbit hole but there is a [whole documentation](https://code.visualstudio.com/docs/getstarted/keybindings) of all the existing keybindings. A good exercise is to find which ones you commonly use and whether or not you could improve the existing keyboard shortcut.
 
 In the example above:
 
 * `K` is useful to show the definition and the detail about a function or a variable. It is the keyboard equivalent to hovering over a function with your mouse.
-* You can also create shortcuts to work with some plugins. I use the `fileutils` plugin and `fuzzysearch`.  `leader r f ` is to rename the current file for instance.
+* You can also create shortcuts to work with some plugins. I use the `fileutils` plugin and `fuzzysearch`.  `leader r f ` is to rename the current file for Instance.
 
 
 
@@ -130,7 +126,7 @@ When you get started with vim, try to stay as much as possible in `normal` mode.
 
 ## Conclusion and further resources
 
-If you want to test it out, the `vim` plugin in vscode is a great start. If you feel like going further, here are some resources:
+If you want to test vim out, using the plugin in vscode is a great start. If you feel like going further, here are some more resources:
 
 * [VimTricks](https://vimtricks.com/)
 * [ThePrimeagen youtube channel](https://www.youtube.com/c/ThePrimeagen)
