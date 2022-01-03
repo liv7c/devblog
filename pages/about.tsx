@@ -26,7 +26,7 @@ const About: NextPage = () => {
           <li>xstate and @xstate/react</li>
         </ul>
 
-        <h2>Constantly learning</h2>
+        <h2>Learning, always</h2>
         <p>
           I&apos;m a self taught developer. In 2016, I wrote my first few lines
           of HTML and it was the start of an incredible journey. What I love

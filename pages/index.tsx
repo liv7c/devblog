@@ -24,7 +24,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         </h1>
         <p>
           I&apos;m a front-end developer based in Paris. Areas of interest
-          include: web accessibility, vim, JavaScript, React.js, and a bit of
+          include: web accessibility, JavaScript, React.js, vim and a bit of
           Rust on the side.
         </p>
       </PageTitleWrapper>

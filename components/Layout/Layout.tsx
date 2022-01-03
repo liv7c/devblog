@@ -22,7 +22,7 @@ const Layout = ({
   pageURL,
 }: LayoutProps) => {
   const title = `${pageTitle} | Olivia Coumans`;
-  const description = pageDescription ?? "Olivia Coumans's website";
+  const description = pageDescription ?? "Olivia Coumans's site";
   const currentURL = pageURL ?? server;
   const siteImage = `${server}${blogImg.src}`;
 
