@@ -6,7 +6,9 @@ const SiteFooter = () => {
     <S.FooterWrapper>
       <MaxWidthWrapper>
         <S.FooterContent>
-          <p>&copy; {new Date().getFullYear()} &mdash; Olivia Coumans</p>
+          <p data-testid="footer-text">
+            &copy; {new Date().getFullYear()} &mdash; Olivia Coumans
+          </p>
           <S.FooterLinkList>
             <S.FooterLinkListItem>
               <a href="https://github.com/liv7c">Github</a>
