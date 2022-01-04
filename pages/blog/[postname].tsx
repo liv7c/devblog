@@ -34,7 +34,7 @@ interface PostProps {
   markdownBody: Post['markdownBody'];
 }
 
-function Post({ frontmatter, markdownBody }: PostProps) {
+const Post: NextPage<PostProps> = ({ frontmatter, markdownBody }) => {
   if (!frontmatter) return null;
 
   return (
@@ -73,7 +73,7 @@ function Post({ frontmatter, markdownBody }: PostProps) {
       </PostContainer>
     </Layout>
   );
-}
+};
 
 export async function getStaticProps({ ...ctx }) {
   const { postname } = ctx.params;

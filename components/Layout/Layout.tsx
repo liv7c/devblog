@@ -4,8 +4,8 @@ import { ReactNode } from 'react';
 import { server } from '../../config';
 import blogImg from '../../public/blog-img.png';
 import {
-  MaxWidthWrapper,
   MaxWidthPageContentWrapper,
+  MaxWidthWrapper,
 } from '../../styles/Wrapper';
 import SiteFooter from '../SiteFooter';
 import SiteHeader from '../SiteHeader';
