@@ -39,7 +39,7 @@ const About: NextPage = () => {
       <ul>
         <li>
           Web accessibility (semantic HTML, adopting an accessibility first
-          approach, decrypting the WCAG)
+          approach, understanding the WCAG)
         </li>
         <li>Type systems (exploring this topic with Typescript and Rust)</li>
       </ul>

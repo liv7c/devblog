@@ -9,7 +9,6 @@ import * as S from './SiteHeader.styles';
 const SiteHeader = () => {
   const { pathname } = useRouter();
   const [menuVisible, setMenuVisible] = useState(false);
-  console.log('pathname', pathname);
 
   return (
     <header>
