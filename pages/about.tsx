@@ -18,12 +18,14 @@ const About: NextPage = () => {
         <h2>My tech stack</h2>
         <ul>
           <li>
-            React and other libraries in its ecosystem (Redux, React Testing
-            Library, Emotion)
+            React and other libraries in its ecosystem (e.g. Redux and Redux
+            Toolkit)
           </li>
           <li>Typescript</li>
-          <li>Jest and Cypress for testing</li>
-          <li>CSS, SASS and CSS-in-JS solutions like Emotion</li>
+          <li>Jest, React Testing Library and Cypress for testing</li>
+          <li>
+            CSS, SASS and CSS-in-JS solutions like Emotion and Styled Components
+          </li>
           <li>xstate and @xstate/react</li>
         </ul>
 
