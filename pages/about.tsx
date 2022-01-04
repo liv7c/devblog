@@ -1,5 +1,3 @@
-import { NextPage } from 'next';
-
 import Layout from '../components/Layout';
 import { PageTitleWrapper } from '../styles/Wrapper';
 
@@ -40,7 +38,7 @@ const About: NextPage = () => {
         <ul>
           <li>
             Web accessibility (semantic HTML, adopting an accessibility first
-            approach, decrypting the WCAG)
+            approach, exploring the WCAG)
           </li>
           <li>Type systems (exploring this topic with Typescript and Rust)</li>
         </ul>
