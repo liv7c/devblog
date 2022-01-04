@@ -13,10 +13,8 @@ interface BlogProps {
 const Blog: NextPage<BlogProps> = ({ posts }) => {
   return (
     <Layout pageTitle="Blog">
-      <PageTitleWrapper>
-        <h1>Blog</h1>
-        <PostList posts={posts} withTag={true} />
-      </PageTitleWrapper>
+      <h1>Blog</h1>
+      <PostList posts={posts} withTag={true} />
     </Layout>
   );
 };

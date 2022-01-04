@@ -3,7 +3,10 @@ import { ReactNode } from 'react';
 
 import { server } from '../../config';
 import blogImg from '../../public/blog-img.png';
-import { MaxWidthWrapper } from '../../styles/Wrapper';
+import {
+  MaxWidthWrapper,
+  MaxWidthPageContentWrapper,
+} from '../../styles/Wrapper';
 import SiteFooter from '../SiteFooter';
 import SiteHeader from '../SiteHeader';
 import * as S from './Layout.styles';
@@ -13,6 +16,7 @@ interface LayoutProps {
   pageTitle: string;
   pageDescription?: string;
   pageURL?: string;
+  withLargeBottomSpace?: boolean;
 }
 
 const Layout = ({
@@ -20,6 +24,7 @@ const Layout = ({
   pageTitle,
   pageDescription,
   pageURL,
+  withLargeBottomSpace = false,
 }: LayoutProps) => {
   const title = `${pageTitle} | Olivia Coumans`;
   const description = pageDescription ?? "Olivia Coumans's site";
@@ -49,7 +54,11 @@ const Layout = ({
       <S.ContentWrapper>
         <SiteHeader />
         <main>
-          <MaxWidthWrapper>{children}</MaxWidthWrapper>
+          <MaxWidthPageContentWrapper
+            withLargeBottomSpace={withLargeBottomSpace}
+          >
+            {children}
+          </MaxWidthPageContentWrapper>
         </main>
         <SiteFooter />
       </S.ContentWrapper>

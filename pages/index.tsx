@@ -14,14 +14,12 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ posts }) => {
   return (
     <Layout pageTitle="Home">
-      <PageTitleWrapper>
-        <h1>Hi, I&apos;m Olivia.</h1>
-        <p>
-          I&apos;m a front-end developer based in Paris. Areas of interest
-          include: web accessibility, JavaScript, React.js, vim and a bit of
-          Rust on the side.
-        </p>
-      </PageTitleWrapper>
+      <h1>Hi, I&apos;m Olivia.</h1>
+      <p>
+        I&apos;m a front-end developer based in Paris. Areas of interest
+        include: web accessibility, JavaScript, React.js, vim and a bit of Rust
+        on the side.
+      </p>
 
       <h2>Latest blog posts</h2>
       <PostList posts={posts} />
