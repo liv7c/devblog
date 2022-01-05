@@ -19,6 +19,9 @@ const SiteFooter = () => {
             <S.FooterLinkListItem>
               <a href="https://twitter.com/liv_codes">Twitter</a>
             </S.FooterLinkListItem>
+            <S.FooterLinkListItem>
+              <a href="/rss/feed.xml">RSS</a>
+            </S.FooterLinkListItem>
           </S.FooterLinkList>
         </S.FooterContent>
       </MaxWidthWrapper>

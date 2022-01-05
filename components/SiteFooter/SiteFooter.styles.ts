@@ -9,7 +9,7 @@ export const FooterWrapper = styled.footer`
 `;
 
 export const FooterContent = styled.div`
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
