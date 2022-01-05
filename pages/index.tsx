@@ -6,6 +6,7 @@ import PostList from '../components/PostList';
 import { PageTitleWrapper } from '../styles/Wrapper';
 import { Post } from '../types/Post';
 import { getAllPosts } from '../utils/posts';
+import { generateRssFeed } from '../utils/rss';
 
 interface HomeProps {
   posts: Post[];
@@ -28,6 +29,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 };
 
 export async function getStaticProps() {
+  await generateRssFeed();
   const allPosts = getAllPosts();
 
   return {

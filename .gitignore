@@ -130,3 +130,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+public/rss/atom.xml
+public/rss/feed.xml
+public/rss/feed.json
