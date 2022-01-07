@@ -16,7 +16,7 @@ export default function PostList({ posts, withTag = false }: PostListProps) {
   return (
     <div>
       {!posts && <div>No posts!</div>}
-      <ul>
+      <S.PostListContainer>
         {posts &&
           posts.map((post) => {
             return (
@@ -33,7 +33,7 @@ export default function PostList({ posts, withTag = false }: PostListProps) {
               </li>
             );
           })}
-      </ul>
+      </S.PostListContainer>
     </div>
   );
 }
