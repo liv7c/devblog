@@ -27,7 +27,8 @@ const Layout = ({
   withLargeBottomSpace = false,
 }: LayoutProps) => {
   const title = `${pageTitle} | Olivia Coumans`;
-  const description = pageDescription ?? "Olivia Coumans's site";
+  const description =
+    pageDescription ?? 'Olivia Coumans, front-end developer in Paris';
   const currentURL = pageURL ?? server;
   const siteImage = `${server}${blogImg.src}`;
 
@@ -35,21 +36,25 @@ const Layout = ({
     <>
       <Head>
         <title>{title}</title>
-        <meta property="og:title" content={title} key="ogtitle" />
         <meta name="description" content={description} />
-        <meta property="og:description" content={description} key="ogdesc" />
-        <meta property="og:image" content={siteImage} key="ogimage" />
-        <meta property="og:url" content={currentURL} key="ogurl" />
-        <meta
-          property="og:site_name"
-          content="Olivia Coumans"
-          key="ogsitename"
-        />
+
+        {/* twitter */}
         <meta name="twitter:card" content="summary" key="twcard" />
         <meta name="twitter:creator" content="@liv_codes" key="twhandle" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={siteImage} />
+
+        {/* Open graph data */}
+        <meta property="og:title" content={title} key="ogtitle" />
+        <meta
+          property="og:site_name"
+          content="Olivia Coumans"
+          key="ogsitename"
+        />
+        <meta property="og:description" content={description} key="ogdesc" />
+        <meta property="og:image" content={siteImage} key="ogimage" />
+        <meta property="og:url" content={currentURL} key="ogurl" />
       </Head>
       <S.ContentWrapper>
         <SiteHeader />
