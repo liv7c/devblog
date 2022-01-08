@@ -35,7 +35,7 @@ const Layout = ({
     <>
       <Head>
         <title>{title}</title>
-        <meta property="og:title" content={pageTitle} key="ogtitle" />
+        <meta property="og:title" content={title} key="ogtitle" />
         <meta name="description" content={description} />
         <meta property="og:description" content={description} key="ogdesc" />
         <meta property="og:image" content={siteImage} key="ogimage" />
