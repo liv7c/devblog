@@ -1,16 +1,8 @@
- <xml version="1.0" encoding="UTF-8">
- <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://oliviac.dev</loc>
-  </url>
-  <url>
-    <loc>https://oliviac.dev/about</loc>
-  </url>
-  <url>
-    <loc>https://oliviac.dev/blog</loc>
-  </url>
-  <url>
-    <loc>https://oliviac.dev/blog/vim-with-vscode</loc>
-  </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://oliviac.dev</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-08T13:24:25.667Z</lastmod></url>
+<url><loc>https://oliviac.dev/about</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-08T13:24:25.668Z</lastmod></url>
+<url><loc>https://oliviac.dev/blog</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-08T13:24:25.668Z</lastmod></url>
+<url><loc>https://oliviac.dev/blog/search-for-string-with-git-log</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-08T13:24:25.668Z</lastmod></url>
+<url><loc>https://oliviac.dev/blog/vim-with-vscode</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-08T13:24:25.668Z</lastmod></url>
 </urlset>
-</xml>

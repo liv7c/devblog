@@ -1,3 +1,9 @@
-# Allow all user agents.
+# *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://oliviac.dev
+
+# Sitemaps
+Sitemap: https://oliviac.dev/sitemap.xml
