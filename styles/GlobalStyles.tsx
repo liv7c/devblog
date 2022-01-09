@@ -14,6 +14,15 @@ const GlobalStyles = createGlobalStyle`
     --button-bg: #6246ea;
 
     --page-padding: 20px;
+
+    --selection-color: #fff;
+    --selection-background: #5b21b6;
+  }
+
+  ::selection {
+    color: var(--selection-color);
+    background-color:
+      var(--selection-background);
   }
 
   html,
