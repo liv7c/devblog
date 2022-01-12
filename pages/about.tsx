@@ -30,10 +30,10 @@ const About: NextPage = () => {
 
       <h2>Learning, always</h2>
       <p>
-        I&apos;m a self taught developer. In 2016, I wrote my first few lines of
-        HTML and it was the start of an incredible journey. What I love about
-        being a developer is that we can learn something new every single day
-        (even a small detail).
+        I&apos;m a self taught developer. What I love about being a developer is
+        that we can learn something new every day (even a tiny detail). In 2016,
+        I wrote my first few lines of HTML, and it was the start of an
+        incredible journey.
       </p>
       <p>Things I currently love learning about:</p>
       <ul>
