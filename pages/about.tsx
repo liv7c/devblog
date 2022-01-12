@@ -9,9 +9,8 @@ const About: NextPage = () => {
       <h1>About</h1>
       <p>
         My name is Olivia. I&apos;m a front-end developer in Paris with 3+ years
-        of experience working mostly on B2B products with a tech stack going
-        from Jinja templates to single page apps built with React and
-        Typescript.
+        of experience working primarily on B2B products with a tech stack going
+        from Jinja templates to React and Typescript.
       </p>
 
       <h2>My tech stack</h2>
