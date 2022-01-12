@@ -8,13 +8,13 @@ keywords:
   - git
 ---
 
-Recently, I discovered a useful functionality of `git log` while cleaning up some code. You can pass an option to `git log` to get back a list of all the commits that changed a certain string. Let's explore that feature!
+Recently, I discovered a useful functionality of `git log` while cleaning up some code. You can pass an option to `git log` to get back a list of all the commits that changed a particular string. Let's explore that feature!
 
 ## Using `git log -S`
 
-If you want to find all the occurrences of a certain string in your git history, `git log -S` is perfect for the job.
+If you want to find all the occurrences of a specific string in your git history, `git log -S` is perfect for the job.
 
-For example, if you look for a certain component in a React app, you can type:
+For example, if you look for a particular component in a React app, you can type:
 
 ```sh
 git log -S ContentWrapper
@@ -51,11 +51,11 @@ Don't hesitate to pass flags to customize the output of `git log`:
 git log --name-only --oneline -p ./components/SiteHeader/SiteHeader.tsx
 ```
 
-This above example will only display the hash and the name of each commit that modified the file.
+The above example will only display the hash and the name of each commit that modified the file.
 
 ## Conclusion and further resources
 
-With `git log` and some of its options, you can quickly find out when some piece of code was removed or added while staying in your terminal. Hope it will be useful for you too!
+With `git log` and some of its options, you can quickly find out when some piece of code was removed or added while staying in your terminal. I hope it will be helpful for you too!
 
 Some further resources:
 
