@@ -5,18 +5,18 @@ import { QUERIES } from './constants/Queries';
 const GlobalStyles = createGlobalStyle`
   :root {
     --bg-color: #fffffe;
-    --secondary-bg-color: #ddd6fe;
+    --secondary-bg-color:#bfdbfe;
     --text-color: #2b2c34;
-    --link-color: #5b21b6;
+    --link-color: #1d4ed8;
 
 
     --button-text: #fffffe;
-    --button-bg: #6246ea;
+    --button-bg: #1d4ed8;
 
     --page-padding: 20px;
 
     --selection-color: #fff;
-    --selection-background: #5b21b6;
+    --selection-background: #1e3a8a;
   }
 
   ::selection {
