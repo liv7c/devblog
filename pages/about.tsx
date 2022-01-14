@@ -9,9 +9,28 @@ const About: NextPage = () => {
       <h1>About</h1>
       <p>
         My name is Olivia. I&apos;m a front-end developer in Paris with 3+ years
-        of experience working primarily on B2B products with a tech stack going
-        from Jinja templates to React and Typescript.
+        of experience working primarily on B2B products.
       </p>
+
+      <h2>Work</h2>
+      <ul>
+        <li>
+          <strong>From October 2018 to now</strong>, I have been working as a
+          front-end developer at Meilleurs Agents, building features for a web
+          application used by thousands of real estate agencies.
+        </li>
+        <li>
+          <strong>Past projects</strong> include{' '}
+          <a href="https://www.pierrecoumansbooks.com/">
+            a website for an incredible bookshop
+          </a>{' '}
+          and a{' '}
+          <a href="https://www.swayandbreathe.com/">
+            blog specialized in indie folk music
+          </a>
+          .
+        </li>
+      </ul>
 
       <h2>My tech stack</h2>
       <ul>
