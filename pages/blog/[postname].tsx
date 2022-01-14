@@ -42,7 +42,7 @@ const Post: NextPage<PostProps> = ({ frontmatter, markdownBody }) => {
       pageTitle={frontmatter.title}
       pageDescription={frontmatter.description}
     >
-      <Link href="/" passHref>
+      <Link href="/blog" passHref>
         <BackLink>&larr; Back to the blog</BackLink>
       </Link>
       <PostContainer>
