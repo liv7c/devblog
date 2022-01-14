@@ -34,7 +34,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts: allPosts.slice(0, 3),
+      posts: allPosts.slice(0, 2),
     },
   };
 }
