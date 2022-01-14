@@ -13,7 +13,7 @@ Generics can be hard to grasp when first learning TypeScript. This post will rev
 ## Generics as a superpower to build reusable code
 The whole idea behind generics is to write functions or data structures that can work with many different types depending on the context.
 
-One of the most common examples is the `identity` function when studying generics. This function has the sole purpose of returning the argument it receives.
+The most common example to introduce generics is the `identity` function. The sole goal of this function is to return the argument it receives.
 
 ```typescript
 function identify(value) {
@@ -21,7 +21,7 @@ function identify(value) {
 }
 ```
 
-If you have `strict` enabled in your `tsconfig`,  the code above will cause a type error. It will tell you that `value` has the implicit `any` type. The first approach to fixing this issue is to make `value` an `any` type.
+If you have `strict` enabled in your `tsconfig`,  the code above will cause a type error. It will tell you that `value` has the implicit type of `any`. The first approach to fixing this issue is to make `value` an `any` type explicitly.
 
 ```typescript
 function identity(arg: any) {
@@ -29,14 +29,14 @@ function identity(arg: any) {
 }
 ```
 
-One problem with this approach is that you lose type safety.  By making `value` an `any` type, the return value of `identity` will be `any` as well. If you store the result in a variable, this variable will be `any` and could cause type errors.
+One problem with this approach is that you lose all type safety. By making `value` a type of `any`, the return value of `identity` will also be of type `any`. If you store it in a variable, this variable will also be of type `any`, which could cause some type errors.
 
 ```typescript
 const name = identify("Lisa"); // name will be of type `any`
 const total: number = name; // would not throw a type error
 ```
 
-We want TypeScript to infer what type of argument we use. That's when generics come to the rescue.
+We want TypeScript to infer the type of the argument. That's when generics come to the rescue.
 
 ```typescript
 function identity<T>(arg: T): T {
@@ -48,7 +48,7 @@ const name = identity("Lisa");
 // identity<string>("Lisa");
 ```
 
-You can think of a generic as a placeholder or a variable that TypeScript will fill with the correct type information later. In this example, when you invoke `identity`, TypeScript will fill the blanks and replace the generics with a concrete type (`string` in the case of the example).
+You can think of a generic as a placeholder or a variable that TypeScript will fill with the correct type information later. In this example, when you invoke `identity`, TypeScript will fill the blanks and replace the generic `T` with a concrete type (`string` in the case of the example).
 
 ## A real-life example of generics
 Let's imagine we want to build a helper function to get the difference between two arrays. Some criteria for our helper function:
@@ -100,12 +100,13 @@ const diff = getArrayDifference(prevTags, currTags, tagFilterFn);
 
 * If you inspect the `getArrayDifference` in this example, you will see that TypeScript considers `T` to be `Tag`.
 * It returns a list of Tag. `diff` will be of type `Tag[]`. If we had used `any` in our helper function definition, `diff` would have been of type `any` as well, and we would have lost all the advantages of using TypeScript.
+* Thanks to generics, we also have some type safety for our `filterFn`. In the above example, its first argument must be of type `Tag`, and its second argument must be a list of tags.
 
-The power of generics is that our function is also type-safe and reusable with other types. We could use our helper with arrays of numbers.
+Generics make our function type-safe and reusable with other types. We could use our helper with arrays of numbers.
 
 ```typescript
 const otherDiff = getArrayDifference([1, 2, 3], [2, 3], (curr, list) => !list.includes(curr));
-// T == number
+// T = number
 // returns [1]
 ```
 
@@ -116,9 +117,9 @@ The whole idea behind generic constraints is to limit the possibilities of the t
 
 ### Usecase #1: you want to use a specific property on a generic type
 
-We want a function that filters a list by id and pretty-prints the result. This function should be generic because we want it to be flexible.
+Let's say we want to write a function that filters a list by id and pretty-prints the result. This function should be generic because we want it to be reusable with many different types.
 
-On our first trial, we might write something like:
+At first, we might write something like:
 
 ```typescript
 function findByIdAndPrint<T>(list: T[], id: string) {
@@ -133,7 +134,7 @@ function findByIdAndPrint<T>(list: T[], id: string) {
 }
 ```
 
-This won't work. TypeScript will throw a type error `Property "id" does not exist on type "T"`. We have to tell TypeScript that this type is generic, but we also know it must have properties like `"id"`.
+This won't work. TypeScript will throw a type error `Property "id" does not exist on type "T"`. We have to tell TypeScript that `T` will have an `id` property no matter what.
 
 ```typescript
 interface HasId {
@@ -153,7 +154,7 @@ function findByIdAndPrint<T extends HasId> {
 ```
 
 What does `extends` do?
-* It tells TypeScript that `T` must have a property `id` in our case.
+* It tells TypeScript that `T` must have a property `id`.
 * `extends` also means that our type `T` is not limited to having only a property `id` and can have many more.
 * We constraint our generic so that this function won't work with any type without an `id` property.
 
