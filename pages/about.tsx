@@ -48,7 +48,7 @@ const About: NextPage = () => {
 
       <h2>Learning, always</h2>
       <p>
-        I&apos;m a self taught developer. What I love about being a developer is
+        I&apos;m a self-taught developer. What I love about being a developer is
         that we can learn something new every day (even a tiny detail). In 2016,
         I wrote my first few lines of HTML, and it was the start of an
         incredible journey.
