@@ -4,7 +4,7 @@ import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import { ReactMarkdownProps } from 'react-markdown/lib/ast-to-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus as dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { a11yDark as dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import styled from 'styled-components';
 
 import Layout from '../../components/Layout';
