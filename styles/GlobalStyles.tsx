@@ -35,6 +35,8 @@ const GlobalStyles = createGlobalStyle`
 
     --body-font-weight: 400;
 
+    --decorative-border-color: transparent;
+
     --button-text: #fffffe;
     --button-bg: #1d4ed8;
 
@@ -46,12 +48,14 @@ const GlobalStyles = createGlobalStyle`
 
   body[data-theme="dark"]  {
     --bg-color: #1f2028;
-    --secondary-bg-color:#000;
+    --secondary-bg-color: #1f2028;
     --text-color: #fefefe;
     --link-color: #f2f2f2;
     --nav-link-active-color: #bfdbf2;
 
     --body-font-weight: 300;
+    --decorative-border-color: #f2f2f2;
+
     --pre-code-color: #fff;
     --pre-code-bg-color: #2d3037;
 
