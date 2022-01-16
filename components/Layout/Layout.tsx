@@ -58,7 +58,7 @@ const Layout = ({
       </Head>
       <S.ContentWrapper>
         <SiteHeader />
-        <main>
+        <main id="main-content">
           <MaxWidthPageContentWrapper
             withLargeBottomSpace={withLargeBottomSpace}
           >

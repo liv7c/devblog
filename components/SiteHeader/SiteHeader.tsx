@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 import { MaxWidthWrapper } from '../../styles/Wrapper';
 import NavLink from '../NavLink';
+import SkipLink from '../SkipLink';
 import * as S from './SiteHeader.styles';
 
 const ThemeToggler = dynamic(() => import('../ThemeToggler'), { ssr: false });
@@ -16,6 +17,7 @@ const SiteHeader = () => {
   return (
     <header>
       <MaxWidthWrapper>
+        <SkipLink />
         <S.Wrapper>
           <S.Logo>
             <Link href="/" passHref>
