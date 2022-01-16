@@ -28,6 +28,8 @@ const GlobalStyles = createGlobalStyle`
     --pre-code-color: #2b2c34;
     --pre-code-bg-color: #f2f2f1;
 
+    --nav-link-active-color: #1d42d8;
+
     --theme-toggler-bg: #111;
     --theme-toggler-color: #fff;
 
@@ -46,6 +48,7 @@ const GlobalStyles = createGlobalStyle`
     --secondary-bg-color:#000;
     --text-color: #fefefe;
     --link-color: #f2f2f2;
+    --nav-link-active-color: #bfdbf2;
 
     --pre-code-color: #fff;
     --pre-code-bg-color: #2d3037;
