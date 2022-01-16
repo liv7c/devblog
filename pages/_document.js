@@ -41,6 +41,7 @@ export default class MyDocument extends Document {
 
     document.body.dataset.theme = getUserPreference();
   `;
+
     return (
       <Html lang="en-us">
         <Head>

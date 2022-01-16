@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 
 import * as S from './ThemeToggler.styles';
 
+type ThemeMode = 'light' | 'dark';
+
 const useTheme = () => {
-  const [activeTheme, setActiveTheme] = useState<'light' | 'dark'>(
-    document.body.dataset.theme as 'dark' | 'light'
+  const [activeTheme, setActiveTheme] = useState<ThemeMode>(
+    document.body.dataset.theme as ThemeMode
   );
 
-  const inactiveTheme: 'dark' | 'light' =
-    activeTheme === 'light' ? 'dark' : 'light';
+  const inactiveTheme: ThemeMode = activeTheme === 'light' ? 'dark' : 'light';
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem('theme');
