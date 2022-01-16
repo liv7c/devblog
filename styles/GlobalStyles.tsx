@@ -33,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
     --theme-toggler-bg: #111;
     --theme-toggler-color: #fff;
 
+    --body-font-weight: 400;
 
     --button-text: #fffffe;
     --button-bg: #1d4ed8;
@@ -50,6 +51,7 @@ const GlobalStyles = createGlobalStyle`
     --link-color: #f2f2f2;
     --nav-link-active-color: #bfdbf2;
 
+    --body-font-weight: 300;
     --pre-code-color: #fff;
     --pre-code-bg-color: #2d3037;
 
@@ -67,6 +69,7 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Merriweather', serif;
+    font-weight: var(--body-font-weight);
     line-height: 1.75;
     overflow-y: scroll;
   }
