@@ -9,16 +9,20 @@ export const FooterWrapper = styled.footer`
 `;
 
 export const FooterContent = styled.div`
-  @media ${QUERIES.laptopAndUp} {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: baseline;
+`;
+
+export const FooterCopyRight = styled.p`
+  margin-right: 20px;
 `;
 
 export const FooterLinkList = styled.ul`
   list-style: none;
   padding: 0;
+  margin-top: 0;
   display: flex;
 `;
 
@@ -30,5 +34,13 @@ export const FooterLinkListItem = styled.li`
   a {
     display: block;
     padding: 10px;
+  }
+`;
+
+export const ThemeTogglerWrapper = styled.div`
+  margin-bottom: 20px;
+
+  @media ${QUERIES.laptopAndUp} {
+    display: none;
   }
 `;
