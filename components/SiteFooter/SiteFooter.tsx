@@ -1,14 +1,20 @@
+import dynamic from 'next/dynamic';
+
 import { MaxWidthWrapper } from '../../styles/Wrapper';
 import * as S from './SiteFooter.styles';
+
+const ThemeToggler = dynamic(() => import('../ThemeToggler'), {
+  ssr: false,
+});
 
 const SiteFooter = () => {
   return (
     <S.FooterWrapper>
       <MaxWidthWrapper>
         <S.FooterContent>
-          <p data-testid="footer-text">
+          <S.FooterCopyRight data-testid="footer-text">
             &copy; {new Date().getFullYear()} &mdash; Olivia Coumans
-          </p>
+          </S.FooterCopyRight>
           <S.FooterLinkList>
             <S.FooterLinkListItem>
               <a href="https://github.com/liv7c">Github</a>
@@ -24,6 +30,9 @@ const SiteFooter = () => {
             </S.FooterLinkListItem>
           </S.FooterLinkList>
         </S.FooterContent>
+        <S.ThemeTogglerWrapper>
+          <ThemeToggler />
+        </S.ThemeTogglerWrapper>
       </MaxWidthWrapper>
     </S.FooterWrapper>
   );

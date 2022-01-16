@@ -134,3 +134,4 @@ dist
 public/rss/atom.xml
 public/rss/feed.xml
 public/rss/feed.json
+public/sitemap.xml

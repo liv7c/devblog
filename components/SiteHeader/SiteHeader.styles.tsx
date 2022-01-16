@@ -94,3 +94,17 @@ export const NavListItem = styled.li`
     }
   }
 `;
+
+export const LeftSide = styled.div`
+  display: flex;
+  align-items: baseline;
+`;
+
+export const DesktopTogglerContainer = styled.div`
+  display: none;
+
+  @media ${QUERIES.laptopAndUp} {
+    display: block;
+    margin-left: 20px;
+  }
+`;
