@@ -26,7 +26,7 @@ export default function PostList({ posts, withTag = false }: PostListProps) {
                 </Link>
                 <div>
                   {withTag && <Tag>{post.frontmatter.tags[0]}</Tag>}
-                  <S.PostDate>
+                  <S.PostDate dateTime={post.frontmatter.date}>
                     {getFormattedDate(post.frontmatter.date)}
                   </S.PostDate>
                 </div>
