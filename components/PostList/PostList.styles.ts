@@ -10,6 +10,8 @@ export const PostDate = styled.time`
 `;
 
 export const PostListContainer = styled.ul`
+  margin-bottom: 25px;
+
   & > li:not(:last-child) {
     margin-bottom: 25px;
   }

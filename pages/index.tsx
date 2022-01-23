@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import styled from 'styled-components';
 
+import ButtonLink from '../components/ButtonLink';
 import Layout from '../components/Layout';
 import PostList from '../components/PostList';
 import { PageTitleWrapper } from '../styles/Wrapper';
@@ -14,7 +16,7 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ posts }) => {
   return (
-    <Layout pageTitle="Home">
+    <Layout pageTitle="Home" withLargeBottomSpace>
       <h1>Hi, I&apos;m Olivia.</h1>
       <p>
         I&apos;m a front-end developer based in Paris. Areas of interest include
@@ -24,6 +26,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 
       <h2>Latest blog posts</h2>
       <PostList posts={posts} />
+      <ButtonLink href="/blog" name="See all posts &rarr;" />
     </Layout>
   );
 };
