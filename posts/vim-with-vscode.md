@@ -86,19 +86,19 @@ Some of my shortcuts:
   ],
 ```
 
-`vim.normalModeKeyBindingsNonRecursive` is to set those shortcuts in vim normal mode only. The `before` property is the keyboard shortcut. You put your keyboard combination in an array. The `command` is what you want this combination to do. You can create shortcuts for some of the VSCode editor actions. I use the `rename` action a lot (normally works with `F2`), so I created a little shortcut that is easier for me. It can quickly become a little rabbit hole, but there is a [full documentation](https://code.visualstudio.com/docs/getstarted/keybindings) of all the existing keybindings. A good exercise is to find which ones you commonly use and whether or not you could improve the existing keyboard shortcut.
+`vim.normalModeKeyBindingsNonRecursive` sets those shortcuts in vim's normal mode only. The `before` property is the keyboard shortcut. You put your keyboard combination in an array. The `command` is what you want this combination to do. You can create shortcuts for some of the VSCode editor actions. I use the `rename` action a lot (normally works with `F2`), so I created a little shortcut that is easier for me. It can quickly become a little rabbit hole, but there is a [full documentation](https://code.visualstudio.com/docs/getstarted/keybindings) of all the existing keybindings. A good exercise is to find which ones you commonly use and whether or not you could improve the existing keyboard shortcut.
 
 In the example above:
 
 * `K` is helpful to show the definition and the detail about a function or a variable. It is the keyboard equivalent to hovering over a function with your mouse.
-* You can also create shortcuts to work with some plugins. I use the `fileutils` plugin and `fuzzy search`.  `leader r f ` is to rename the current file, for Instance.
+* You can also create shortcuts to work with some plugins. I use the `fileutils` plugin and `fuzzy search`.  `leader r f ` is to rename the current file, for instance.
 
 
 ## Extending vim power with some plugins
 
-You can activate a couple of vim plugins in VSCode. A vim plugin, just like in vscode, adds some extra functionalities to vim that can be very useful.
+You can activate a couple of vim plugins in VSCode. A vim plugin, just like in VSCode, adds some extra functionalities to vim that can be very useful.
 
-The plugin I recommend activating is `vim-surround`. It makes it very easy to modify brackets, quotes, and other surrounding elements. You can activate `Vim: Surround` in your vim plugin settings.
+The plugin I recommend activating is `vim-surround`. It makes it easy to modify brackets, quotes, and other surrounding elements. You can activate `Vim: Surround` in your vim plugin settings.
 
 With this plugin, for example:
 
@@ -120,11 +120,29 @@ When you get started with vim, try to stay in `normal` mode as much as possible.
 * `dd` to delete the whole line
 * `cc` to delete the entire line and be directly in `insert` mode on the same line
 * a number + `k` and `j` (e.g. `5k`) to move to a specific line
-* When editing HTML, `cit` enables you to edit the content of the tag directly. It puts you in insert mode inside of the tag (small warning: if there is some content inside the tag, it will get deleted)
+* When editing HTML, `cit` enables you to directly edit the tag's content. It puts you in insert mode inside of the tag (small warning: if there is some content inside the tag, it will get deleted)
 * `u` to undo whatever weird thing can sometimes happen when editing with vim...
 
-## Conclusion and further resources
+## Bonus: moving a code block up or down in visual mode
 
+I remember watching a presentation on React by Ryan Florence and seeing this trick for the first time. During the talk, he highlighted a code block in visual mode and moved it up and down without cutting and pasting. If you want to do something similar in VSCode with vim, add these to your `settings.json`:
+
+```json
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+	  {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    }
+  ],
+```
+
+You can now select a code block in visual mode and move it up with `K` or down with `J`.
+
+## Conclusion and further resources
 If you want to test vim out, using the plugin in VSCode is a great start. If you feel like going further, here are some more resources:
 
 * [VimTricks](https://vimtricks.com/)
