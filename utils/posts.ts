@@ -18,5 +18,12 @@ export function getAllPosts() {
     return data;
   })(require.context('../posts', true, /\.md$/));
 
-  return posts;
+  return posts.sort((a, b) => {
+    const [aPostDate, bPostDate] = [
+      new Date(a.frontmatter.date),
+      new Date(b.frontmatter.date),
+    ];
+
+    return bPostDate.getTime() - aPostDate.getTime();
+  });
 }
