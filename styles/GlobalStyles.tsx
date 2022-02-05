@@ -120,7 +120,7 @@ const GlobalStyles = createGlobalStyle`
     color: var(--text-color);
   }
 
-  ul {
+  ul, ol {
     padding-left: 10px;
   }
 
