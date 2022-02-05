@@ -6,7 +6,7 @@ export const ThemeToggler = styled.button`
   background: var(--theme-toggler-bg);
   color: var(--theme-toggler-color);
   border: none;
-  padding: 7px 10px;
+  padding: 10px 10px 7px;
   font-size: 0.9rem;
   border-radius: 0.25rem;
   outline-offset: 3px;
