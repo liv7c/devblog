@@ -104,7 +104,8 @@ export const DesktopTogglerContainer = styled.div`
   display: none;
 
   @media ${QUERIES.laptopAndUp} {
+    min-width: 130px;
     display: block;
-    margin-left: 20px;
+    margin-left: 21px;
   }
 `;
