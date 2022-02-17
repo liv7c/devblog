@@ -20,7 +20,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       <h1>Hi, I&apos;m Olivia.</h1>
       <p>
         I&apos;m a front-end developer based in Paris. Areas of interest include
-        web accessibility, JavaScript, React.js, vim, and a bit of Rust on the
+        web accessibility, JavaScript, React.js, vim, and a bit of Go on the
         side.
       </p>
 

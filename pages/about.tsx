@@ -59,7 +59,8 @@ const About: NextPage = () => {
           Web accessibility (semantic HTML, adopting an accessibility first
           approach, understanding the WCAG)
         </li>
-        <li>Type systems (exploring this topic with Typescript and Rust)</li>
+        <li>Type systems (exploring this topic with Typescript)</li>
+        <li>State machines</li>
       </ul>
     </Layout>
   );
