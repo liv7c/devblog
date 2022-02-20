@@ -9,12 +9,12 @@ interface NavLinkProps {
   isCurrent: boolean;
 }
 
-function NavLink({ href, name, isCurrent }: NavLinkProps) {
+function NavLink({href, name, isCurrent}: NavLinkProps) {
   return (
     <Link href={href} passHref>
       <S.NavLinkItem
         current={isCurrent}
-        {...(isCurrent ? { 'aria-current': 'page' } : {})}
+        {...(isCurrent ? {'aria-current': 'page'} : {})}
       >
         {name}
       </S.NavLinkItem>

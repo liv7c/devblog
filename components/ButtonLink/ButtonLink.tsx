@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import styled from 'styled-components';
 
 import * as S from './ButtonLink.styles';
 
@@ -8,7 +7,7 @@ interface ButtonLinkProps {
   name: string;
 }
 
-function ButtonLink({ href, name }: ButtonLinkProps) {
+function ButtonLink({href, name}: ButtonLinkProps) {
   return (
     <Link href={href} passHref>
       <S.Link>{name}</S.Link>

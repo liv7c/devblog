@@ -1,15 +1,15 @@
 import matter from 'gray-matter';
-import type { NextPage } from 'next';
+import type {NextPage} from 'next';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
-import { ReactMarkdownProps } from 'react-markdown/lib/ast-to-react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { a11yDark as dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import {ReactMarkdownProps} from 'react-markdown/lib/ast-to-react';
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+import {a11yDark as dark} from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import styled from 'styled-components';
 
 import Layout from '../../components/Layout';
-import type { Post } from '../../types/Post';
-import { getFormattedDate } from '../../utils/date';
+import type {Post} from '../../types/Post';
+import {getFormattedDate} from '../../utils/date';
 
 const BackLink = styled.a`
   margin-bottom: 20px;
@@ -34,7 +34,7 @@ interface PostProps {
   markdownBody: Post['markdownBody'];
 }
 
-const Post: NextPage<PostProps> = ({ frontmatter, markdownBody }) => {
+const Post: NextPage<PostProps> = ({frontmatter, markdownBody}) => {
   if (!frontmatter) return null;
 
   return (
@@ -53,7 +53,7 @@ const Post: NextPage<PostProps> = ({ frontmatter, markdownBody }) => {
         <div>
           <ReactMarkdown
             components={{
-              code({ node, inline, className, children, ...props }) {
+              code({node, inline, className, children, ...props}) {
                 const match = /language-(\w+)/.exec(className || '');
                 return !inline && match ? (
                   <SyntaxHighlighter style={dark} language={match[1]}>
@@ -75,8 +75,8 @@ const Post: NextPage<PostProps> = ({ frontmatter, markdownBody }) => {
   );
 };
 
-export async function getStaticProps({ ...ctx }) {
-  const { postname } = ctx.params;
+export async function getStaticProps({...ctx}) {
+  const {postname} = ctx.params;
 
   const content = await import(`../../posts/${postname}.md`);
   const data = matter(content.default);

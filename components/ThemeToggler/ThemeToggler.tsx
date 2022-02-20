@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 import * as S from './ThemeToggler.styles';
 
@@ -23,11 +23,11 @@ const useTheme = () => {
     window.localStorage.setItem('theme', activeTheme);
   }, [activeTheme]);
 
-  return { activeTheme, inactiveTheme, setActiveTheme };
+  return {activeTheme, inactiveTheme, setActiveTheme};
 };
 
 const ThemeToggle = () => {
-  const { activeTheme, inactiveTheme, setActiveTheme } = useTheme();
+  const {activeTheme, inactiveTheme, setActiveTheme} = useTheme();
   const isDarkThemeActive = activeTheme === 'dark';
 
   return (

@@ -1,7 +1,7 @@
-import { Feed } from 'feed';
+import {Feed} from 'feed';
 import fs from 'fs';
 
-import { getAllPosts } from './posts';
+import {getAllPosts} from './posts';
 
 export const generateRssFeed = async () => {
   const posts = await getAllPosts();
@@ -48,7 +48,7 @@ export const generateRssFeed = async () => {
   });
 
   // create rss files in public/rss folder
-  fs.mkdirSync('./public/rss', { recursive: true });
+  fs.mkdirSync('./public/rss', {recursive: true});
   fs.writeFileSync('./public/rss/feed.xml', feed.rss2());
   fs.writeFileSync('./public/rss/atom.xml', feed.atom1());
   fs.writeFileSync('./public/rss/feed.json', feed.json1());

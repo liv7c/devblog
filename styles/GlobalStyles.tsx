@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
 
-import { QUERIES } from './constants/Queries';
+import {QUERIES} from './constants/Queries';
 
 const GlobalStyles = createGlobalStyle`
   html,
@@ -53,7 +53,7 @@ const GlobalStyles = createGlobalStyle`
     --link-color: #f2f2f2;
     --nav-link-active-color: #bfdbf2;
 
-    --body-font-weight: 300;
+    --body-font-weight: 400;
     --decorative-border-color: #f2f2f2;
 
     --pre-code-color: #fff;

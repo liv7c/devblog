@@ -1,5 +1,5 @@
-import Document, { Head, Html, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import Document, {Head, Html, Main, NextScript} from 'next/document';
+import {ServerStyleSheet} from 'styled-components';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -57,7 +57,7 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
-          <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
+          <script dangerouslySetInnerHTML={{__html: setInitialTheme}} />
           <Main />
           <NextScript />
         </body>

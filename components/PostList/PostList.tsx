@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import type { Post } from '../../types/Post';
-import { getFormattedDate } from '../../utils/date';
+import type {Post} from '../../types/Post';
+import {getFormattedDate} from '../../utils/date';
 import Tag from '../Tag';
 import * as S from './PostList.styles';
 
@@ -10,7 +10,7 @@ interface PostListProps {
   withTag?: boolean;
 }
 
-export default function PostList({ posts, withTag = false }: PostListProps) {
+export default function PostList({posts, withTag = false}: PostListProps) {
   if (posts === undefined) return null;
 
   return (
@@ -21,7 +21,7 @@ export default function PostList({ posts, withTag = false }: PostListProps) {
           posts.map((post) => {
             return (
               <li key={post.slug}>
-                <Link href={{ pathname: `/blog/${post.slug}` }}>
+                <Link href={{pathname: `/blog/${post.slug}`}}>
                   {post.frontmatter.title}
                 </Link>
                 <div>

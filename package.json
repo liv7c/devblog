@@ -5,6 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
+    "format": "npm run prettier -- --write",
     "start": "next start",
     "lint": "next lint",
     "test:watch": "jest --watch",

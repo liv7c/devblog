@@ -1,17 +1,17 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import {useRouter} from 'next/router';
+import {useState} from 'react';
 
-import { MaxWidthWrapper } from '../../styles/Wrapper';
+import {MaxWidthWrapper} from '../../styles/Wrapper';
 import NavLink from '../NavLink';
 import SkipLink from '../SkipLink';
 import * as S from './SiteHeader.styles';
 
-const ThemeToggler = dynamic(() => import('../ThemeToggler'), { ssr: false });
+const ThemeToggler = dynamic(() => import('../ThemeToggler'), {ssr: false});
 
 const SiteHeader = () => {
-  const { pathname } = useRouter();
+  const {pathname} = useRouter();
   const [menuVisible, setMenuVisible] = useState(false);
 
   return (

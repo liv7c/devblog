@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-import { MaxWidthWrapper } from '../../styles/Wrapper';
+import {MaxWidthWrapper} from '../../styles/Wrapper';
 import * as S from './SiteFooter.styles';
 
 const ThemeToggler = dynamic(() => import('../ThemeToggler'), {

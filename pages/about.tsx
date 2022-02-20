@@ -1,7 +1,6 @@
-import { NextPage } from 'next';
+import {NextPage} from 'next';
 
 import Layout from '../components/Layout';
-import { PageTitleWrapper } from '../styles/Wrapper';
 
 const About: NextPage = () => {
   return (

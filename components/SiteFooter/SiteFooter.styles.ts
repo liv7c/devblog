@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { QUERIES } from '../../styles/constants/Queries';
+import {QUERIES} from '../../styles/constants/Queries';
 
 export const FooterWrapper = styled.footer`
   margin-top: auto;

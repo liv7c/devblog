@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { QUERIES } from './constants/Queries';
+import {QUERIES} from './constants/Queries';
 
 export const MaxWidthWrapper = styled.div`
   max-width: 800px;
@@ -16,12 +16,12 @@ export const MaxWidthPageContentWrapper = styled(
   MaxWidthWrapper
 )<MaxWidthPageContentWrapperProps>`
   padding-top: 30px;
-  padding-bottom: ${({ withLargeBottomSpace }) =>
+  padding-bottom: ${({withLargeBottomSpace}) =>
     withLargeBottomSpace ? '70px' : '30px'};
 
   @media ${QUERIES.tabletAndUp} {
     padding-top: 10px;
-    padding-bottom: ${({ withLargeBottomSpace }) =>
+    padding-bottom: ${({withLargeBottomSpace}) =>
       withLargeBottomSpace ? '70px' : '10px'};
   }
 `;

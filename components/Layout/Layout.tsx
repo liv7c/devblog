@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import { ReactNode } from 'react';
+import {ReactNode} from 'react';
 
-import { server } from '../../config';
+import {server} from '../../config';
 import blogImg from '../../public/blog-img.png';
 import {
   MaxWidthPageContentWrapper,

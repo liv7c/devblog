@@ -1,16 +1,16 @@
-import { NextPage } from 'next';
+import {NextPage} from 'next';
 
 import Layout from '../../components/Layout';
 import PostList from '../../components/PostList';
-import { PageTitleWrapper } from '../../styles/Wrapper';
-import { Post } from '../../types/Post';
-import { getAllPosts } from '../../utils/posts';
+import {PageTitleWrapper} from '../../styles/Wrapper';
+import {Post} from '../../types/Post';
+import {getAllPosts} from '../../utils/posts';
 
 interface BlogProps {
   posts: Post[];
 }
 
-const Blog: NextPage<BlogProps> = ({ posts }) => {
+const Blog: NextPage<BlogProps> = ({posts}) => {
   return (
     <Layout pageTitle="Blog" withLargeBottomSpace>
       <h1>Blog</h1>

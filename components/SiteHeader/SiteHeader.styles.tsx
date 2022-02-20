@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { QUERIES } from '../../styles/constants/Queries';
+import {QUERIES} from '../../styles/constants/Queries';
 
 export const Logo = styled.span`
   font-size: 1.2rem;

@@ -1,20 +1,17 @@
-import type { NextPage } from 'next';
-import Link from 'next/link';
-import styled from 'styled-components';
+import type {NextPage} from 'next';
 
 import ButtonLink from '../components/ButtonLink';
 import Layout from '../components/Layout';
 import PostList from '../components/PostList';
-import { PageTitleWrapper } from '../styles/Wrapper';
-import { Post } from '../types/Post';
-import { getAllPosts } from '../utils/posts';
-import { generateRssFeed } from '../utils/rss';
+import {Post} from '../types/Post';
+import {getAllPosts} from '../utils/posts';
+import {generateRssFeed} from '../utils/rss';
 
 interface HomeProps {
   posts: Post[];
 }
 
-const Home: NextPage<HomeProps> = ({ posts }) => {
+const Home: NextPage<HomeProps> = ({posts}) => {
   return (
     <Layout pageTitle="Home" withLargeBottomSpace>
       <h1>Hi, I&apos;m Olivia.</h1>

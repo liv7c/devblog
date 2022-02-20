@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import {ReactNode} from 'react';
 
 import * as S from './Tag.styles';
 
@@ -6,7 +6,7 @@ interface TagProps {
   children: ReactNode;
 }
 
-const Tag = ({ children }: TagProps) => {
+const Tag = ({children}: TagProps) => {
   return <S.Tag>{children}</S.Tag>;
 };
 
