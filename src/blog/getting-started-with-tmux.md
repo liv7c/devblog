@@ -22,10 +22,10 @@ A window is your entire terminal window. A pane is what you create when you spli
 
  A tmux window:
 
-![A tmux window takes up your entire terminal window](/images/tmux-window.png)
+![A tmux window takes up your entire terminal window](/img/tmux-window.png)
 
 A tmux pane:
-![Example of a tmux pane in tmux, splitting the tmux window in half vertically](/images/tmux-pane.png)
+![Example of a tmux pane in tmux, splitting the tmux window in half vertically](/img/tmux-pane.png)
 
 ## Installing tmux and running it
 First, make sure you have tmux installed on your system. Check out [the tmux official wiki](https://github.com/tmux/tmux/wiki/Installing) for all the information you need to install it properly. Once installed, you can check that everything is working by running the command `tmux` in your terminal. You should be in a tmux session. To exit it, type `exit` and enter.
