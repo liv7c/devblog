@@ -1,5 +1,0 @@
-[[redirects]]
- from = "https://admiring-austin-d06378.netlify.app/*"
- to = "https://oliviac.dev/:splat"
- status = 301
- force = true
