@@ -1,6 +1,6 @@
 ---json
 {
-  "permalink": "rss/feed.xml",
+  "permalink": "feed.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
   "title": "Title",
@@ -30,13 +30,6 @@
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.posts %} {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url)
-
-
-
-
-
-
-
   }}{% endset %}
   <entry>
     <title>{{ post.data.title }}</title>
