@@ -7,18 +7,16 @@
     <link rel="stylesheet" href="{{ '/css/styles.css' | url }}" />
   </head>
   <body>
-    {% include './siteHeader.njk' %}
+    <div class="page-wrapper">
+      {% include './siteHeader.njk' %}
 
-    <main id="main-content">
-      <div class="page-content-wrapper">
-        {{ content | safe }}
-      </div>
-    </main>
+      <main id="main-content">
+        <div class="page-content-wrapper">
+          {{ content | safe }}
+        </div>
+      </main>
 
-    <footer>
-      <div class="page-content-wrapper">
-        <p>&copy; {{ currentYear }}</p>
-      </div>
-    </footer>
+      {% include './siteFooter.njk' %}
+    </div>
   </body>
 </html>
