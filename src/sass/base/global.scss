@@ -131,3 +131,16 @@ ol {
 li {
   margin-bottom: 12px;
 }
+
+code {
+  color: var(--pre-code-color);
+  background-color: var(--pre-code-bg-color);
+  padding: 4px 5px;
+  border-radius: 3px;
+}
+
+code[class^='language'] {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
