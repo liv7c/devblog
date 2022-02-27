@@ -1,12 +1,12 @@
 /**
- * Vendors / external css
- */
-@import './vendors/normalize';
-
-/**
  * mixins and functions
  */
 @import './abstract/mixins';
+
+/**
+ * Vendors / external css
+ */
+@import './vendors/normalize';
 
 /**
  * Global styles
