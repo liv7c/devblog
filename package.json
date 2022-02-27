@@ -1,0 +1,31 @@
+{
+  "name": "devblog",
+  "version": "2.0.0",
+  "description": "Personal dev blog",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:sass": "sass  --no-source-map src/sass:public/css",
+    "build:eleventy": "eleventy",
+    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:sass build:eleventy"
+  },
+  "keywords": [
+    "11ty",
+    "sass",
+    "html"
+  ],
+  "author": "Olivia Coumans",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "autoprefixer": "^10.4.2",
+    "cssnano": "^5.0.17",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.7",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.9"
+  }
+}
