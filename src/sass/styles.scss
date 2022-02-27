@@ -1,3 +1,20 @@
-body {
-  background-color: skyblue;
-}
+/**
+ * Vendors / external css
+ */
+@import './vendors/normalize';
+
+/**
+ * mixins and functions
+ */
+@import './abstract/mixins';
+
+/**
+ * Global styles
+ */
+@import './base/global';
+@import './base/layout';
+
+/**
+ * Components
+ */
+@import './components/site-header';

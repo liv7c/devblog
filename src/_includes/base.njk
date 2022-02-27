@@ -4,19 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }} | Olivia's dev blog</title>
-    <link rel="stylesheet" href="{{ 'css/styles.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/css/styles.css' | url }}" />
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-      </ul>
-    </nav>
+    {% include './siteHeader.njk' %}
 
-    {{ content | safe }}
+    <main id="main-content">
+      <div class="page-content-wrapper">
+        {{ content | safe }}
+      </div>
+    </main>
 
     <footer>
-      <p>&copy; {{ currentYear }}</p>
+      <div class="page-content-wrapper">
+        <p>&copy; {{ currentYear }}</p>
+      </div>
     </footer>
   </body>
 </html>
