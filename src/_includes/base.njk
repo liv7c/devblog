@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include './head.njk' %}
+  </head>
+  <body>
+    <div class="page-wrapper">
+      {% include './siteHeader.njk' %}
+
+      <main id="main-content">
+        <div class="page-content-wrapper">
+          {{ content | safe }}
+        </div>
+      </main>
+
+      {% include './siteFooter.njk' %}
+    </div>
+
+    <script src="{{ '/js/app.js' | url }}"></script>
+  </body>
+</html>

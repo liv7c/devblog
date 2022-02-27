@@ -1,0 +1,32 @@
+<header class="site-header">
+  <div class="max-width-wrapper">
+    <a href="#main-content" class="site-header__skip-link"
+      >Skip to main content</a
+    >
+
+    <div class="site-header__content">
+      <span class="site-header__logo"><a href="/">Olivia Coumans</a></span>
+      <nav aria-label="Main">
+        <button
+          class="site-header__menu-button"
+          aria-expanded="false"
+          data-menu-button
+        >
+          Menu
+        </button>
+
+        <ul class="site-header__nav-list" data-menu-list>
+          <li class="site-header__nav-list-item">
+            <a href="/" class="site-header__nav-link" {% if page.url === "/" %}aria-current="page"{% endif %}>Home</a>
+          </li>
+          <li class="site-header__nav-list-item">
+            <a href="/blog" class="site-header__nav-link" {% if page.url === "/blog/" %}aria-current="page"{% endif %}>Blog</a>
+          </li>
+          <li class="site-header__nav-list-item">
+            <a href="/about" class="site-header__nav-link" {% if page.url === "/about/" %}aria-current="page"{% endif %}>About</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

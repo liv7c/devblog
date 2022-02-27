@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include './head.njk' %}
+    <link rel="stylesheet" href="{{ '/css/prism.css' | url }}" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      {% include './siteHeader.njk' %}
+
+      <main id="main-content">
+        <div class="page-content-wrapper post">
+          <h1 class="post__title">{{ title }}</h1>
+          <time datetime="{{ date | isoDate }}">{{ date | asPostDate }}</time>
+
+          {{ content | safe }}
+        </div>
+      </main>
+
+      {% include './siteFooter.njk' %}
+    </div>
+
+    <script src="{{ '/js/app.js' | url }}"></script>
+  </body>
+</html>

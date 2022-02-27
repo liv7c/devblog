@@ -131,7 +131,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-public/rss/atom.xml
-public/rss/feed.xml
-public/rss/feed.json
-public/sitemap.xml
+public/

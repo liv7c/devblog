@@ -1,0 +1,143 @@
+.site-header__logo {
+  font-size: 1.2rem;
+
+  a,
+  a:link,
+  a:visited {
+    padding-left: 0;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+}
+
+.site-header__content {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: baseline;
+
+  @include tabletAndUp {
+    padding: 20px 0;
+  }
+}
+
+.site-header__menu-button {
+  display: block;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 2px;
+
+  @include tabletAndUp {
+    display: none;
+  }
+}
+
+.site-header__skip-link {
+  background: var(--button-bg);
+  left: 0;
+  padding: 10px 12px;
+  position: absolute;
+  z-index: 1;
+  top: -50px;
+  display: block;
+
+  &,
+  &:link,
+  &:visited {
+    color: var(--button-text);
+  }
+
+  &:focus {
+    outline-offset: 3px;
+    top: 0;
+  }
+}
+
+.site-header__nav-list {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  background-color: var(--bg-color);
+  width: 100vw;
+  padding: 30px 0;
+  margin-left: calc(var(--page-padding) * -1);
+  display: none;
+
+  &--visible {
+    display: block;
+  }
+
+  @include tabletAndUp {
+    display: block;
+    position: static;
+    background-color: none;
+    width: auto;
+    display: flex;
+    margin: 0;
+    margin-left: auto;
+    padding: 0;
+  }
+}
+
+.site-header__nav-list-item {
+  --border-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--border-color);
+
+  &:last-child {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  @include tabletAndUp {
+    border-top: none;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.site-header__nav-link {
+  &,
+  &:link,
+  &:visited {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 25px var(--page-padding);
+    text-decoration: underline;
+
+    @include tabletAndUp {
+      padding: 15px;
+    }
+  }
+
+  &:not(:hover),
+  &:link:not(:hover),
+  &:visited:not(:hover) {
+    text-decoration: none;
+  }
+
+  &[aria-current='page'] {
+    color: var(--nav-link-active-color);
+  }
+}
+
+.site-header__left-side {
+  display: flex;
+  align-items: baseline;
+}
+
+.site-header__theme-toggler-container {
+  display: none;
+
+  @include laptopAndUp {
+    min-width: 130px;
+    display: block;
+    margin-left: 21px;
+  }
+}

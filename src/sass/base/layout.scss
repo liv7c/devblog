@@ -1,0 +1,22 @@
+.max-width-wrapper,
+.page-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px var(--page-padding);
+}
+
+.page-content-wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @include tabletAndUp {
+    padding-top: 10px;
+    padding-bottom: 70px;
+  }
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

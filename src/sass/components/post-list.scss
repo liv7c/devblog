@@ -1,0 +1,16 @@
+.post-list {
+  margin-bottom: 25px;
+
+  & > li:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  &__date {
+    font-size: 0.9rem;
+    display: inline-block;
+
+    .tag + & {
+      margin-left: 20px;
+    }
+  }
+}
