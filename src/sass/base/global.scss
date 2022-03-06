@@ -62,6 +62,7 @@ body[data-theme='light'] {
   --page-padding: 20px;
   --selection-background: #1e3a8a;
   --selection-color: #fff;
+  --focus-color: #1d4ed8;
 }
 
 body[data-theme='dark'] {
@@ -81,6 +82,12 @@ body[data-theme='dark'] {
 ::selection {
   color: var(--selection-color);
   background-color: var(--selection-background);
+}
+
+a:focus,
+button:focus {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 body {
