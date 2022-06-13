@@ -1,6 +1,7 @@
 {
   "extends": ["config:base", "schedule:weekends"],
   "separateMajorMinor": true,
+  "dependencyDashboard": false,
   "packageRules": [
     {
       "matchManagers": ["npm"],
