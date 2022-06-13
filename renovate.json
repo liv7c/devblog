@@ -1,0 +1,11 @@
+{
+  "extends": ["config:base", "schedule:weekends"],
+  "separateMajorMinor": true,
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["patch", "minor", "major"],
+      "groupName": "npm dependencies"
+    }
+  ]
+}
