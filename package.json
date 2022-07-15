@@ -23,7 +23,7 @@
   "author": "Olivia Coumans",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0-canary.12",
+    "@11ty/eleventy": "2.0.0-canary.13",
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.1.0",
     "autoprefixer": "^10.4.7",
@@ -32,7 +32,7 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.14",
     "postcss-cli": "10.0.0",
-    "rollup": "2.76.0",
+    "rollup": "2.77.0",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "1.53.0"
   }
