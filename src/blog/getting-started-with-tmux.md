@@ -65,7 +65,7 @@ bind C-a send-prefix
 
 * `set -g prefix C-a` will tell tmux every time it runs `control+a` as its prefix.
 * `unbind` is to free `C-b`  and keep only one combination as our prefix.
-* `bind C-a send-refix` is to make sure you can use this keymap in programs running inside of tmux. For instance, if you use vim and do not include this line, any of your vim keymaps using `C-a` would no longer work inside tmux.
+* `bind C-a send-prefix` is to make sure you can use this keymap in programs running inside of tmux. For instance, if you use vim and do not include this line, any of your vim keymaps using `C-a` would no longer work inside tmux.
 
 ### A small note before going further
 
