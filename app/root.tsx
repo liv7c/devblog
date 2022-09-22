@@ -33,7 +33,7 @@ export default function App() {
         <div className="h-full flex flex-col max-w-none prose">
           <Header />
           <main className="bg-beige py-8 container">
-            <div className="prose">
+            <div className="prose lg:prose-lg">
               <Outlet />
             </div>
           </main>

@@ -1,8 +1,13 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./app/**/*.{ts,tsx,jsx,js}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Roboto', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         beige: '#fffffe',
         'off-pink': '#faeee7',
@@ -22,10 +27,9 @@ module.exports = {
           css: {
             color: '#33272a',
             a: {
-              color: '#594a4e',
-              '&:hover': {
-                color: '#33272a',
-              },
+              color: '#33272a',
+              fontWeight: '500',
+              textDecoration: 'underline',
             },
           },
         },

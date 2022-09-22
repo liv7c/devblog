@@ -11,7 +11,7 @@ const MenuLink = ({
   children: ReactNode;
   isLast?: boolean;
 }) => {
-  const classes = clsx('block py-3 px-4 no-underline', {
+  const classes = clsx('block py-3 px-4 no-underline text-lg', {
     'mr-4': !isLast,
   });
 
@@ -33,7 +33,7 @@ function Header() {
     <header className="">
       <div className="flex justify-between container items-center md:items-baseline h-full relative">
         <span>
-          <Link to="/" className="no-underline">
+          <Link to="/" className="no-underline text-lg">
             Olivia Coumans
           </Link>
         </span>
@@ -46,7 +46,7 @@ function Header() {
           </button>
           <ul
             className={clsx(
-              'list-none p-0 m-0 md:flex items-baseline h-full absolute z-40 w-screen md:w-auto md:static left-0 mt-6 md:mt-0 bg-beige md:bg-transparent',
+              'list-none p-0 m-0 md:flex items-baseline absolute z-40 w-screen md:w-auto md:static left-0 mt-6 md:mt-0 bg-beige md:bg-transparent',
               {
                 hidden: !menuVisible,
               }

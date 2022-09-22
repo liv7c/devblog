@@ -19,11 +19,13 @@ function AboutPage() {
         <li>
           <strong>Past projects</strong> include a website for
           <a href="https://www.pierrecoumansbooks.com/">
+            {' '}
             an incredible bookshop{' '}
           </a>
           and
           <a href="https://www.swayandbreathe.com/">
-            a blog about indie folk music.
+            {' '}
+            a blog to support indie musicians.
           </a>
         </li>
       </ul>
