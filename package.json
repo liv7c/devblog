@@ -1,39 +1,38 @@
 {
-  "name": "devblog",
-  "version": "2.0.0",
-  "description": "Personal dev blog",
-  "main": "index.js",
+  "private": true,
+  "sideEffects": false,
   "scripts": {
-    "watch:sass": "sass  --no-source-map --watch src/sass/styles.scss:public/css/styles.css",
-    "watch:js": "rollup -c -w",
-    "watch:eleventy": "eleventy --serve",
-    "build:sass": "sass  --no-source-map src/sass/styles.scss:public/css/styles.css",
-    "build:js": "ROLLUP_WATCH=false rollup -c",
-    "build:eleventy": "eleventy",
-    "optimize:css": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
-    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
-    "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:sass build:eleventy build:js"
+    "start": "cross-env NODE_ENV=production netlify dev",
+    "build": "run-s \"build:*\"",
+    "build:css": "npm run generate:css -- --minify",
+    "build:remix": "remix build",
+    "dev": "run-p \"dev:*\"",
+    "dev:css": "npm run generate:css -- --watch",
+    "dev:remix": "remix dev",
+    "generate:css": "npx tailwindcss -i ./styles/tailwind.css -o ./app/tailwind.css"
   },
-  "keywords": [
-    "11ty",
-    "sass",
-    "html"
-  ],
-  "author": "Olivia Coumans",
-  "license": "MIT",
+  "dependencies": {
+    "@netlify/functions": "^1.0.0",
+    "@remix-run/netlify": "^1.7.2",
+    "@remix-run/node": "^1.7.2",
+    "@remix-run/react": "^1.7.2",
+    "cross-env": "^7.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0-canary.15",
-    "@11ty/eleventy-plugin-rss": "1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "4.1.0",
-    "autoprefixer": "10.4.8",
-    "cssnano": "5.1.13",
-    "luxon": "3.0.1",
-    "npm-run-all": "4.1.5",
-    "postcss": "8.4.16",
-    "postcss-cli": "10.0.0",
-    "rollup": "2.78.1",
-    "rollup-plugin-terser": "7.0.2",
-    "sass": "1.54.5"
+    "@remix-run/dev": "^1.7.2",
+    "@remix-run/eslint-config": "^1.7.2",
+    "@remix-run/serve": "^1.7.2",
+    "@tailwindcss/typography": "^0.5.7",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "eslint": "^8.23.1",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
