@@ -8,6 +8,9 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 
+import Footer from './components/Footer';
+import Header from './components/Header';
+
 import styles from './tailwind.css';
 
 export const meta: MetaFunction = () => ({
@@ -20,13 +23,23 @@ export const links: LinksFunction = () => [{rel: 'stylesheet', href: styles}];
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <head>
         <Meta />
         <Links />
       </head>
-      <body>
-        <Outlet />
+
+      <body className="h-full">
+        <div className="h-full flex flex-col max-w-none prose">
+          <Header />
+          <main className="bg-beige py-8 container">
+            <div className="prose">
+              <Outlet />
+            </div>
+          </main>
+          <Footer />
+        </div>
+
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
