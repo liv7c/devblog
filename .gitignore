@@ -1,8 +1,3 @@
-node_modules
-dist
-.next
-out
-.DS_Store
 # Logs
 logs
 *.log
@@ -109,6 +104,9 @@ dist
 .temp
 .cache
 
+# Docusaurus cache and generated files
+.docusaurus
+
 # Serverless directories
 .serverless/
 
@@ -131,4 +129,26 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-public/
+# tailwind stuff
+/app/tailwind.css
+
+# remix stuff
+/.cache
+/build
+/server-build
+/public/build
+/coverage
+tsconfig.tsbuildinfo
+
+/app/styles/**/*.css
+other/postcss.ignored
+
+/cypress/videos
+/cypress/screenshots
+*.local.*
+
+.env
+.env.production
+.envrc
+
+.netlify
