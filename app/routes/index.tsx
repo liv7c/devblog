@@ -1,13 +1,13 @@
-export default function Index() {
+function Index() {
   return (
-    <main className="prose bg-beige">
-      <h1>Hello</h1>
+    <div>
+      <h1>Hi, I'm Olivia.</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nostrum
-        suscipit in dolores omnis, modi adipisci corporis magnam expedita
-        deleniti veniam nemo at placeat veritatis maiores repellendus quibusdam
-        facilis blanditiis.
+        I'm a front-end developer based in Paris. Areas of interest include web
+        accessibility, JavaScript, React.js, vim, and a bit of Go on the side.
       </p>
-    </main>
+    </div>
   );
 }
+
+export default Index;

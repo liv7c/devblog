@@ -5,15 +5,26 @@ module.exports = {
     extend: {
       colors: {
         beige: '#fffffe',
+        'off-pink': '#faeee7',
+        'primary-highlight': '#ff8ba7',
+      },
+      container: {
+        screens: {
+          sm: '100%',
+          md: '800px',
+          lg: '800px',
+        },
+        padding: '20px',
+        center: true,
       },
       typography: {
         DEFAULT: {
           css: {
             color: '#33272a',
             a: {
-              color: '#3182ce',
+              color: '#594a4e',
               '&:hover': {
-                color: '#2c5282',
+                color: '#33272a',
               },
             },
           },
