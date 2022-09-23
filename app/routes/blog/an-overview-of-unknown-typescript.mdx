@@ -10,7 +10,11 @@ meta:
 date: 2022-01-21
 ---
 
-# {attributes.title}
+import DateTime from '~/components/DateTime';
+
+<h1 className="heading-post">{attributes.title}</h1>
+
+<DateTime date={attributes.date} />
 
 Typescript's version 3.0 introduced a new type, `unknown`. Contrary to `any`, we do not opt out entirely from the type system by assigning a type `unknown` to a value. This blog post will explore the purpose of `unknown` and some key differences between `unknown` and `any`.
 

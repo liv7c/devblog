@@ -1,5 +1,6 @@
 import {json, LoaderFunction} from '@remix-run/node';
 import {Link, useLoaderData} from '@remix-run/react';
+import PostList from '~/components/PostList';
 import {PostMetaData} from '~/types/post';
 import {getAllPosts} from '~/utils/post';
 
@@ -25,15 +26,7 @@ function Index() {
       </p>
 
       <h2>Latest blog posts</h2>
-      <ul>
-        {posts.map((post) => {
-          return (
-            <li key={post.slug}>
-              <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-            </li>
-          );
-        })}
-      </ul>
+      <PostList posts={posts} />
     </div>
   );
 }

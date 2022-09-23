@@ -25,3 +25,7 @@
   font-style: bold;
   font-display: swap;
 }
+
+.heading-post {
+  margin-bottom: 16px !important;
+}
