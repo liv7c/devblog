@@ -1,19 +1,24 @@
-import type {LoaderFunction} from '@remix-run/node';
+import {json, LoaderFunction} from '@remix-run/node';
 import {useLoaderData, Link} from '@remix-run/react';
-import {getAllPosts} from '~/utils/mdx';
+import {PostMetaData} from '~/types/post';
+import {getAllPosts} from '~/utils/post';
 
-export const loader: LoaderFunction = () => {
-  return getAllPosts();
-};
+type LoaderData = {posts: PostMetaData[]};
+
+export async function loader() {
+  const posts = getAllPosts();
+
+  return json<LoaderData>({posts});
+}
 
 export default function BlogIndex() {
-  const posts = useLoaderData();
+  const {posts} = useLoaderData<LoaderData>();
 
   return (
     <div>
       <h1>Blog</h1>
       <ul>
-        {posts.map((post: any) => {
+        {posts.map((post) => {
           return (
             <li key={post.slug}>
               <Link to={post.slug}>{post.title}</Link>

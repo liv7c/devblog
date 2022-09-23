@@ -1,13 +1,20 @@
-import {LoaderFunction} from '@remix-run/node';
+import {json, LoaderFunction} from '@remix-run/node';
 import {Link, useLoaderData} from '@remix-run/react';
-import {getAllPosts} from '~/utils/mdx';
+import {PostMetaData} from '~/types/post';
+import {getAllPosts} from '~/utils/post';
 
-export const loader: LoaderFunction = () => {
-  return getAllPosts({limit: 3});
+type LoaderData = {
+  posts: PostMetaData[];
 };
 
+export async function loader() {
+  const posts = getAllPosts({limit: 3});
+
+  return json<LoaderData>({posts});
+}
+
 function Index() {
-  const posts = useLoaderData();
+  const {posts} = useLoaderData<LoaderData>();
 
   return (
     <div>
@@ -19,7 +26,7 @@ function Index() {
 
       <h2>Latest blog posts</h2>
       <ul>
-        {posts.map((post: any) => {
+        {posts.map((post) => {
           return (
             <li key={post.slug}>
               <Link to={`/blog/${post.slug}`}>{post.title}</Link>
