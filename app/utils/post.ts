@@ -3,6 +3,7 @@ import * as post2 from '~/routes/blog/search-for-string-with-git-log.mdx';
 import * as post3 from '~/routes/blog/an-overview-of-unknown-typescript.mdx';
 import * as post4 from '~/routes/blog/exploring-generics-and-generic-constraints.mdx';
 import * as post5 from '~/routes/blog/getting-started-with-tmux.mdx';
+import {PostMetaData} from '~/types/post';
 
 function postFromModule(mod: any) {
   return {
@@ -12,10 +13,10 @@ function postFromModule(mod: any) {
   };
 }
 
-function sortByDate(data: any, orderBy: 'asc' | 'desc') {
-  const sortedData = data.sort((firstPost: any, secondPost: any) => {
-    const firstPostDate = Date.parse(firstPost.date);
-    const secondPostDate = Date.parse(secondPost.date);
+function sortByDate(posts: PostMetaData[], orderBy: 'asc' | 'desc') {
+  const sortedData = posts.sort((firstPost, secondPost) => {
+    const firstPostDate = firstPost.date.getTime();
+    const secondPostDate = secondPost.date.getTime();
 
     return orderBy === 'desc'
       ? secondPostDate - firstPostDate
