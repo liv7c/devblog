@@ -3,4 +3,5 @@ export interface PostMetaData {
   date: Date;
   title: string;
   description: string;
+  keywords: string[];
 }
