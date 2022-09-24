@@ -1,4 +1,4 @@
-import {json, LoaderFunction} from '@remix-run/node';
+import {json, LoaderFunction, MetaFunction} from '@remix-run/node';
 import {useLoaderData, Link} from '@remix-run/react';
 import PostList from '~/components/PostList';
 import {PostMetaData} from '~/types/post';
@@ -11,6 +11,12 @@ export async function loader() {
 
   return json<LoaderData>({posts});
 }
+
+export const meta: MetaFunction = () => {
+  return {
+    title: 'Blog | Olivia Coumans',
+  };
+};
 
 export default function BlogIndex() {
   const {posts} = useLoaderData<LoaderData>();
