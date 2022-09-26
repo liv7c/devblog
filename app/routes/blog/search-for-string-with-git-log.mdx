@@ -10,7 +10,11 @@ meta:
     - git
 ---
 
-# {attributes.title}
+import DateTime from '~/components/DateTime';
+
+<h1 className="heading-post">{attributes.title}</h1>
+
+<DateTime date={attributes.date} />
 
 Recently, I discovered a useful functionality of `git log` while cleaning up some code. You can pass an option to `git log` to get back a list of all the commits that changed a particular string. Let's explore that feature!
 

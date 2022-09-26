@@ -10,7 +10,11 @@ meta:
     - typescript
 ---
 
-# {attributes.title}
+import DateTime from '~/components/DateTime';
+
+<h1 className="heading-post">{attributes.title}</h1>
+
+<DateTime date={attributes.date} />
 
 Generics can be hard to grasp when first learning TypeScript. This post will review what generics are and why we use them. We'll then move on to explore generic constraints. They are a handy trick to keep in mind to build more type-safe code.
 

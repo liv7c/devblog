@@ -10,7 +10,11 @@ meta:
     - tmux
 ---
 
-# {attributes.title}
+import DateTime from '~/components/DateTime';
+
+<h1 className="heading-post">{attributes.title}</h1>
+
+<DateTime date={attributes.date} />
 
 Apart from its cool name, tmux is also a great tool to make your developer life easier. In this post, we'll look at the purpose of tmux and some basic terminology. We'll write a tmux configuration that is enough to start using it and look at the most common commands.
 

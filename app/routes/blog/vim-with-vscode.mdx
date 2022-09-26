@@ -10,7 +10,11 @@ meta:
     - vim
 ---
 
-# {attributes.title}
+import DateTime from '~/components/DateTime';
+
+<h1 className="heading-post">{attributes.title}</h1>
+
+<DateTime date={attributes.date} />
 
 In this post, I share some tips about using the vim plugin in VSCode. The plugin is an excellent option to try out another way of editing code and get a feel for it. It allows you to dive into using vim modes and motions with little to no configuration. You do not have to spend hours making vim work with your linter, formatter, or file extensions. By using vim consistently with VSCode, you will already have your favorite shortcuts and motions if you decide to move away from VSCode later.
 
