@@ -10,6 +10,7 @@ function postFromModule(mod: any) {
     slug: mod.filename.replace(/\.mdx?$/, ''),
     date: mod.attributes.date,
     ...mod.attributes.meta,
+    title: mod.attributes.title,
   };
 }
 

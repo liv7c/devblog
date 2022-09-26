@@ -1,5 +1,6 @@
 import type {LinksFunction, MetaFunction} from '@remix-run/node';
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -7,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import React from 'react';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -27,11 +29,18 @@ export const links: LinksFunction = () => [
   {rel: 'icon', href: '/img/favicon.ico'},
 ];
 
-export default function App() {
+function Document({
+  children,
+  title = 'Olivia Coumans',
+}: {
+  children: React.ReactNode;
+  title?: string;
+}) {
   return (
     <html lang="en" className="h-full">
       <head>
         <Meta />
+        <title>{title}</title>
         <Links />
       </head>
 
@@ -39,9 +48,7 @@ export default function App() {
         <div className="h-full flex flex-col max-w-none prose">
           <Header />
           <main className="bg-beige py-8 container">
-            <div className="prose lg:prose-lg">
-              <Outlet />
-            </div>
+            <div className="prose lg:prose-lg">{children}</div>
           </main>
           <Footer />
         </div>
@@ -51,5 +58,23 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
+  );
+}
+
+export function CatchBoundary() {
+  return (
+    <Document title="Page not found | Olivia Coumans">
+      <h1>Page not found</h1>
+      <p>This page does not exist.</p>
+      <Link to="/">Back to the home page</Link>
+    </Document>
+  );
+}
+
+export default function App() {
+  return (
+    <Document title="Olivia Coumans">
+      <Outlet />
+    </Document>
   );
 }
