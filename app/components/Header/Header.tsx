@@ -35,7 +35,10 @@ function Header() {
   }, [pathname]);
 
   return (
-    <header className="">
+    <header>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <div className="flex justify-between container items-center md:items-baseline h-full relative">
         <span>
           <Link to="/" className="no-underline text-lg">
