@@ -31,6 +31,10 @@ module.exports = {
               fontWeight: '500',
               textDecoration: 'underline',
             },
+            pre: {
+              padding: '0px !important',
+              backgroundColor: 'transparent',
+            },
           },
         },
       },

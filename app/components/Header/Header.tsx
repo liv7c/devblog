@@ -1,5 +1,5 @@
-import {ReactNode, useState} from 'react';
-import {Link, NavLink} from '@remix-run/react';
+import {ReactNode, useEffect, useState} from 'react';
+import {Link, NavLink, useLocation} from '@remix-run/react';
 import clsx from 'clsx';
 
 const MenuLink = ({
@@ -24,10 +24,15 @@ const MenuLink = ({
 
 function Header() {
   const [menuVisible, setMenuVisible] = useState(false);
+  const {pathname} = useLocation();
 
   const toggleMenu = () => {
     setMenuVisible((prevState) => !prevState);
   };
+
+  useEffect(() => {
+    setMenuVisible(false);
+  }, [pathname]);
 
   return (
     <header className="">
@@ -41,6 +46,7 @@ function Header() {
           <button
             className="md:hidden bg-slate-700 text-white py-3 px-4 rounded mt-2 mb-2"
             onClick={toggleMenu}
+            aria-expanded={menuVisible}
           >
             Menu
           </button>
