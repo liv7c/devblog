@@ -45,9 +45,9 @@ function Document({
       </head>
 
       <body className="h-full">
-        <div className="h-full flex flex-col max-w-none prose">
+        <div className="flex flex-col h-full max-w-none prose">
           <Header />
-          <main className="bg-beige py-8 container" id="main-content">
+          <main className="container py-8 bg-beige" id="main-content">
             <div className="prose lg:prose-lg prose-ul:pl-0 prose-ul:list-none lg:prose-ul:pl-0 prose-li:pl-0 lg:prose-li:pl-0">
               {children}
             </div>
