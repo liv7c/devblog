@@ -33,6 +33,9 @@ function Index() {
 
       <h2>Latest blog posts</h2>
       <PostList posts={posts} />
+      <Link to="/blog" className="inline-block py-2">
+        View all posts &rarr;
+      </Link>
     </div>
   );
 }

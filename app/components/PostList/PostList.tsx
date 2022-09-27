@@ -34,7 +34,7 @@ function PostList({posts, withTag = false}: PostListProps) {
         const postDate = new Date(post.date);
 
         return (
-          <li key={post.slug}>
+          <li key={post.slug} className="pb-4 last-of-type:pb-0">
             <Link to={`/blog/${post.slug}`}>{post.title}</Link>
             <div>
               {withTag ? <TagList keywords={post.keywords} /> : null}
