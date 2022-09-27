@@ -1,4 +1,5 @@
-import {ReactNode, useEffect, useState} from 'react';
+import type {ReactNode} from 'react';
+import { useEffect, useState} from 'react';
 import {Link, NavLink, useLocation} from '@remix-run/react';
 import clsx from 'clsx';
 

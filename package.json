@@ -3,6 +3,8 @@
   "sideEffects": false,
   "scripts": {
     "start": "cross-env NODE_ENV=production netlify dev",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache --ext js,jsx,ts,tsx ./app",
+    "lint:fix": "eslint --cache --cache-location ./node_modules/.cache/.eslintcache --ext js,jsx,ts,tsx ./app --fix",
     "build": "run-s \"build:*\"",
     "build:css": "npm run generate:css -- --minify",
     "build:remix": "remix build",

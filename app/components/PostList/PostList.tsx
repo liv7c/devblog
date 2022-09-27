@@ -1,6 +1,5 @@
 import {Link} from '@remix-run/react';
 
-import {getISODate, getPostDate} from '~/utils/date';
 import type {PostMetaData} from '~/types/post';
 import DateTime from '../DateTime';
 

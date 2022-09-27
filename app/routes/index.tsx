@@ -1,7 +1,8 @@
-import {json, LoaderFunction, MetaFunction} from '@remix-run/node';
+import type {MetaFunction} from '@remix-run/node';
+import {json} from '@remix-run/node';
 import {Link, useLoaderData} from '@remix-run/react';
 import PostList from '~/components/PostList';
-import {PostMetaData} from '~/types/post';
+import type {PostMetaData} from '~/types/post';
 import {getAllPosts} from '~/utils/post';
 
 type LoaderData = {

@@ -1,4 +1,4 @@
-import {LinksFunction} from '@remix-run/node';
+import type {LinksFunction} from '@remix-run/node';
 import {Outlet} from '@remix-run/react';
 
 import styles from 'highlight.js/styles/a11y-dark.css';

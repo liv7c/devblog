@@ -3,7 +3,7 @@ import * as post2 from '~/routes/blog/search-for-string-with-git-log.mdx';
 import * as post3 from '~/routes/blog/an-overview-of-unknown-typescript.mdx';
 import * as post4 from '~/routes/blog/exploring-generics-and-generic-constraints.mdx';
 import * as post5 from '~/routes/blog/getting-started-with-tmux.mdx';
-import {PostMetaData} from '~/types/post';
+import type {PostMetaData} from '~/types/post';
 
 function postFromModule(mod: any) {
   return {
