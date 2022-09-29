@@ -29,18 +29,11 @@ export const links: LinksFunction = () => [
   {rel: 'icon', href: '/img/favicon.ico'},
 ];
 
-function Document({
-  children,
-  title = 'Olivia Coumans',
-}: {
-  children: React.ReactNode;
-  title?: string;
-}) {
+function Document({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className="h-full">
       <head>
         <Meta />
-        <title>{title}</title>
         <Links />
       </head>
 
