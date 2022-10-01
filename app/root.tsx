@@ -29,10 +29,17 @@ export const links: LinksFunction = () => [
   {rel: 'icon', href: '/img/favicon.ico'},
 ];
 
-function Document({children}: {children: React.ReactNode}) {
+function Document({
+  children,
+  title,
+}: {
+  children: React.ReactNode;
+  title?: string;
+}) {
   return (
     <html lang="en" className="h-full">
       <head>
+        {title && <title>{title}</title>}
         <Meta />
         <Links />
       </head>
@@ -66,7 +73,7 @@ export function CatchBoundary() {
 
 export default function App() {
   return (
-    <Document title="Olivia Coumans">
+    <Document>
       <Outlet />
     </Document>
   );
