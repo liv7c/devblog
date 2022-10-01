@@ -15,7 +15,6 @@ export function getSEOMeta({
       : `https://oliviac.dev${currentPath}`;
 
   return {
-    title,
     description,
     keywords,
     image: '/img/blog-img.png',
