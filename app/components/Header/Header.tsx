@@ -17,7 +17,7 @@ const MenuLink = ({
   });
 
   return (
-    <NavLink to={to} className={classes}>
+    <NavLink to={to} className={classes} prefetch="intent">
       {children}
     </NavLink>
   );

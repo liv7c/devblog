@@ -35,7 +35,9 @@ function PostList({posts, withTag = false}: PostListProps) {
 
           return (
             <li key={post.slug} className="pb-4 last-of-type:pb-0">
-              <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+              <Link to={`/blog/${post.slug}`} prefetch="intent">
+                {post.title}
+              </Link>
               <div>
                 {withTag ? <TagList keywords={post.keywords} /> : null}
                 <DateTime className="text-sm" date={postDate} />
