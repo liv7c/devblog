@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: url('/fonts/Roboto-Medium') format('ttf');
+  src: url('/fonts/Roboto-Medium.ttf') format('ttf');
   font-weight: 500;
   font-style: semi-bold;
   font-display: swap;
@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: url('/fonts/Roboto-Bold') format('ttf');
+  src: url('/fonts/Roboto-Bold.ttf') format('ttf');
   font-weight: 700;
   font-style: bold;
   font-display: swap;
