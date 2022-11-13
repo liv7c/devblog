@@ -9,7 +9,7 @@ function Footer() {
           <li>
             <a
               href="https://github.com/liv7c"
-              className="p-5 block text-white hover:opacity-90 hover:text-white transition-opacity"
+              className="py-2 px-5  md:p-5 block text-white hover:opacity-90 hover:text-white transition-opacity"
             >
               Github
             </a>
@@ -17,7 +17,7 @@ function Footer() {
           <li>
             <a
               href="https://www.linkedin.com/in/olivia-coumans/"
-              className="p-5 block text-white hover:opacity-90 hover:text-white transition-opacity"
+              className="py-2 px-5  md:p-5 block text-white hover:opacity-90 hover:text-white transition-opacity"
             >
               Linkedin
             </a>
@@ -25,7 +25,7 @@ function Footer() {
           <li>
             <a
               href="https://twitter.com/liv_codes"
-              className="p-5 block text-white hover:opacity-90 hover:text-white transition-opacity"
+              className="py-2 px-5  md:p-5 block text-white hover:opacity-90 hover:text-white transition-opacity"
             >
               Twitter
             </a>
@@ -33,7 +33,7 @@ function Footer() {
           <li>
             <a
               href="/rss/feed.xml"
-              className="p-5 block text-white hover:opacity-90 hover:text-white transition-opacity"
+              className="py-2 px-5  md:p-5 block text-white hover:opacity-90 hover:text-white transition-opacity"
             >
               RSS Feed
             </a>
