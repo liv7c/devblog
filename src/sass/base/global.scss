@@ -2,6 +2,7 @@
   font-family: 'Atkinson';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: local(''),
     url('../fonts/Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2'),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -12,6 +13,7 @@
   font-family: 'Atkinson';
   font-style: italic;
   font-weight: 400;
+  font-display: swap;
   src: local(''),
     url('../fonts/Atkinson-Hyperlegible-Italic-102a.woff2') format('woff2'),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -22,6 +24,7 @@
   font-family: 'Atkinson';
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: local(''),
     url('../fonts/Atkinson-Hyperlegible-Bold-102a.woff2') format('woff2'),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
