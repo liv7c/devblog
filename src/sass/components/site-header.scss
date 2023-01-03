@@ -1,13 +1,7 @@
 .site-header__logo {
   font-size: 1.2rem;
-
-  a,
-  a:link,
-  a:visited {
-    padding-left: 0;
-    color: var(--text-color);
-    text-decoration: none;
-  }
+  padding: 6px 0;
+  text-decoration: none;
 }
 
 .site-header__content {
@@ -15,20 +9,28 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  align-items: baseline;
+  align-items: center;
 
   @include tabletAndUp {
     padding: 20px 0;
+    align-items: baseline;
   }
 }
 
 .site-header__menu-button {
   display: block;
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  padding: 10px 15px;
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 8px;
   border-radius: 2px;
+
+  svg {
+    color: var(--text-color);
+    width: 30px;
+  }
 
   @include tabletAndUp {
     display: none;
@@ -41,7 +43,7 @@
   padding: 10px 12px;
   position: absolute;
   z-index: 1;
-  top: -50px;
+  top: -55px;
   display: block;
 
   &,
@@ -62,7 +64,7 @@
   left: 0;
   background-color: var(--bg-color);
   width: 100vw;
-  padding: 30px 0;
+  padding-top: 30px;
   margin-left: calc(var(--page-padding) * -1);
   display: none;
 
@@ -85,6 +87,7 @@
 .site-header__nav-list-item {
   --border-color: rgba(0, 0, 0, 0.2);
   border-top: 1px solid var(--border-color);
+  margin-bottom: 0;
 
   &:last-child {
     border-bottom: 1px solid var(--border-color);
@@ -102,28 +105,19 @@
 }
 
 .site-header__nav-link {
-  &,
-  &:link,
-  &:visited {
-    color: var(--text-color);
-    text-decoration: none;
-    display: block;
-    padding: 25px var(--page-padding);
-    text-decoration: underline;
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+  padding: 25px var(--page-padding);
 
-    @include tabletAndUp {
-      padding: 15px;
-    }
-  }
-
-  &:not(:hover),
-  &:link:not(:hover),
-  &:visited:not(:hover) {
-    text-decoration: none;
+  @include tabletAndUp {
+    padding: 7px var(--page-padding);
   }
 
   &[aria-current='page'] {
-    color: var(--nav-link-active-color);
+    @include tabletAndUp {
+      text-decoration: underline;
+    }
   }
 }
 
