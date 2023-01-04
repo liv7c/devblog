@@ -62,19 +62,10 @@ body[data-theme='light'] {
   --button-text: #fffffe;
   --button-bg: #1d4ed8;
   --page-padding: 20px;
-  --selection-background: #1e3a8a;
-  --selection-color: #fff;
-  --focus-color: #1d4ed8;
-}
-
-::selection {
-  color: var(--selection-color);
-  background-color: var(--selection-background);
 }
 
 a:focus,
 button:focus {
-  outline: 2px solid var(--focus-color);
   outline-offset: 2px;
 }
 
