@@ -48,19 +48,19 @@ html {
 
 body,
 body[data-theme='light'] {
-  --black: #0f172a;
-  --white: #f1f5f9;
-  --bg-color: #fef6e4;
-  --secondary-bg-color: #f3d2c1;
-  --text-color: #172c66;
+  --black: #272343;
+  --white: #fffffe;
+  --bg-color: #fffffe;
+  --secondary-bg-color: #e3f6f5;
+  --text-color: #272343;
   --link-color: #001858;
-  --tag-bg-color: #f3d2c1;
+  --tag-bg-color: #ffd803;
   --pre-code-color: #2b2c34;
   --pre-code-bg-color: #fffffe;
   --body-font-weight: 400;
   --decorative-border-color: transparent;
-  --button-text: #fffffe;
-  --button-bg: #1d4ed8;
+  --button-text: #272343;
+  --button-bg: #ffd803;
   --page-padding: 20px;
 }
 
