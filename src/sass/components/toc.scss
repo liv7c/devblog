@@ -1,0 +1,29 @@
+.toc-details {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.toc-wrapper {
+  margin: 20px 0 30px;
+  padding-top: 16px;
+  padding-left: 10px;
+  padding-bottom: 6px;
+  border: 1px dotted var(--text-color);
+}
+
+.toc-title {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.toc {
+  ol {
+    list-style: none;
+    margin-top: 0.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}

@@ -143,6 +143,10 @@ ol {
   padding-left: 10px;
 }
 
+ol {
+  list-style: disc;
+}
+
 li {
   margin-bottom: 12px;
 }
@@ -158,4 +162,5 @@ code[class^='language'] {
   background-color: transparent;
   padding: 0;
   border-radius: 0;
+  font-size: 0.9rem;
 }
