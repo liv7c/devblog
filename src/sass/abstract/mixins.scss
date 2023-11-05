@@ -1,17 +1,20 @@
 @mixin tabletAndUp {
-  @media (min-width: 550px) {
+  // 550px
+  @media (min-width: 34.375rem) {
     @content;
   }
 }
 
 @mixin laptopAndUp {
-  @media (min-width: 1100px) {
+  // 1100px
+  @media (min-width: 68.75rem) {
     @content;
   }
 }
 
 @mixin desktopAndUp {
-  @media (min-width: 1500px) {
+  // 1500px
+  @media (min-width: 93.75rem) {
     @content;
   }
 }
