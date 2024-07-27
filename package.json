@@ -31,9 +31,9 @@
     "cssnano": "7.0.4",
     "luxon": "3.4.4",
     "npm-run-all2": "6.2.2",
-    "postcss": "8.4.39",
+    "postcss": "8.4.40",
     "postcss-cli": "11.0.0",
-    "rollup": "4.19.0",
+    "rollup": "4.19.1",
     "sass": "1.77.8"
   },
   "dependencies": {
