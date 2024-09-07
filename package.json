@@ -28,13 +28,13 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.0",
     "@rollup/plugin-terser": "^0.4.3",
     "autoprefixer": "10.4.20",
-    "cssnano": "7.0.5",
+    "cssnano": "7.0.6",
     "luxon": "3.5.0",
     "npm-run-all2": "6.2.2",
-    "postcss": "8.4.42",
+    "postcss": "8.4.45",
     "postcss-cli": "11.0.0",
     "rollup": "4.21.2",
-    "sass": "1.77.8"
+    "sass": "1.78.0"
   },
   "dependencies": {
     "eleventy-plugin-toc": "^1.1.5",
