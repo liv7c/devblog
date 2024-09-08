@@ -20,7 +20,7 @@ There are so many ways to check whether your HTML is valid. With React, we tend 
 
 ## Setting up html validation in vitest
 
-I assume you already have a react project with vitest. If not, you can check out the [entire demo code](#see-the-whole-project-code) in the final section of the post.
+I assume you already have a react project with vitest. If not, you can check out the [entire demo code](#the-whole-demo-code) in the final section of the post.
 
 The first step is to install [`html-validate`](https://www.npmjs.com/package/html-validate). If you use `npm` or `pnpm` along with vitest v2, you might need to use the flag `--legacy-peer-deps`. This flag turns off the peer dependency checking during installation.
 
