@@ -6,7 +6,12 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginTOC = require('eleventy-plugin-toc');
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.setLibrary('md', markdownIt().use(markdownItAnchor));
+  eleventyConfig.setLibrary(
+    'md',
+    markdownIt({
+      html: true,
+    }).use(markdownItAnchor)
+  );
   eleventyConfig.addPlugin(pluginTOC, {
     wrapper: 'div',
   });
