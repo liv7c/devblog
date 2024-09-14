@@ -31,7 +31,7 @@
     "cssnano": "7.0.6",
     "luxon": "3.5.0",
     "npm-run-all2": "6.2.3",
-    "postcss": "8.4.45",
+    "postcss": "8.4.47",
     "postcss-cli": "11.0.0",
     "rollup": "4.21.3",
     "sass": "1.78.0"
