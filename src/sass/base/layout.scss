@@ -1,3 +1,5 @@
+@use "../abstract/mixins";
+
 .max-width-wrapper,
 .page-content-wrapper {
   // 1000px
@@ -10,7 +12,7 @@
   padding-top: 30px;
   padding-bottom: 30px;
 
-  @include tabletAndUp {
+  @include mixins.tabletAndUp {
     padding-top: 10px;
     padding-bottom: 60px;
   }

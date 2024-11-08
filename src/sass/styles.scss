@@ -1,27 +1,27 @@
 /**
  * mixins and functions
  */
-@import './abstract/mixins';
+@use 'abstract/mixins';
 
 /**
  * Vendors / external css
  */
-@import './vendors/normalize';
+@use 'vendors/normalize';
 
 /**
  * Global styles
  */
-@import './base/global';
-@import './base/a11y';
-@import './base/layout';
+@use 'base/global';
+@use 'base/a11y';
+@use 'base/layout';
 
 /**
  * Components
  */
-@import './components/site-header';
-@import './components/site-footer';
-@import './components/tag';
-@import './components/post';
-@import './components/post-list';
-@import './components/link';
-@import './components/toc';
+@use 'components/site-header';
+@use 'components/site-footer';
+@use 'components/tag';
+@use 'components/post';
+@use 'components/post-list';
+@use 'components/link';
+@use 'components/toc';
