@@ -1,3 +1,5 @@
+@use "../abstract/mixins";
+
 .site-header__logo {
   font-size: 1.2rem;
   padding: 6px 0;
@@ -11,7 +13,7 @@
   position: relative;
   align-items: center;
 
-  @include tabletAndUp {
+  @include mixins.tabletAndUp {
     padding: 20px 0;
     align-items: baseline;
   }
@@ -32,7 +34,7 @@
     width: 30px;
   }
 
-  @include tabletAndUp {
+  @include mixins.tabletAndUp {
     display: none;
   }
 }
@@ -72,7 +74,7 @@
     display: block;
   }
 
-  @include tabletAndUp {
+  @include mixins.tabletAndUp {
     display: block;
     position: static;
     background-color: none;
@@ -93,7 +95,7 @@
     border-bottom: 1px solid var(--border-color);
   }
 
-  @include tabletAndUp {
+  @include mixins.tabletAndUp {
     border-top: none;
     &:not(:last-child) {
       margin-right: 10px;
@@ -110,12 +112,12 @@
   display: block;
   padding: 25px var(--page-padding);
 
-  @include tabletAndUp {
+  @include mixins.tabletAndUp {
     padding: 7px var(--page-padding);
   }
 
   &[aria-current='page'] {
-    @include tabletAndUp {
+    @include mixins.tabletAndUp {
       text-decoration: underline;
     }
   }
@@ -129,7 +131,7 @@
 .site-header__theme-toggler-container {
   display: none;
 
-  @include laptopAndUp {
+  @include mixins.laptopAndUp {
     min-width: 130px;
     display: block;
     margin-left: 21px;
