@@ -1,5 +1,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{ title }} - Olivia Coumans</title>
 <meta name="description" content="{{ description }}" />
 
 <meta name="twitter:card" content="summary" />
@@ -15,6 +16,8 @@
 <meta property="og:url" content="{{ page.url }}" />
 <link rel="icon" href="{{ '/img/favicon.ico' | url }}" />
 
-<title>{{ title }} - Olivia Coumans</title>
+{% for font in ['Atkinson-Hyperlegible-Regular', 'Atkinson-Hyperlegible-Bold'] %}
+<link rel="preload" href="/fonts/{{ font }}.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+{% endfor %}
 
 <link rel="stylesheet" href="{{ '/css/styles.css' | url }}" />
