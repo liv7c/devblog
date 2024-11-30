@@ -108,18 +108,16 @@
 
 .site-header__nav-link {
   color: var(--text-color);
-  text-decoration: none;
   display: block;
+  text-underline-offset: 0.17lh;
   padding: 25px var(--page-padding);
 
   @include mixins.tabletAndUp {
     padding: 7px var(--page-padding);
   }
 
-  &[aria-current='page'] {
-    @include mixins.tabletAndUp {
-      text-decoration: underline;
-    }
+  &:not(:hover):not([aria-current='page']) {
+      text-decoration: none;
   }
 }
 

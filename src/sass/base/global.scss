@@ -122,6 +122,8 @@ small,
 
 a {
   color: var(--text-color);
+  text-underline-offset: 0.15lh;
+  text-decoration-thickness: 0.2ex;
 }
 
 ul,
