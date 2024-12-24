@@ -139,6 +139,11 @@ li {
   margin-bottom: 12px;
 }
 
+pre {
+  outline-offset: 4px;
+  outline-width: 2px;
+}
+
 code {
   background-color: var(--pre-code-bg-color);
   padding: 4px 5px;
