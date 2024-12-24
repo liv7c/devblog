@@ -1,41 +1,29 @@
 @use "../abstract/mixins";
 
 .site-header__logo {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 6px 0;
   text-decoration: none;
+  text-align: center;
+
+  @include mixins.tabletAndUp {
+    font-size: 1.2rem;
+    text-align: left;
+  }
 }
 
 .site-header__content {
   padding: 0;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   position: relative;
-  align-items: center;
 
   @include mixins.tabletAndUp {
+    align-items: center;
     padding: 20px 0;
+    flex-direction: row;
     align-items: baseline;
-  }
-}
-
-.site-header__menu-button {
-  display: block;
-  background-color: transparent;
-  border: 1px solid var(--text-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 8px;
-  border-radius: 2px;
-
-  svg {
-    color: var(--text-color);
-    width: 30px;
-  }
-
-  @include mixins.tabletAndUp {
-    display: none;
   }
 }
 
@@ -62,17 +50,12 @@
 
 .site-header__nav-list {
   list-style: none;
-  position: absolute;
-  left: 0;
-  background-color: var(--bg-color);
-  width: 100vw;
-  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
   margin-left: calc(var(--page-padding) * -1);
-  display: none;
-
-  &--visible {
-    display: block;
-  }
 
   @include mixins.tabletAndUp {
     display: block;
@@ -80,37 +63,28 @@
     background-color: none;
     width: auto;
     display: flex;
-    margin: 0;
+    margin-top: 0;
     margin-left: auto;
-    padding: 0;
   }
 }
 
 .site-header__nav-list-item {
-  --border-color: rgba(0, 0, 0, 0.2);
-  border-top: 1px solid var(--border-color);
-  margin-bottom: 0;
-
-  &:last-child {
-    border-bottom: 1px solid var(--border-color);
-  }
-
-  @include mixins.tabletAndUp {
     border-top: none;
+    margin: 0;
+
     &:not(:last-child) {
       margin-right: 10px;
     }
     &:last-child {
       border-bottom: none;
     }
-  }
 }
 
 .site-header__nav-link {
   color: var(--text-color);
   display: block;
   text-underline-offset: 0.17lh;
-  padding: 25px var(--page-padding);
+  padding: 7px var(--page-padding);
 
   @include mixins.tabletAndUp {
     padding: 7px var(--page-padding);
