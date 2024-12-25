@@ -1,5 +1,13 @@
 @use "../abstract/mixins";
 
+.site-header {
+  margin-bottom: 1rem;
+
+  @include mixins.tabletAndUp {
+    margin-bottom: 0;
+  }
+}
+
 .site-header__logo {
   font-size: 1.4rem;
   padding: 6px 0;
