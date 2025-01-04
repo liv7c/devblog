@@ -34,7 +34,7 @@
     "postcss": "8.4.49",
     "postcss-cli": "11.0.0",
     "rollup": "4.29.1",
-    "sass": "1.83.0"
+    "sass": "1.83.1"
   },
   "dependencies": {
     "eleventy-plugin-toc": "^1.1.5",
