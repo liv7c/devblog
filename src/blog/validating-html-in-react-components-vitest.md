@@ -107,9 +107,7 @@ The test output shows us that our simple Button component has two issues:
 
 ## The whole demo code
 
-Here's the entire demo code if you feel like playing around with it!
-
-<iframe height="500px" width="100%"  src="https://stackblitz.com/edit/vitejs-vite-ceadnv?embed=1&file=src%2Fcomponents%2FButton%2Findex.test.tsx&view=editor"></iframe>
+You can check out the entire demo code on <a href="https://stackblitz.com/edit/vitejs-vite-ceadnv?file=src%2Fcomponents%2FButton%2Findex.test.tsx" target="_blank" rel="noopener noreferrer">StackBlitz</a>.
 
 ## Conclusion
 
