@@ -15,11 +15,6 @@
   &__content-wrapper {
     background-color: var(--secondary-bg-color);
     padding: 10px 0;
-
-    @include mixins.laptopAndUp {
-      border-top-right-radius: 30px;
-      border-top-left-radius: 30px;
-    }
   }
 
   &__content {
