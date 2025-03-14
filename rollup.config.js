@@ -1,9 +1,9 @@
 import terser from '@rollup/plugin-terser';
 
 export default {
-  input: 'src/js/app.js',
+  input: 'src/js/add-tabindex.js',
   output: {
-    file: 'public/js/app.js',
+    file: 'public/js/add-tabindex.js',
     format: 'iife',
     sourcemap: false,
   },
