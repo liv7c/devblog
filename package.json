@@ -27,13 +27,13 @@
     "@11ty/eleventy-plugin-rss": "2.0.3",
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.0",
     "@rollup/plugin-terser": "^0.4.3",
-    "autoprefixer": "10.4.20",
+    "autoprefixer": "10.4.21",
     "cssnano": "7.0.6",
     "luxon": "3.5.0",
     "npm-run-all2": "7.0.2",
     "postcss": "8.5.3",
-    "postcss-cli": "11.0.0",
-    "rollup": "4.34.9",
+    "postcss-cli": "11.0.1",
+    "rollup": "4.35.0",
     "sass": "1.85.1"
   },
   "dependencies": {
