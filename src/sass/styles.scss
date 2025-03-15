@@ -16,6 +16,11 @@
 @use 'base/layout';
 
 /**
+* Page specific
+*/
+@use 'pages/home';
+
+/**
  * Components
  */
 @use 'components/site-header';
