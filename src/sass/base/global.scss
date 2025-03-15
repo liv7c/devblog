@@ -18,16 +18,17 @@
 }
 
 @font-face {
-  font-family: 'Shantell';
+  font-family: 'Shantell Sans';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/ShantellSansNormal-Bold.woff2') format('woff2');
+  src: url('/fonts/ShantellSansNormal-Bold.woff2') format('woff2'),
+  url('/fonts/ShantellSansNormal-Bold.woff') format('woff');
 }
 
 
 @font-face {
-  font-family: 'Shantell';
+  font-family: 'Shantell Sans';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -35,7 +36,7 @@
 }
 
 @font-face {
-  font-family: 'Shantell';
+  font-family: 'Shantell Sans';
   font-style: italic;
   font-weight: 600;
   font-display: swap;
@@ -125,7 +126,7 @@ h3,
 h4,
 h5 {
   margin: 3rem 0 1.38rem;
-  font-family: 'Shantell', 'Courrier Sans', serif;
+  font-family: 'Shantell Sans', 'Courrier Sans', serif;
   font-weight: 600;
   color: var(--title-color);
   line-height: 1.3;

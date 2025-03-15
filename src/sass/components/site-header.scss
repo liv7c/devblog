@@ -2,6 +2,7 @@
 
 .site-header {
   margin-bottom: 1rem;
+  color: var(--title-color);
 
   @include mixins.tabletAndUp {
     margin-bottom: 0;
@@ -9,13 +10,15 @@
 }
 
 .site-header__logo {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  font-family: 'Shantell Sans', serif;
+  font-weight: 600;
   padding: 6px 0;
   text-decoration: none;
   text-align: center;
 
   @include mixins.tabletAndUp {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     text-align: left;
   }
 }
@@ -29,14 +32,15 @@
 
   @include mixins.tabletAndUp {
     align-items: center;
-    padding: 20px 0;
+    padding: 2.25rem 0;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
   }
 }
 
 .site-header__skip-link {
-  background: var(--button-bg);
+  background: var(--bright-orange);
+  color: var(--text-color-light);
   left: 0;
   padding: 10px 12px;
   position: absolute;
@@ -64,6 +68,7 @@
   margin-top: 0.5rem;
   margin-bottom: 0;
   margin-left: calc(var(--page-padding) * -1);
+  gap: 1rem;
 
   @include mixins.tabletAndUp {
     display: block;
@@ -73,23 +78,17 @@
     display: flex;
     margin-top: 0;
     margin-left: auto;
+    gap: 2rem;
   }
 }
 
 .site-header__nav-list-item {
     border-top: none;
     margin: 0;
-
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-    &:last-child {
-      border-bottom: none;
-    }
 }
 
 .site-header__nav-link {
-  color: var(--text-color);
+  color: var(--title-color);
   display: block;
   text-underline-offset: 0.17lh;
   padding: 7px var(--page-padding);
