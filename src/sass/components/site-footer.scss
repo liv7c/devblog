@@ -2,19 +2,12 @@
 
 .site-footer {
   margin-top: auto;
-
-  &__back-top {
-    text-align: center;
-  }
-
-  &__back-top-link {
-    display: inline-block;
-    padding: 10px 0;
-  }
+  color: var(--text-color-light);
 
   &__content-wrapper {
-    background-color: var(--secondary-bg-color);
-    padding: 10px 0;
+    background-color: var(--footer-bg-color);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   &__content {
@@ -22,38 +15,33 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      align-items: baseline;
+      align-items: center;
     }
   }
 
   &__copyright {
-    margin-right: 20px;
+    margin: 0;
   }
 
   &__links-list {
     list-style: none;
-    padding: 0;
-    margin-top: 0;
+    padding: 1rem 0;
+    gap: 1rem;
+    margin: 0;
     display: grid;
-    margin-left: -10px;
     grid-template-columns: repeat(2, 1fr);
 
     @include mixins.laptopAndUp {
+      padding: 0;
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       margin-left: 0;
+      gap: 2rem;
     }
-  }
 
-  &__links-list-item {
-    &:not(:last-child) {
-      margin-right: 10px;
+    li {
       margin-bottom: 0;
-    }
-
-    a {
-      display: block;
-      padding: 10px;
     }
   }
 }
