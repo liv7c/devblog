@@ -17,6 +17,31 @@
   src: url('/fonts/Atkinson-Hyperlegible-Bold.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Shantell';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/ShantellSansNormal-Bold.woff2') format('woff2');
+}
+
+
+@font-face {
+  font-family: 'Shantell';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/ShantellSansNormal-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Shantell';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/ShantellSansNormal-SemiBold.woff2') format('woff2');
+}
+
 html,
 body {
   height: 100%;
@@ -100,8 +125,8 @@ h3,
 h4,
 h5 {
   margin: 3rem 0 1.38rem;
-  font-family: 'Atkinson', sans-serif;
-  font-weight: 700;
+  font-family: 'Shantell', 'Courrier Sans', serif;
+  font-weight: 600;
   color: var(--title-color);
   line-height: 1.3;
 }
