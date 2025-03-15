@@ -2,7 +2,7 @@
 
 .site-header {
   margin-bottom: 1rem;
-  color: var(--title-color);
+  color: var(--text-color-dark);
 
   @include mixins.tabletAndUp {
     margin-bottom: 0;
@@ -10,7 +10,7 @@
 }
 
 .site-header__logo {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: 'Shantell Sans', serif;
   font-weight: 600;
   padding: 6px 0;
@@ -18,7 +18,7 @@
   text-align: center;
 
   @include mixins.tabletAndUp {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     text-align: left;
   }
 }
@@ -32,7 +32,7 @@
 
   @include mixins.tabletAndUp {
     align-items: center;
-    padding: 2.25rem 0;
+    padding: 2.25rem 0 1rem;
     flex-direction: row;
     align-items: center;
   }

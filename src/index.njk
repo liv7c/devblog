@@ -4,27 +4,65 @@ description: Olivia Coumans, front-end developer in Paris
 layout: base.njk
 ---
 
-<h1>Hi, I'm Olivia.</h1>
-<p>
-  I'm a front-end developer based in Paris. Areas of interest include web
-  accessibility, JavaScript, React.js, vim, and a bit of Go on the side.
-</p>
-
-<h2>Latest blog posts</h2>
-
-{% set posts = collections.posts | reverse | limit(2) %}
-
-<ul>
-  {%- for post in posts -%}
-  <li>
-    <a href="{{ post.url }}">{{ post.data.title }}</a>
-    <div>
-      <time datetime="{{ post.data.date | isoDate }}" class="post-list__date">{{
-        post.data.date | asPostDate
-      }}</time>
+<section class="home-section home-section--hero">
+  <div class="max-width-wrapper">
+    <div class="home-hero">
+      <div class="home-hero__content">
+        <h1 class="home-hero__title">Welcome to my dev blog!</h1>
+        <p class="home-hero__subtitle">
+          Hi, I’m Olivia, a self-taught front-end developer. 
+          I love sharing my learnings, from developer tools to web accessibility and performance.
+        </p>
+      </div>
+      <img src="/img/big-flower.svg" alt="" class="home-hero__illustration">
     </div>
-  </li>
-  {%- endfor -%}
-</ul>
+  </div>
+</section>
 
-<a href="/blog" class="main-link">See all posts &rarr;</a>
+<section class="home-section home-section--dark">
+  <div class="max-width-wrapper">
+    <h2>A few (not that interesting) facts about me</h2>
+    <ul class="home-facts-list">
+      <li>
+        I wrote my first line of code at 24 and never looked back. I instantly fell in love with building UIs, and it's been my passion for the past 6 years as a front-end developer.
+      </li>
+      <li>
+        My first ever project was a Wordpress website I built for my dad's bookshop. It was the ultimate introduction to learning how to solve problems one step at a time. The website is still in production and working! It holds a special place in my heart.
+      </li>
+      <li>
+        I started coding React projects when classes were still a thing and hooks did not exist...
+      </li>
+      <li>
+        I’ve been trying to finish The Voyage Out by Virginia Woolf for the past 6 months... It's such a great book, but I keep having to restart it. (Am I in an infinite loop?)
+      </li>
+    </ul>
+  </div>
+  <img src="/img/small-flower-oj.svg" alt="" class="home-facts__flower-decoration-left">
+  <img src="/img/small-flower-oj.svg" alt="" class="home-facts__flower-decoration-right">
+</section>
+
+<section class="home-section">
+  <div class="max-width-wrapper">
+    <div class="home-section__title-with-flower">
+      <h2>Latest and freshest posts</h2>
+      <img src="/img/small-blue-flower.svg" alt="" class="home-section__title-flower">
+    </div>
+    {% set posts = collections.posts | reverse | limit(2) %}
+
+    <ul class="home-post-list">
+      {%- for post in posts -%}
+      <li class="home-post-item">
+        <a href="{{ post.url }}">
+          <strong>{{ post.data.title }}</strong>
+          <time datetime="{{ post.data.date | isoDate }}" class="post-list__date">{{
+              post.data.date | asPostDate
+          }}</time>
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+    <a href="/blog" class="home-post-link">See all posts &rarr;</a>
+  </div>
+</section>
+
+

@@ -66,7 +66,11 @@ body[data-theme='light'] {
   --brown-10: #4F2B1E;
   --brown-20: #644C3B;
   --brown-70: #21120D;
+  --off-white: #F5EED7;
   --bright-orange: #EE6E40;
+  --primary-yellow: #F5C523;
+  --primary-green: #B3C97D;
+  --primary-blue: #47BABF;
 
   --black: #272343;
   --white: #fffffe;
@@ -84,7 +88,7 @@ body[data-theme='light'] {
   --page-padding: 1rem;
 
   --body-bg-color: var(--beige-10);
-  --footer-bg-color: var(--brown-20);
+  --footer-bg-color: var(--primary-green);
   --title-color: var(--brown-10);
   --text-color-light: var(--beige-20);
   --text-color-dark: var(--brown-70);
@@ -128,7 +132,7 @@ h5 {
   margin: 3rem 0 1.38rem;
   font-family: 'Shantell Sans', 'Courrier Sans', serif;
   font-weight: 600;
-  color: var(--title-color);
+  color: currentColor;
   line-height: 1.3;
 }
 
