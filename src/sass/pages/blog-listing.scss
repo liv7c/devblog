@@ -2,6 +2,7 @@
 
 .blog-listing {
   padding: 3rem 0;
+  position: relative;
 
 
   h1 {
@@ -42,6 +43,21 @@
     position: absolute;
     inset: 0;
   }
+
+  &:first-of-type {
+    &::before {
+        content: '';
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-image: url('/img/small-plant.svg'); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: -25px;
+        right: -10px;
+        transform: rotate(10deg);
+    }
+  }
 }
 
 .blog-listing__card-meta-info {
@@ -60,5 +76,40 @@
 
   time {
     font-size: 1rem;
+  }
+}
+
+.blog-listing__flower {
+  display: none;
+  position: absolute;
+  top: 0;
+
+  @include mixins.desktopAndUp {
+    display: block;
+  }
+
+  &--right-middle {
+    top: 30%;
+    right: 0;
+  }
+
+  &--right-bottom {
+    top: 80%;
+    right: 4%;
+  }
+
+  &--left-middle {
+    top: 50%;
+    left: 0%;
+  }
+
+  &--left-bottom {
+    top: 85%;
+    left: 3%;
+  }
+
+  &--left-top {
+    top: 20%;
+    left: 2%;
   }
 }
