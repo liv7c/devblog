@@ -1,6 +1,25 @@
+@use "../abstract/mixins";
+
 .post {
+  background-color: #fffaeb;
+  margin: 0 auto;
+  border-radius: 7px;
+  padding: 2rem 2rem 3rem;
+  border-top: 4px solid transparent;
+
+  @include mixins.laptopAndUp {
+    margin-bottom: 4rem;
+    border-top: 4px solid var(--primary-blue);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+
   &__title {
     margin-bottom: 4px;
+    font-family: 'Atkinson', sans-serif;
+  }
+
+  h2, h3 {
+    font-family: 'Atkinson', sans-serif;
   }
 
   &__date {
