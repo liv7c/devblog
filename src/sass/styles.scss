@@ -19,14 +19,15 @@
 * Page specific
 */
 @use 'pages/home';
+@use 'pages/blog-listing';
 
 /**
  * Components
  */
 @use 'components/site-header';
 @use 'components/site-footer';
+@use 'components/card';
 @use 'components/tag';
 @use 'components/post';
-@use 'components/post-list';
 @use 'components/link';
 @use 'components/toc';

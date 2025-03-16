@@ -154,40 +154,6 @@
   }
 }
 
-.home-post-item {
-  background-color: var(--off-white);
-  border-radius: 10px;
-  max-width: 43rem;
-  flex: 1;
-  border-bottom: 3px solid var(--text-color-dark);
-
-  &:has(a:hover) {
-    border-bottom: 3px solid var(--bright-orange);
-    opacity: 0.8;
-  }
-
-  &:has(a:focus) {
-    outline: 2px solid var(--bright-orange);
-    outline-offset: 2px;
-  }
-  
-  a {
-    display: flex;
-    padding: 2rem 1rem;
-    flex-direction: column;
-    text-decoration: none;
-    outline: none;
-  }
-
-  strong {
-    font-size: 1.125rem;
-  }
-
-  time {
-    text-decoration: none;
-  }
-}
-
 .home-post-link {
   background-color: var(--text-color-dark);
   color: var(--text-color-light);

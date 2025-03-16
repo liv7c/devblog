@@ -1,0 +1,64 @@
+@use "../abstract/mixins";
+
+.blog-listing {
+  padding: 3rem 0;
+
+
+  h1 {
+    font-size: 3rem;
+    color: var(--title-color);
+    margin-bottom: 3.125rem;
+  }
+}
+
+.blog-listing__list {
+  display: grid;
+  gap: 3rem;
+
+  @include mixins.laptopAndUp {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.blog-listing__card {
+  --card-padding: 0;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include mixins.laptopAndUp {
+    min-height: 12rem;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-family: 'Atkinson', sans-serif;
+  }
+
+  a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.blog-listing__card-meta-info {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  justify-content: space-between;
+
+  @include mixins.laptopAndUp {
+    flex-direction: row;
+    margin-top: auto;
+    align-items: center;
+  }
+
+  time {
+    font-size: 1rem;
+  }
+}

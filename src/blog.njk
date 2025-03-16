@@ -4,20 +4,26 @@ description: Olivia Coumans, front-end developer in Paris
 layout: base.njk
 ---
 
-<div class="page-content-wrapper">
-  <h1>Blog</h1>
+<div class="page-content-wrapper blog-listing">
+  <div class="max-width-wrapper">
+    <h1>All the blog posts</h1>
 
-  <ul class="post-list">
-    {%- for post in collections.posts | reverse -%}
-    <li>
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
-      <div>
-        <span class="tag">{{ post.data.topics }}</span>
-        <time datetime="{{ post.data.date | isoDate }}" class="post-list__date">{{
-          post.data.date | asPostDate
-        }}</time>
-      </div>
-    </li>
-    {%- endfor -%}
-  </ul>
+    <ul class="blog-listing__list">
+      {%- for post in collections.posts | reverse -%}
+      <li class="card blog-listing__card">
+        <h2>
+          <a href="{{ post.url }}">
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <div class="blog-listing__card-meta-info">
+          <p class="tag">{{ post.data.topics }}</p>
+          <time datetime="{{ post.data.date | isoDate }}" class="post-list__date">{{
+            post.data.date | asPostDate
+          }}</time>
+        </div>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
 </div>

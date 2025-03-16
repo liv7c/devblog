@@ -51,7 +51,7 @@ layout: base.njk
 
     <ul class="home-post-list">
       {%- for post in posts -%}
-      <li class="home-post-item">
+      <li class="card">
         <a href="{{ post.url }}">
           <strong>{{ post.data.title }}</strong>
           <time datetime="{{ post.data.date | isoDate }}" class="post-list__date">{{
