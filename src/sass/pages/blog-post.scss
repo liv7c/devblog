@@ -15,11 +15,11 @@
 
   &__title {
     margin-bottom: 4px;
-    font-family: 'Atkinson', sans-serif;
+    font-family: var(--font-body);
   }
 
   h2, h3 {
-    font-family: 'Atkinson', sans-serif;
+    font-family: var(--font-body);
   }
 
   &__date {
@@ -31,5 +31,35 @@
     padding-top: 8px;
     padding-bottom: 10px;
     margin-bottom: 10px;
+  }
+}
+
+.toc-details {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.toc-wrapper {
+  margin: 20px 0 30px;
+  padding-top: 16px;
+  padding-left: 10px;
+  padding-bottom: 6px;
+  border: 1px dotted var(--text-color-dark);
+}
+
+.toc-title {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.toc {
+  ol {
+    list-style: none;
+    margin-top: 0.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
   }
 }

@@ -60,7 +60,6 @@ html {
 
 body,
 body[data-theme='light'] {
-  // new colors
   --beige-10: #E6E1C4;
   --beige-20: #EAE7D9;
   --brown-10: #4F2B1E;
@@ -72,19 +71,9 @@ body[data-theme='light'] {
   --primary-green: #B3C97D;
   --primary-blue: #47BABF;
 
-  --black: #272343;
-  --white: #fffffe;
-  --bg-color: #E6E1C4;
-  --secondary-bg-color: #d1d1f7;
-  --text-color: #272343;
-  --link-color: #001858;
-  --tag-bg-color: #C3AED6;
-  --pre-code-color: #2b2c34;
   --pre-code-bg-color: #fffffe;
   --body-font-weight: 400;
-  --decorative-border-color: transparent;
   --button-text: #272343;
-  --button-bg: #C3AED6;
   --page-padding: 1rem;
 
   --body-bg-color: var(--beige-10);
@@ -93,6 +82,9 @@ body[data-theme='light'] {
   --text-color-light: var(--beige-20);
   --text-color-dark: var(--brown-70);
   --decorative-border-color-bright: var(--bright-orange);
+
+  --font-body: 'Atkinson', sans-serif;
+  --font-heading: 'Shantell Sans', 'Courier Sans', serif;
 }
 
 a:focus,
@@ -104,7 +96,7 @@ body {
   background-color: var(--body-bg-color);
   color: var(--text-color-dark);
   font-size: 1.1rem;
-  font-family: 'Atkinson', sans-serif;
+  font-family: var(--font-body);
   font-weight: var(--body-font-weight);
   line-height: 1.75;
   overflow-y: scroll;
@@ -130,7 +122,7 @@ h3,
 h4,
 h5 {
   margin: 3rem 0 1.38rem;
-  font-family: 'Shantell Sans', 'Courrier Sans', serif;
+  font-family: var(--font-heading);
   font-weight: 600;
   color: currentColor;
   line-height: 1.3;

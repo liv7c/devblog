@@ -23,13 +23,4 @@
 @use 'components/card';
 @use 'components/tag';
 @use 'components/section';
-@use 'components/post';
 @use 'components/link';
-@use 'components/toc';
-
-/**
-* Page specific
-*/
-@use 'pages/home';
-@use 'pages/blog-listing';
-@use 'pages/about';

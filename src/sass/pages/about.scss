@@ -2,7 +2,6 @@
 
 .about-page {
   &__hero-section {
-
     @include mixins.tabletAndUp {
       padding-top: 3rem;
     }
@@ -10,6 +9,7 @@
 
   &__title {
     font-size: 3rem;
+    color: var(--title-color);
   }
 
   &__tidbits {
@@ -71,7 +71,8 @@
     h3 {
       margin: 0;
       font-size: 1.5rem;
-      font-family: 'Atkinson', sans-serif;
+      
+      font-family: var(--font-body);
     }
 
     & ul {
@@ -150,7 +151,7 @@
 
   h2, h3 {
     margin: 0;
-    font-family: 'Atkinson', sans-serif;
+    font-family: var(--font-body);
     font-size: 1.125rem;
   }
 }

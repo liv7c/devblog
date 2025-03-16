@@ -20,3 +20,11 @@
 {% endfor %}
 
 <link rel="stylesheet" href="{{ '/css/styles.css' | url }}" />
+
+{% if page.url == '/' %}
+  <link rel="stylesheet" href="{{ '/css/pages/home.css' | url }}" />
+{% elif page.url.indexOf('/blog') == 0 %}
+  <link rel="stylesheet" href="{{ '/css/pages/blog-listing.css' | url }}" />
+{% elif page.url.indexOf('/about') == 0 %}
+  <link rel="stylesheet" href="{{ '/css/pages/about.css' | url }}" />
+{% endif %}
