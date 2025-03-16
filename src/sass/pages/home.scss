@@ -1,30 +1,5 @@
 @use "../abstract/mixins";
 
-.home-section {
-  padding: 2.5rem 0;
-  position: relative;
-
-  @include mixins.tabletAndUp {
-    padding: 6rem 0;
-  }
-
-  h2 {
-    margin-top: 0;
-    margin-bottom: 3rem;
-    color: var(--title-color);
-  }
-}
-
-.home-section--dark {
-  background-color: var(--brown-20);
-  color: var(--text-color-light);
-
-  h2 {
-    color: var(--text-color-light);
-  }
-}
-
-
 .home-hero {
   @include mixins.laptopAndUp {
     display: flex;
@@ -65,29 +40,6 @@
   }
 }
 
-.home-facts__flower-decoration-left {
-  position: absolute; 
-  display: none;
-
-  // 1248px
-  @media (min-width: 78rem) {
-    display: block;
-    top: 20px;
-    left: 17px;
-  }
-}
-
-.home-facts__flower-decoration-right {
-  position: absolute; 
-  display: none;
-
-  // 1248px
-  @media (min-width: 78rem) {
-    display: block;
-    bottom: 45px;
-    right: 18px;
-  }
-}
 
 .home-facts-list {
   list-style: none;
@@ -151,40 +103,5 @@
 
   @include mixins.laptopAndUp {
     flex-direction: row;
-  }
-}
-
-.home-post-link {
-  background-color: var(--text-color-dark);
-  color: var(--text-color-light);
-  padding: 1rem 0.5rem;
-  border-radius: 7px;
-
-  text-decoration: none;
-  transition: opacity 0.2 cubic-bezier(0.165, 0.84, 0.44, 1);
-
-  &:hover,
-  &:active {
-    opacity: 0.8;
-  }
-
-  &:focus {
-    outline: 2px solid var(--bright-orange);
-    outline-offset: 2px;
-  }
-}
-
-.home-section__title-with-flower {
-  display: flex;
-  gap: 50px;
-}
-
-.home-section__title-flower {
-  display: none;
-
-  @include mixins.laptopAndUp {
-    display: block;
-    position: relative;
-    top: -30px;
   }
 }

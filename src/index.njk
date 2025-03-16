@@ -4,7 +4,7 @@ description: Olivia Coumans, front-end developer in Paris
 layout: base.njk
 ---
 
-<section class="home-section home-section--hero">
+<section class="page-section home-section--hero">
   <div class="max-width-wrapper">
     <div class="home-hero">
       <div class="home-hero__content">
@@ -19,7 +19,7 @@ layout: base.njk
   </div>
 </section>
 
-<section class="home-section home-section--dark">
+<section class="page-section page-section--dark">
   <div class="max-width-wrapper">
     <h2>A few (not that interesting) facts about me</h2>
     <ul class="home-facts-list">
@@ -37,15 +37,15 @@ layout: base.njk
       </li>
     </ul>
   </div>
-  <img src="/img/small-flower-oj.svg" alt="" class="home-facts__flower-decoration-left">
-  <img src="/img/small-flower-oj.svg" alt="" class="home-facts__flower-decoration-right">
+  <img src="/img/small-flower-oj.svg" alt="" class="page-section__flower-decoration-left">
+  <img src="/img/small-flower-oj.svg" alt="" class="page-section__flower-decoration-right">
 </section>
 
-<section class="home-section">
+<section class="page-section">
   <div class="max-width-wrapper">
-    <div class="home-section__title-with-flower">
+    <div class="page-section__title-with-flower">
       <h2>Latest and freshest posts</h2>
-      <img src="/img/small-blue-flower.svg" alt="" class="home-section__title-flower">
+      <img src="/img/small-blue-flower.svg" alt="" class="page-section__title-flower">
     </div>
     {% set posts = collections.posts | reverse | limit(2) %}
 
@@ -61,7 +61,7 @@ layout: base.njk
       </li>
       {%- endfor -%}
     </ul>
-    <a href="/blog" class="home-post-link">See all posts &rarr;</a>
+    <a href="/blog" class="button-link">See all posts &rarr;</a>
   </div>
 </section>
 

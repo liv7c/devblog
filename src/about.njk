@@ -5,49 +5,82 @@ layout: base.njk
 ---
 
 
-<div class="page-content-wrapper">
-  <h1>About</h1>
-  <p>
-    My name is Olivia. I'm a front-end developer in Paris with 5+ years of experience working on both B2B and B2C
-    products.
-  </p>
-  <h2>Work</h2>
-  <ol reversed="reversed">
-    <li>
-      <strong>Since June 2023</strong>, I have been working as a senior front-end developer at <a href="https://www.welcometothejungle.com/en">Welcome to the Jungle</a>.
-    </li>
-    <li>
-      <strong>From October 2018 to December 2022</strong>, I was working as a front-end developer at <a href="https://www.meilleursagents.com/">Meilleurs Agents</a>,
-        building features for a web application used by thousands of real estate agencies.
-    </li>
-  </ol>
-  <h2>Some side projects</h2>
-  <ul>
-    <li>The <a href="https://www.pierrecoumansbooks.com/">website</a> for my father's incredible bookshop. Website built using Wordpress and a custom theme that I created from scratch using PHP, HTML, and a little bit of JavaScript.</li>
-    <li><a href="https://github.com/liv7c/gen_prettier">A small CLI tool</a> (previously a bash script) to generate a prettier config file. It was a great little project to explore embedded templates in Go :)</li>
-    <li>My constantly evolving <a href="https://github.com/liv7c/nvim-config">neovim config.</a></li>
-  </ul>
-  <h2>My tech stack</h2>
-  <ul>
-    <li>
-      React and other libraries in its ecosystem (e.g. TanStack Query, Redux and Redux Toolkit)
-    </li>
-    <li>Typescript</li>
-    <li>Jest, Vitest, React Testing Library and Cypress for testing</li>
-    <li>CSS, SASS and CSS-in-JS solutions like Emotion and Styled Components</li>
-  </ul>
-  <h2>Learning, always</h2>
-  <p>
-    I'm a self-taught developer. What I love about being a developer is learning something new every day (even a tiny
-    detail). In 2016, I wrote my first few lines of HTML, which was the start of an incredible journey.
-  </p>
-  <p id="things-love-learning">Things I currently love learning about:</p>
-  <ul aria-describedby="things-love-learning">
-    <li>
-      Web accessibility (semantic HTML, adopting an accessibility-first approach, understanding the
-                  WCAG)
-    </li>
-    <li>Type systems (exploring this topic with Typescript)</li>
-    <li>Go(lang) along with some SQL</li>
-  </ul>
+<div class="page-section about-page__hero-section">
+  <div class="max-width-wrapper">
+    <h1 class="about-page__title">About me...</h1>
+    <p id="tidbits" class="about-page__tidbits">A few tidbits:</p>
+    <ul aria-labelledby="tidbits" class="about-page__tidbits-list" role="list">
+      <li>
+        I’ve been working as a front-end developer for the past six years, building products for both B2C and B2B.
+      </li>
+      <li>My journey into coding started with a year and a half of self-learning. This time was filled with perseverance, frustration, and plenty of "What am I doing?" moments.</li>
+      <li>Professionally, I’ve worked extensively with React and its evolving ecosystem, from (vanilla) Redux and class components to migrating codebases to hooks and TypeScript.</li>
+      <li>Web accessibility is something I care deeply about. With every project, I try to dig deeper and build things that are as inclusive and user-friendly as possible.</li>
+      <li>I also love branching out and experimenting. Lately, that means learning Go to build small tools that improve my dev workflow. And for the past three years, I’ve been using Vim (still a basic user, but editing this way makes me happy).</li>
+    </ul>
+  </div>
 </div>
+<section class="page-section page-section--dark">
+  <div class="max-width-wrapper about-page__experience-wrapper">
+    <h2>Work experience</h2>
+    <ol reversed="reversed" class="about-page__experience-list" role="list">
+      <li>
+        <div>
+          <h3>Senior Front-end Developer - Welcome to the Jungle</h3>
+          <p><strong>Since June 2023</strong>, I’ve been working as a senior front-end developer at <a href="https://www.welcometothejungle.com/en" target="_blank">Welcome to the Jungle</a>. My core contributions include leading the front-end development for new B2C products, such as an application tracker for candidates. In the past year, I’ve been working on building a new product from the ground up.</p>
+          <ul>
+            <li>React</li>
+            <li>Styled components</li>
+            <li>Typescript</li>
+            <li>Vite</li>
+            <li>Vitest</li>
+            <li>Webpack</li>
+            <li>CircleCI</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Front-end Developer - Meilleurs Agents</h3>
+          <p><strong>From October 2018 to December 2022</strong>, I worked as a Front-End Developer at <a href="https://www.meilleursagents.com/" target="_blank">Meilleurs Agents</a>, where I contributed to building new products and improving existing ones. I had the opportunity to integrate a fresh layout for the B2B application, implement a state machine using XState for a product that’s now live, and migrate tests from Enzyme to React Testing Library. In addition to these technical tasks, I also mentored team members. </p>
+          <ul>
+            <li>React</li>
+            <li>JavaScript</li>
+            <li>SASS</li>
+            <li>Redux</li>
+            <li>Webpack</li>
+            <li>Jest</li>
+            <li>Cypress</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+    <img src="/img/branch_leaves.svg" class="about-page__experience-list-decoration" alt="">
+  </div>
+  <img src="/img/small-flower-oj.svg" alt="" class="page-section__flower-decoration-left">
+  <img src="/img/small-flower-oj.svg" alt="" class="page-section__flower-decoration-right">
+</section>
+<section class='page-section'>
+  <div class="max-width-wrapper">
+    <div class="page-section__title-with-flower">
+      <h2>Side projects</h2>
+      <img src="/img/yellow-orange-flower.svg" alt="" class="page-section__title-flower page-section__title-flower--small">
+    </div>
+
+    <article class="project-card">
+      <div class="project-card__image-wrapper">
+        <img src="/img/pierre_coumans_screenshot.png" alt="Hero section of the homepage where Pierre Coumans is written in large and bold letters. There is also a portion of a slideshow with current news about the bookshop.">
+      </div>
+      <div>
+        <h3>Pierre Coumans - Rare Books</h3>
+        <ul>
+          <li>Designed and coded the website from scratch.</li>
+          <li>Developed a custom Wordpress theme using PHP templates, Sass for the CSS and vanilla javascript.</li>
+          <li>Integrated WPML plugins for internationalization.</li>
+          <li>Integrated the website to MailChimp enabling the website's owner to gain momentum with their newsletter and email campaigns.</li>
+        </ul>
+        <a href="https://www.pierrecoumansbooks.com/" class="button-link button-link--small" target="_blank">Visit website &rarr;</a>
+      </div>
+    </article>
+  </div>
+</section>

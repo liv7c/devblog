@@ -15,3 +15,28 @@
     background-color: currentColor;
   }
 }
+
+.button-link {
+  background-color: var(--text-color-dark);
+  color: var(--text-color-light);
+  padding: 1rem 0.5rem;
+  border-radius: 7px;
+
+  text-decoration: none;
+  transition: opacity 0.2 cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  &:hover,
+  &:active {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: 2px solid var(--bright-orange);
+    outline-offset: 2px;
+  }
+
+  &--small {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
