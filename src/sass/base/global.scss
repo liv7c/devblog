@@ -20,19 +20,9 @@
 @font-face {
   font-family: 'Shantell Sans';
   font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/ShantellSansNormal-Bold.woff2') format('woff2'),
-  url('/fonts/ShantellSansNormal-Bold.woff') format('woff');
-}
-
-
-@font-face {
-  font-family: 'Shantell Sans';
-  font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('/fonts/ShantellSansNormal-SemiBold.woff2') format('woff2');
+  src: url('/fonts/shantell-sans-bold.woff2') format('woff2');
 }
 
 html,
@@ -76,7 +66,7 @@ body[data-theme='light'] {
   --decorative-border-color-bright: var(--bright-orange);
 
   --font-body: 'Atkinson', sans-serif;
-  --font-heading: 'Shantell Sans', 'Arial', sans-serif;
+  --font-heading: 'Shantell Sans', Helvetica, sans-serif;
 }
 
 a:focus,
