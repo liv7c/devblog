@@ -63,24 +63,34 @@ layout: base.njk
 <section class='page-section'>
   <div class="max-width-wrapper">
     <div class="page-section__title-with-flower">
-      <h2>Side projects</h2>
+      <h2>Other projects</h2>
       <img src="/img/yellow-orange-flower.svg" alt="" class="page-section__title-flower page-section__title-flower--small">
     </div>
 
     <article class="project-card">
-      <div class="project-card__image-wrapper">
-        <img src="/img/pierre_coumans_screenshot.png" alt="Hero section of the homepage where Pierre Coumans is written in large and bold letters. There is also a portion of a slideshow with current news about the bookshop.">
-      </div>
-      <div>
-        <h3>Pierre Coumans - Rare Books</h3>
-        <ul>
-          <li>Designed and coded the website from scratch.</li>
-          <li>Developed a custom Wordpress theme using PHP templates, Sass for the CSS and vanilla javascript.</li>
-          <li>Integrated WPML plugins for internationalization.</li>
-          <li>Integrated the website to MailChimp enabling the website's owner to gain momentum with their newsletter and email campaigns.</li>
-        </ul>
-        <a href="https://www.pierrecoumansbooks.com/" class="button-link button-link--small" target="_blank">Visit website &rarr;</a>
-      </div>
+        <header class="project-card__header">
+          <div class="project-card__header-meta-info">
+            <h3>Pierre Coumans - Rare Books</h3>
+            <a href="https://www.pierrecoumansbooks.com/" class="button-link button-link--small" target="_blank">Visit website &rarr;</a>
+          </div>
+          <div class="project-card__image-wrapper">
+            <img src="/img/pierre_coumans_screenshot.png" alt="Hero section of the homepage where Pierre Coumans is written in large and bold letters. There is also a portion of a slideshow with current news about the bookshop.">
+          </div>
+        </header>
+        <div>
+          <ul>
+            <li>Designed and coded the website from scratch.</li>
+            <li>Developed a custom Wordpress theme using PHP templates, Sass for the CSS and vanilla javascript.</li>
+            <li>Integrated WPML plugins for internationalization.</li>
+            <li>Integrated the website to MailChimp enabling the website's owner to gain momentum with their newsletter and email campaigns.</li>
+          </ul>
+          <ul class="project-card__tech-stack">
+            <li>Wordpress</li>
+            <li>HTML</li>
+            <li>SASS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
     </article>
   </div>
 </section>
