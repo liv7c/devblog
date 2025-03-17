@@ -1,0 +1,77 @@
+@use "../abstract/mixins";
+
+.page-section {
+  padding: 2.5rem 0;
+  position: relative;
+
+  @include mixins.tabletAndUp {
+    padding: 6rem 0;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 3rem;
+    color: var(--title-color);
+  }
+}
+
+.page-section--hero {
+  padding-top: 1rem;
+
+  @include mixins.tabletAndUp {
+    padding-top: 3rem;
+  }
+}
+
+.page-section--dark {
+  background-color: var(--brown-20);
+  color: var(--text-color-light);
+
+  h2 {
+    color: var(--text-color-light);
+  }
+}
+
+.page-section__title-with-flower {
+  display: flex;
+  gap: 50px;
+}
+
+.page-section__title-flower {
+  display: none;
+
+  @include mixins.laptopAndUp {
+    display: block;
+    position: relative;
+    top: -30px;
+
+    &--small {
+      width: 50px;
+      left: -10px;
+    }
+  }
+}
+
+.page-section__flower-decoration-left {
+  position: absolute; 
+  display: none;
+
+  // 1248px
+  @media (min-width: 78rem) {
+    display: block;
+    top: 20px;
+    left: 17px;
+  }
+}
+
+.page-section__flower-decoration-right {
+  position: absolute; 
+  display: none;
+
+  // 1248px
+  @media (min-width: 78rem) {
+    display: block;
+    bottom: 45px;
+    right: 18px;
+  }
+}

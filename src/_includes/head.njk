@@ -15,8 +15,16 @@
 <meta property="og:url" content="{{ page.url }}" />
 <link rel="icon" href="{{ '/img/favicon.ico' | url }}" />
 
-{% for font in ['Atkinson-Hyperlegible-Regular', 'Atkinson-Hyperlegible-Bold'] %}
+{% for font in ['Atkinson-Hyperlegible-Regular', 'Atkinson-Hyperlegible-Bold', 'ShantellSansNormal-SemiBold', 'ShantellSansNormal-Bold'] %}
 <link rel="preload" href="/fonts/{{ font }}.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 {% endfor %}
 
 <link rel="stylesheet" href="{{ '/css/styles.css' | url }}" />
+
+{% if page.url == '/' %}
+  <link rel="stylesheet" href="{{ '/css/pages/home.css' | url }}" />
+{% elif page.url.indexOf('/blog') == 0 %}
+  <link rel="stylesheet" href="{{ '/css/pages/blog-listing.css' | url }}" />
+{% elif page.url.indexOf('/about') == 0 %}
+  <link rel="stylesheet" href="{{ '/css/pages/about.css' | url }}" />
+{% endif %}

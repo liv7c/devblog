@@ -17,6 +17,24 @@
   src: url('/fonts/Atkinson-Hyperlegible-Bold.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Shantell Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/ShantellSansNormal-Bold.woff2') format('woff2'),
+  url('/fonts/ShantellSansNormal-Bold.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Shantell Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/ShantellSansNormal-SemiBold.woff2') format('woff2');
+}
+
 html,
 body {
   height: 100%;
@@ -34,20 +52,31 @@ html {
 
 body,
 body[data-theme='light'] {
-  --black: #272343;
-  --white: #fffffe;
-  --bg-color: #f7f3ff;
-  --secondary-bg-color: #d1d1f7;
-  --text-color: #272343;
-  --link-color: #001858;
-  --tag-bg-color: #C3AED6;
-  --pre-code-color: #2b2c34;
+  --beige-10: #E6E1C4;
+  --beige-20: #EAE7D9;
+  --brown-10: #4F2B1E;
+  --brown-20: #644C3B;
+  --brown-70: #21120D;
+  --off-white: #F5EED7;
+  --bright-orange: #EE6E40;
+  --primary-yellow: #F5C523;
+  --primary-green: #B3C97D;
+  --primary-blue: #47BABF;
+
   --pre-code-bg-color: #fffffe;
   --body-font-weight: 400;
-  --decorative-border-color: transparent;
   --button-text: #272343;
-  --button-bg: #C3AED6;
-  --page-padding: 20px;
+  --page-padding: 1rem;
+
+  --body-bg-color: var(--beige-10);
+  --footer-bg-color: var(--primary-green);
+  --title-color: var(--brown-10);
+  --text-color-light: var(--beige-20);
+  --text-color-dark: var(--brown-70);
+  --decorative-border-color-bright: var(--bright-orange);
+
+  --font-body: 'Atkinson', sans-serif;
+  --font-heading: 'Shantell Sans', 'Courier Sans', serif;
 }
 
 a:focus,
@@ -56,10 +85,10 @@ button:focus {
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--body-bg-color);
+  color: var(--text-color-dark);
   font-size: 1.1rem;
-  font-family: 'Atkinson', sans-serif;
+  font-family: var(--font-body);
   font-weight: var(--body-font-weight);
   line-height: 1.75;
   overflow-y: scroll;
@@ -85,8 +114,9 @@ h3,
 h4,
 h5 {
   margin: 3rem 0 1.38rem;
-  font-family: 'Atkinson', sans-serif;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: currentColor;
   line-height: 1.3;
 }
 
@@ -121,7 +151,7 @@ small,
 }
 
 a {
-  color: var(--text-color);
+  color: currentColor;
   text-underline-offset: 0.15lh;
   text-decoration-thickness: 0.2ex;
 }

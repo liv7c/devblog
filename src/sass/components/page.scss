@@ -1,0 +1,10 @@
+@use "../abstract/mixins";
+
+.page-title {
+    color: var(--title-color);
+    font-size: 2rem;
+
+    @include mixins.tabletAndUp {
+      font-size: 3rem;
+    }
+}

@@ -4,10 +4,10 @@
   "description": "Personal dev blog",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "sass  --no-source-map --watch src/sass/styles.scss:public/css/styles.css",
+    "watch:sass": "sass --no-source-map --watch src/sass/styles.scss:public/css/styles.css src/sass/pages/home.scss:public/css/pages/home.css src/sass/pages/blog-listing.scss:public/css/pages/blog-listing.css src/sass/pages/about.scss:public/css/pages/about.css src/sass/pages/blog-post.scss:public/css/pages/blog-post.css",
     "watch:js": "rollup -c -w --bundleConfigAsCjs",
     "watch:eleventy": "eleventy --serve",
-    "build:sass": "sass  --no-source-map src/sass/styles.scss:public/css/styles.css",
+    "build:sass": "sass --no-source-map src/sass/styles.scss:public/css/styles.css src/sass/pages/home.scss:public/css/pages/home.css src/sass/pages/blog-listing.scss:public/css/pages/blog-listing.css src/sass/pages/about.scss:public/css/pages/about.css src/sass/pages/blog-post.scss:public/css/pages/blog-post.css",
     "build:js": "ROLLUP_WATCH=false rollup -c --bundleConfigAsCjs",
     "build:eleventy": "eleventy",
     "optimize:css": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
