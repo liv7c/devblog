@@ -1,21 +1,10 @@
 @use "../abstract/mixins";
 
-.blog-listing {
-  padding: 3rem 0;
-  position: relative;
-
-
-  h1 {
-    font-size: 3rem;
-    color: var(--title-color);
-    margin-bottom: 3.125rem;
-  }
-}
-
 .blog-listing__list {
   display: grid;
   gap: 3rem;
   padding: 0;
+  margin-top: 3rem;
 
   @include mixins.laptopAndUp {
     grid-template-columns: repeat(2, 1fr);

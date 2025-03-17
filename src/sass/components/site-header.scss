@@ -14,13 +14,14 @@
   font-family: var(--font-heading);
   color: var(--title-color);
   font-weight: 600;
-  padding: 6px 0;
+  padding: 1rem 0 0.5rem;
   text-decoration: none;
   text-align: center;
 
   @include mixins.tabletAndUp {
     font-size: 1.5rem;
     text-align: left;
+    padding: 6px 0;
   }
 }
 

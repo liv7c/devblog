@@ -5,9 +5,9 @@ layout: base.njk
 ---
 
 
-<div class="page-content-wrapper blog-listing">
+<div class="page-section page-section--hero blog-listing">
   <div class="max-width-wrapper">
-    <h1>All the blog posts</h1>
+    <h1 class="page-title">All the blog posts</h1>
 
     <ul class="blog-listing__list">
       {%- for post in collections.posts | reverse -%}
