@@ -1,4 +1,4 @@
-@use "../abstract/mixins";
+@use '../abstract/mixins';
 
 .post {
   background-color: #fffaeb;
@@ -10,7 +10,9 @@
   @include mixins.laptopAndUp {
     margin-bottom: 4rem;
     border-top: 4px solid var(--primary-blue);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
 
   &__title {
@@ -18,7 +20,11 @@
     font-family: var(--font-body);
   }
 
-  h2, h3 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-body);
   }
 
@@ -63,3 +69,4 @@
     margin-bottom: 0.5rem;
   }
 }
+
