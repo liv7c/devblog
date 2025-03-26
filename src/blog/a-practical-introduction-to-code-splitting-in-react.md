@@ -3,7 +3,7 @@ title: A practical introduction to code splitting in React
 date: 2025-03-26
 topics:
   - react
-description: This post explores different techniques to code-split a React application. It includes a code-along Vite and React application to understand better Suspense, the new use hook, and other techniques.
+description: This post explores different techniques to code-split a React application. It includes a code-along Vite and React application to better understand Suspense, React.lazy, React's use hook, and other techniques.
 keywords:
   - react
 ---
