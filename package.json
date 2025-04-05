@@ -29,12 +29,12 @@
     "@rollup/plugin-terser": "^0.4.3",
     "autoprefixer": "10.4.21",
     "cssnano": "7.0.6",
-    "luxon": "3.6.0",
+    "luxon": "3.6.1",
     "npm-run-all2": "7.0.2",
     "postcss": "8.5.3",
     "postcss-cli": "11.0.1",
-    "rollup": "4.38.0",
-    "sass": "1.86.0"
+    "rollup": "4.39.0",
+    "sass": "1.86.3"
   },
   "dependencies": {
     "eleventy-plugin-toc": "^1.1.5",
