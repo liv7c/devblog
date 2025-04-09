@@ -9,7 +9,7 @@ keywords:
   - vitest
 ---
 
-I first encountered the concept of "table driven tests" when coding in the beautiful [Go language](https://go.dev/). The technique is straightforward: You create a table (an array in your JavaScript code) to define the cases you want to test. Then, you let the test runner loop through all the test cases. It is an extremely efficient technique for adding new test cases, reducing the boilerplate, and testing a lot more use cases.
+I first encountered the concept of "table driven tests" when coding in the beautiful [Go language](https://go.dev/). The technique is straightforward: You create a table (an array in your JavaScript code) to define the cases you want to test. Then you let the test runner loop through all the test cases. It is an extremely efficient technique for adding new test cases, reducing the boilerplate, and testing a lot more use cases.
 
 This technique is absolutely brilliant for unit tests. In this blog post, we'll explore how to use it in Vitest.
 
@@ -62,7 +62,7 @@ describe('validateEmail', () => {
 });
 ```
 
-With table driven testing, instead of writing the test straightaway, we first define our test cases in an array.
+With table driven testing, instead of writing each test manually, we first define our test cases in an array.
 
 ```ts
 describe('isValidEmail', () => {
@@ -125,9 +125,9 @@ describe('isValidEmail', () => {
 });
 ```
 
-You can define your test cases the way you want. You could rename `expected` to `want` or `expectedOutput`. There is no strict rule here. Sometimes, you might want to add some extra properties too. I like adding a name and using the object structure to make things as readable as possible.
+You can define your test cases the way you want. You could rename `expected` to `want` or `expectedOutput`. There is no strict rule here. You can name the properties however you like, and even include additional fields if needed. I like adding a name and using the object structure to make things as readable as possible.
 
-The only thing left is to run our tests using [`test.each()`](https://vitest.dev/api/#test-each) from Vitest. We pass our test cases to `test.each` and define a callback that gets passed the different properties we defined per test case:
+The only thing left is to run our tests using [`test.each()`](https://vitest.dev/api/#test-each) from Vitest. We pass our test cases to `test.each`, then define a callback that receives each test case's values.
 
 ```ts
 import {isValidEmail} from './validators';
@@ -156,7 +156,7 @@ describe('isValidEmail', () => {
 
 Some things to note:
 
-- Because we use objects to define each case, we can access each property by their name using the `$` notation. If we had used `testName` instead of `name `in our test cases array, we would have written `test.each(testCases)('$testName', ` instead.
+- Because we use objects to define each case, we can access each property by their name using the `$` notation. If we had used `testName` instead of `name` in our test cases array, we would have written `test.each(testCases)('$testName', ` instead.
 - We define a callback function that receives each test case object. We write the test logic once, and reuse it for each case.
 
 If we run the test, we can see an output where Vitest runs each test case and outputs the result in a very clean, readable way:
@@ -209,7 +209,7 @@ describe('isValidEmail', () => {
 
 `%s` interpolates the `name` we provided. It follows the [`printf` formatting rules](https://nodejs.org/api/util.html#util_util_format_format_args). `%s` means you want to interpolate a string. For a number, you would write `%d` for instance.
 
-You can choose whichever notation feels the clearest to you.
+You can choose whichever style feels clearer or more readable to you.
 
 ## When to use table driven tests
 
@@ -228,7 +228,7 @@ If you feel like playing with the code from this blog post, it is available on [
 
 ## Conclusion
 
-In this post, we explored a technique called _table driven testing_, which is quite popular in the Go community. However, we can also apply it to our JavaScript code too!
+In this post, we explored a technique called _table driven testing_, which is quite popular in the Go community. However, we can also apply it to our JavaScript code!
 
 By defining test cases in a table (an array of objects or arrays), we can quickly test multiple input variations without repeating ourselves. This technique reduces the boilerplate and makes adding more test cases easy. It is especially handy when testing pure functions or utils.
 
@@ -238,4 +238,4 @@ Thanks for reading! I hope you find the post useful. If you have any questions o
 
 - [Vitest's documentation on test.each](https://vitest.dev/api/#test-each)
 - [Jest's documentation on the `.each` method](https://jestjs.io/docs/api#each)
-- [Great blog post about table driven test in Go](https://dave.cheney.net/2019/05/07/prefer-table-driven-tests)
+- [Great blog post about table driven tests in Go](https://dave.cheney.net/2019/05/07/prefer-table-driven-tests)
