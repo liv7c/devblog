@@ -224,7 +224,7 @@ In Jest, you can use `.each` in the same way as in Vitest. You can check out [th
 
 ## Complete code demo
 
-If you feel like playing with the code from this blog post, it is available on [Stackblitz](https://stackblitz.com/edit/demo-explore-table-testing-vitest).
+If you feel like playing with the code from this blog post, it is available on [Stackblitz](https://stackblitz.com/edit/demo-explore-table-driven-testing-vitest?file=README.md,src%2Futils%2Fvalidators.test.ts).
 
 ## Conclusion
 
