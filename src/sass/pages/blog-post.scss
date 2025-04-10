@@ -20,6 +20,19 @@
     font-family: var(--font-body);
   }
 
+  .post__dates {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    gap: 1rem;
+    margin: 1rem 0;
+
+    p {
+      margin: 0;
+    }
+  }
+
   h2,
   h3,
   h4,

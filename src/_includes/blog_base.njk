@@ -14,7 +14,12 @@
             <span aria-hidden="true">&larr;
             </span>Back to the blog</a>
           <h1 class="post__title">{{ title }}</h1>
-          <time datetime="{{ date | isoDate }}">{{ date | asPostDate }}</time>
+          <div class="post__dates">
+            <p>Published <time datetime="{{ date | isoDate }}">{{ date | asPostDate }}</time></p>
+            {% if updated %}
+            <p>Updated <time datetime="{{ updated | isoDate }}">{{ updated | asPostDate }}</time></p>
+            {% endif %}
+          </div>
           <details class="toc-details">
             <summary>Table of content</summary>
             <div class="toc-wrapper">
