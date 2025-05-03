@@ -30,7 +30,7 @@
     "autoprefixer": "10.4.21",
     "cssnano": "7.0.6",
     "luxon": "3.6.1",
-    "npm-run-all2": "7.0.2",
+    "npm-run-all2": "8.0.1",
     "postcss": "8.5.3",
     "postcss-cli": "11.0.1",
     "rollup": "4.40.1",
