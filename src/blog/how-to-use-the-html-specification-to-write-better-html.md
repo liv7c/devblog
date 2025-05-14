@@ -39,7 +39,7 @@ To sum things up:
 
 ### Content model
 
-Content model describes **what content an element can contain**. Each HTML element can contain specific categories. Some HTML elements, like a [heading tag](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) for instance, can contain only phrasing content. Whenever you wonder what you can put inside of an HTML element, you should look at the element's content model. 
+Content model describes **what content an element can contain**. Each HTML element can contain specific categories. Some HTML elements, such as [the heading tag](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements), can contain only phrasing content. Whenever you wonder what you can put inside of an HTML element, you should look at the element's content model. 
 
 ### Content model vs. Category
 
@@ -48,13 +48,13 @@ Content model describes **what content an element can contain**. Each HTML eleme
 
 ## How to read an HTML specification entry
 
-Let's say you're looking at [the specification for the `<li>` element](https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element). Each element in the specification is decribed using a consistent set of sections. Here's a quick breakdown of some key sections you'll find for most elements:
+In this section, we'll discuss how to read an HTML specification entry. Let's say you're looking at [the specification for the `<li>` element](https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element). Each element in the specification is described using a consistent set of sections. Here's a quick breakdown of some key sections you'll find for most elements:
 
 - **Content model**: This tells you what can go inside the element tags. In the case of the `<li>` tag, its content model is "flow content", meaning it can contain almost any HTML element.
 - **Content attributes**: The section lists the possible attributes you can specify on the element.
 - **Contexts in which the element can be used**: It indicates where the element can be used. For instance, some elements are only valid within specific parent elements. In the case of the `<li>`, this section explains that `<li>` should be used inside of `<ol>`, `<ul>` or `<menu>` elements.
 
-The specification also includes many clickable links to help you explore further. For example, if you need a refresher on what "flow content" means, click on the link and you'll be taken to a detailed overview of that term.
+The specification also includes many clickable links to help you explore further. For example, if you need a refresher on what "flow content" means, click on the link, and you'll be taken to a detailed overview of that term.
 
 ## Building a better mental image of the different elements and their purpose
 
@@ -122,7 +122,7 @@ Some general rules:
 
 - Do not create headings to make some text bigger. A heading marks a section of your document. It should help you determine whether the text is a heading or not.
 - Don't forget to check the hierarchy of your headings. If you have an `h3` after an `h2`, does that make sense as a sub-subsection?
-- Think of headings as a table of contents. This will help determine whether there are missing headings on the page. You can use an extension to quickly look at the outline of your document. I use [HTML5 Outliner](https://chromewebstore.google.com/detail/html5-outliner/afoibpobokebhgfnknfndkgemglggomo). 
+- Think of headings as a table of contents. This will help determine whether any headings are missing on the page. You can use an extension to quickly view the outline of your document. I use [HTML5 Outliner](https://chromewebstore.google.com/detail/html5-outliner/afoibpobokebhgfnknfndkgemglggomo). 
 
 
 ## Let's use the spec to answer some HTML questions
@@ -142,7 +142,7 @@ Can I write code like this?
 
 Let's answer that step by step!
 1. First, let's [look for the `<button>` element in the spec](https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element).
-2. To check what the element can contain, we can look at the content model. It states that it expects [**phrasing content**](https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2) and that you should not nest any interactive element inside of a button. For instance, even if an `anchor` link is considered phrasing content, you should not nest it inside of a button. 
+2. To check what the element can contain, we can look at its content model. It states that it expects [**phrasing content**](https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2) and that you should not nest any interactive element inside of a button. For instance, even if an `anchor` link is considered phrasing content, you should not nest it inside of a button. 
 3. If you [search for the `<p>` tag inside the spec](https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element), you'll see it is not phrasing content.
 4. Therefore, we cannot use a `<p>` tag inside a `<button>`.
 
@@ -160,7 +160,7 @@ Let's imagine we have this piece of code:
 With CSS, we can make the `<p>` tag appear next to or underneath the picture. However, in the HTML, how do we group those two elements? Let's look at the specs!
 
 1. We are trying to create a relationship between 2 elements. So, the ["Grouping content" subsection](https://html.spec.whatwg.org/multipage/grouping-content.html#grouping-content) might be the best place to look. 
-2. There are lots of different elements (`<p>`, `<ul>`, `<ol>`) in this subsection. However, for our image, [the `<figure>` element](https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element) might be the most useful in our case.
+2. There are lots of different elements (`<p>`, `<ul>`, `<ol>`) in this subsection. However, for our image, [the `<figure>` element](https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element) is likely the most suitable choice in our case.
 3. We see that the `<figure>` represents self-contained content, making sense on its own, optionally accompanied by a caption.
 4. In this case, we can use it to group our image with the text underneath, which we can then turn into a `<figcaption>`.
 
@@ -188,5 +188,6 @@ Some last quick tips:
 - [HTML Specification](https://html.spec.whatwg.org/multipage/)
 - [Great article by WebAIM on headings](https://webaim.org/techniques/headings/)
 - [HTML5 Outliner Extension](https://chromewebstore.google.com/detail/html5-outliner/afoibpobokebhgfnknfndkgemglggomo)
+
 
 
