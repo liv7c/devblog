@@ -41,11 +41,6 @@ To sum things up:
 
 Content model describes **what content an element can contain**. Each HTML element can contain specific categories. Some HTML elements, such as [the heading tag](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements), can contain only phrasing content. Whenever you wonder what you can put inside of an HTML element, you should look at the element's content model. 
 
-### Content model vs. Category
-
-- The category is what an element is. An element can belong to zero or more categories.
-- The content model specifies the type of content that can be placed inside the element.
-
 ## How to read an HTML specification entry
 
 In this section, we'll discuss how to read an HTML specification entry. Let's say you're looking at [the specification for the `<li>` element](https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element). Each element in the specification is described using a consistent set of sections. Here's a quick breakdown of some key sections you'll find for most elements:
@@ -89,10 +84,10 @@ Using a `<nav>` indicates that this section contains essential navigation links.
 
 ## The importance of headings to give structure to your document
 
-Heading elements (`h1`, `h2`, etc.) are part of the "Sections" subsection. They are a crucial way to add structure to a document. [As mentioned in the spec](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements), 'they represent headings for their sections'. There are some critical takeaways to take from that section:
+Heading elements (`<h1>`, `<h2>`, etc.) are part of the "Sections" subsection. They are a crucial way to add structure to a document. [As mentioned in the spec](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements), 'they represent headings for their sections'. There are some critical takeaways to take from that section:
 
 - Headings are a way to create sections within your document. 
-- The different heading levels match the level of nested sections. When you use a `h1`, it means the top-level section. If you use a `h3` after a `h2`, it means a sub-subsection. The levels are a way to add some **hierarchy** to your content.
+- The different heading levels match the level of nested sections. When you use a `<h1>`, it means the top-level section. If you use a `<h3>` after a `<h2>`, it means a sub-subsection. The levels are a way to add some **hierarchy** to your content.
 
 
 Headings form a [**document outline**](https://html.spec.whatwg.org/multipage/sections.html#headings-and-outlines-2). An outline is like a table of contents of your different headings in the order they appear on the page. I once read that headings can be thought of as chapters in a book. 
@@ -101,11 +96,17 @@ Getting your headings right is a crucial first step toward making your document 
 Let's look at a quick example:
 
 ```tsx
-<h1>Super cool business</h1>
-  <h2>About</h2>
+<main>
+  <h1>Super cool business</h1>
+  <section>
+    <h2>About</h2>
     <h3>Services</h3>
-  <h2>Guides</h2>
+  </section>
+  <section>
+    <h2>Guides</h2>
     <h3>How to use our new AI product</h3>
+  </section>
+</main>
 ```
 
 The outline of the following code would be:
