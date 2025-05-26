@@ -181,3 +181,13 @@ code[class^='language'] {
 iframe {
   max-width: 100%;
 }
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-style: italic;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
