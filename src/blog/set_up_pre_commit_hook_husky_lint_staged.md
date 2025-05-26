@@ -169,10 +169,10 @@ When husky is installed, it runs a script that updates the `.git/config` file by
 
 In `.git/config`:
 
-```yml
+```ini
 [core]
-	...
-	hooksPath = .husky/_
+  ...
+  hooksPath = .husky/_
 ```
 
 In the `husky` source code, in the [`index.js`](https://github.com/typicode/husky/blob/main/index.js), there is a statement that sets up the `hooksPath`:
