@@ -60,6 +60,29 @@
       position: relative;
       top: 4px;
     }
+
+    @include mixins.laptopAndUp {
+        &::after {
+            content: '';
+            position: absolute;
+            left: 9px; 
+            top: 35px; 
+            width: 2px;
+            height: 500px;
+            background-image: repeating-linear-gradient(
+              to bottom,
+              var(--primary-green),
+              var(--primary-green) 2px,
+              transparent 2px,
+              transparent 6px
+            );
+            z-index: 0;
+        }
+
+        &:last-child::after {
+          display: none;
+        }
+    }
   }
 
   li {
@@ -70,42 +93,31 @@
       font-family: var(--font-body);
     }
 
-    & ul {
+    & .tech-stack-list {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
       list-style: none;
       padding: 0;
-    }
 
-    & li {
-      display: flex;
-      align-items: center;
-      margin: 0;
-      font-weight: 600;
-      background-color: var(--beige-20);
-      color: var(--text-color-dark);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      padding: 4px 8px;
-      border-radius: 7px;
+      & li {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        font-weight: 600;
+        background-color: var(--beige-20);
+        color: var(--text-color-dark);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        border-radius: 7px;
+      }
     }
   }
 }
 
 .about-page__experience-wrapper {
   position: relative;
-}
-
-.about-page__experience-list-decoration {
-  display: none;
-
-  @include mixins.laptopAndUp {
-    display: block;
-    position: absolute;
-    top: 125px;
-    left: 7px;
-  }
 }
 
 .project-card {
