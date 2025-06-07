@@ -23,7 +23,7 @@
   "author": "Olivia Coumans",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "3.1.0",
+    "@11ty/eleventy": "3.1.1",
     "@11ty/eleventy-plugin-rss": "2.0.4",
     "@11ty/eleventy-plugin-syntaxhighlight": "5.0.1",
     "@rollup/plugin-terser": "^0.4.3",
@@ -33,7 +33,7 @@
     "npm-run-all2": "8.0.4",
     "postcss": "8.5.4",
     "postcss-cli": "11.0.1",
-    "rollup": "4.41.1",
+    "rollup": "4.42.0",
     "sass": "1.89.1"
   },
   "dependencies": {
