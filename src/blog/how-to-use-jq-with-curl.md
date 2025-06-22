@@ -10,7 +10,7 @@ keywords:
   - JSON
 ---
 
-[jq](https://github.com/jqlang/jq) is a useful command-line tool to process a JSON payload quickly. I tend to use `jq` in conjunction with `curl` to explore third-party APIs. `jq` is a powerful tool for filtering or transforming JSON data. In this article, we’ll explore a couple of its functionalities while playing with two free third-party APIs. The goal is to become more comfortable with `jq` by the end of the blog post and to have started a cheat sheet of our own.
+[jq](https://github.com/jqlang/jq) is a useful command-line tool to process a JSON payload quickly. I tend to use `jq` in conjunction with `curl` to explore third-party APIs. `jq` is a powerful tool for filtering or transforming JSON data. In this article, we’ll explore a couple of its functionalities while playing with two free third-party APIs. The goal is to become more comfortable with `jq` by the end of the blog post and to have started building a cheat sheet of our own.
 
 ## How to install `jq`
 
@@ -59,7 +59,7 @@ With this command, we obtain a JSON array of 200 elements.
 
 ### Extract the length of a JSON array with `jq`
 
-If you are wondering how many items there are in a JSON array, you can use the `length` helper in `jq`:
+If you are wondering how many items are in a JSON array, you can use the `length` helper in `jq`:
 
 ```sh
 curl -s https://jsonplaceholder.typicode.com/todos | jq length
@@ -101,7 +101,7 @@ The above command `jq ‘[2:5]’` includes three elements (the elements at inde
 
 Let’s switch things up! Many APIs include a large amount of data that we may not be interested in. Let’s use the [swapi API](https://swapi.py4e.com/documentation) to explore a more complex dataset.
 
-If we retrieve the Star Wars characters using the [the API's people endpoint](https://swapi.py4e.com/api/people/), we’ll see that the output puts all the characters in a `results` key. The top-level keys in the output JSON object include pagination data.
+If we retrieve the Star Wars characters using [the API's people endpoint](https://swapi.py4e.com/api/people/), we’ll see that the output puts all the characters in a `results` key. The top-level keys in the output JSON object include pagination data.
 
 To solely include the people, we can write:
 
@@ -196,7 +196,7 @@ Let’s dissect that command:
 - We sort the array by each element’s height. Because the API returns each character height as a string, we must convert each height to a number to obtain a correct sorting result.
 - We pass to `sort_by` the property we want to use to sort our array. We can convert the property if needed. In the example, we use `tonumber` to cast each string into a number.
 - Then, we can pipe the results to `reverse` if we want to reverse the order of the results. In our case, it will return an array from the character with the largest height to the character with the smallest height.
-- We do use `map` to select the name and height of each item.
+- Finally, we use `map` to extract the name and height of each character.
 
 The output looks like:
 
