@@ -2,6 +2,7 @@
 title: How to use jq with curl to explore an API’s JSON response
 date: 2025-06-22
 topics:
+  - command-line
   - jq
 description: This article explores how to use the command-line tool jq with curl to process, filter, and transform JSON responses from APIs.
 keywords:

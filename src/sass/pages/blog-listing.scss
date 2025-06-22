@@ -69,6 +69,12 @@
   }
 }
 
+.blog-listing__card-topics {
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
 .blog-listing__flower {
   display: none;
   position: absolute;

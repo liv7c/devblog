@@ -18,7 +18,11 @@ layout: base.njk
           </a>
         </h2>
         <div class="blog-listing__card-meta-info">
-          <p class="content-tag">{{ post.data.topics }}</p>
+          <ul class="blog-listing__card-topics">
+          {% for tag in post.data.topics %}
+              <li class="content-tag">{{ tag }}</li>
+          {% endfor %}
+          </ul>
           <time datetime="{{ post.data.date | isoDate }}" class="post-list__date">{{
             post.data.date | asPostDate
           }}</time>
