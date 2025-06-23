@@ -135,15 +135,15 @@ It extracts the `results` properties and maps each item in the results array to 
 ```js
 [
   {
-    name: 'Luke Skywalker',
-    url: 'https://swapi.py4e.com/api/people/1/',
+    "name": "Luke Skywalker",
+    "url": "https://swapi.py4e.com/api/people/1/"
   },
   {
-    name: 'C-3PO',
-    url: 'https://swapi.py4e.com/api/people/2/',
-  },
-  // some more data...
-];
+    "name": "C-3PO",
+    "url": "https://swapi.py4e.com/api/people/2/"
+  }
+  // more data...
+]
 ```
 
 Beyond picking the properties we are interested in, we can filter the data using `jq`. Let’s look at how next!
@@ -204,16 +204,16 @@ The output looks like:
 ```js
 [
   {
-    name: 'Darth Vader',
-    height: '202',
+    "name": "Darth Vader",
+    "height": "202",
   },
   {
-    name: 'Biggs Darklighter',
-    height: '183',
+    "name": "Biggs Darklighter",
+    "height": "183",
   },
   {
-    name: 'Obi-Wan Kenobi',
-    height: '182',
+    "name": "Obi-Wan Kenobi",
+    "height": "182",
   },
   // some more sorted data...
 ];
@@ -230,7 +230,7 @@ curl -s https://swapi.py4e.com/api/people/ | jq "keys"
 In a glimpse, we get back an array of all the keys from the API response:
 
 ```js
-['count', 'next', 'previous', 'results'];
+["count", "next", "previous", "results"]
 ```
 
 If we wanted to get an idea of what type of data the API has for a character, we could do:
@@ -244,23 +244,23 @@ In this command, we look at the first element of the result array and get back i
 ```js
 // output from the previous curl command
 [
-  'birth_year',
-  'created',
-  'edited',
-  'eye_color',
-  'films',
-  'gender',
-  'hair_color',
-  'height',
-  'homeworld',
-  'mass',
-  'name',
-  'skin_color',
-  'species',
-  'starships',
-  'url',
-  'vehicles',
-];
+  "birth_year",
+  "created",
+  "edited",
+  "eye_color",
+  "films",
+  "gender",
+  "hair_color",
+  "height",
+  "homeworld",
+  "mass",
+  "name",
+  "skin_color",
+  "species",
+  "starships",
+  "url",
+  "vehicles"
+]
 ```
 
 ## Cheat sheet and recap
