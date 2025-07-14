@@ -30,11 +30,6 @@
     opacity: 0.8;
   }
 
-  &:focus {
-    outline: 2px solid var(--bright-orange);
-    outline-offset: 2px;
-  }
-
   &--small {
     font-size: 0.9rem;
     padding: 0.3rem 0.5rem;
