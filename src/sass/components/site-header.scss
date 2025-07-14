@@ -41,9 +41,9 @@
 }
 
 .site-header__skip-link {
-  background: var(--bright-orange);
-  color: var(--text-color-light);
-  left: 0;
+  background: black;
+  color: white;
+  left: 6px;
   padding: 10px 12px;
   position: absolute;
   z-index: 1;
@@ -53,12 +53,13 @@
   &,
   &:link,
   &:visited {
-    color: var(--button-text);
+    color: white;
   }
 
   &:focus {
-    outline-offset: 3px;
-    top: 0;
+    outline-offset: 2px;
+    outline-width: 3px;
+    top: 6px;
   }
 }
 
