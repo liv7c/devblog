@@ -11,9 +11,9 @@
     opacity: 0.8;
   }
 
-  &:has(a:focus) {
-    outline: 2px solid var(--bright-orange);
-    outline-offset: 2px;
+  &:has(a:focus-visible) {
+    outline: 3px solid var(--text-color-dark);
+    outline-offset: 4px;
   }
   
   a {
@@ -21,7 +21,12 @@
     padding: var(--card-padding, 2rem 1rem);
     flex-direction: column;
     text-decoration: none;
-    outline: none;
+
+    /* we disable the outline as the card has a rule of &:has(a:focus-visible) that handles
+    adding the focus styles */
+    &:focus-visible {
+      outline: none;
+    }
   }
 
   strong {

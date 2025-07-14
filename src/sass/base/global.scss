@@ -69,9 +69,10 @@ body[data-theme='light'] {
   --font-heading: 'Shantell Sans', Helvetica, sans-serif;
 }
 
-a:focus,
-button:focus {
-  outline-offset: 2px;
+/* add universal focus indicator for when elements are focused via the keyboard */
+*:focus-visible {
+  outline: 2px solid black;
+  outline-offset: 1px;
 }
 
 body {
