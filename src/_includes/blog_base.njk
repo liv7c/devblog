@@ -10,23 +10,30 @@
       {% include './siteHeader.njk' %}
       <main id="main-content">
         <div class="page-content-wrapper post">
-          <a href="/blog" class="post__back-link">
-            <span aria-hidden="true">&larr;
-            </span>Back to the blog</a>
-          <h1 class="post__title">{{ title }}</h1>
-          <div class="post__dates">
-            <p>Published <time datetime="{{ date | isoDate }}">{{ date | asPostDate }}</time></p>
-            {% if updated %}
-            <p>Updated <time datetime="{{ updated | isoDate }}">{{ updated | asPostDate }}</time></p>
-            {% endif %}
-          </div>
-          <details class="toc-details">
-            <summary>Table of content</summary>
-            <div class="toc-wrapper">
-              {{ content | toc | safe }}
+          <div>
+            <a href="/blog" class="post__back-link">
+              <span aria-hidden="true">&larr;
+              </span>Back to the blog
+            </a>
+
+            <h1 class="post__title">{{ title }}</h1>
+
+            <div class="post__dates">
+              <p>Published <time datetime="{{ date | isoDate }}">{{ date | asPostDate }}</time></p>
+              {% if updated %}
+              <p>Updated <time datetime="{{ updated | isoDate }}">{{ updated | asPostDate }}</time></p>
+              {% endif %}
             </div>
-          </details>
-          {{ content | safe }}
+
+            <details class="toc-details">
+              <summary>Table of content</summary>
+              <div class="toc-wrapper">
+                {{ content | toc | safe }}
+              </div>
+            </details>
+
+            {{ content | safe }}
+          </div>
         </div>
       </main>
       {% include './siteFooter.njk' %}

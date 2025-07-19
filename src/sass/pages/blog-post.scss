@@ -1,10 +1,11 @@
 @use '../abstract/mixins';
 
 .post {
+  --breathing-room: 2rem;
   background-color: #fffaeb;
   margin: 0 auto;
   border-radius: 7px;
-  padding: 2rem 2rem 3rem;
+  padding: 2rem var(--breathing-room) 3rem;
   border-top: 4px solid transparent;
 
   @include mixins.laptopAndUp {
@@ -13,6 +14,17 @@
     box-shadow:
       0 10px 15px -3px rgb(0 0 0 / 0.1),
       0 4px 6px -4px rgb(0 0 0 / 0.1);
+    display: grid;
+    grid-template-columns: 1fr min(70ch, 100%) 1fr;
+
+    & > * {
+      grid-column: 2;
+    }
+
+    pre[class^="language-"] {
+      margin-right: calc(var(--breathing-room) * -1);
+      margin-left: calc(var(--breathing-room) * -1);
+    }
   }
 
   &__title {
