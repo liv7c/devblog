@@ -4,6 +4,7 @@ const {DateTime} = require('luxon');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginTOC = require('eleventy-plugin-toc');
+const {eleventyImageTransformPlugin} = require('@11ty/eleventy-img');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary(
@@ -18,6 +19,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ['webp', 'jpeg', 'svg'],
+    svgAllowUpscale: false,
+    svgShortCircuit: true,
+  });
 
   eleventyConfig.addWatchTarget('./src/sass/');
   eleventyConfig.addPassthroughCopy('./src/css/');
