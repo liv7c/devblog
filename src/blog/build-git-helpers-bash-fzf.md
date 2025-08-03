@@ -1,5 +1,5 @@
 ---
-title: 'The joy of fzf: building Git helpers with Bash'
+title: 'Build Git helpers from scratch with Bash and fzf'
 date: 2025-08-03
 topics:
   - bash
