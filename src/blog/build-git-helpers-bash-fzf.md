@@ -9,7 +9,7 @@ description: Learn how to use fzf, the command-line fuzzy-finder, to build helpf
 keywords:
   - fzf
   - bash
-	- Git
+  - Git
 ---
 
 [`fzf`](https://github.com/junegunn/fzf) is a command-line fuzzy-finder you can run in your terminal to filter any list of files, command history, and more. `fzf` is versatile and can be used in combination with other tools such as grep and Git.
