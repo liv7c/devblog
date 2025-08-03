@@ -4,17 +4,18 @@ date: 2025-08-03
 topics:
   - bash
   - fzf
-  - command-line
+  - Git
 description: Learn how to use fzf, the command-line fuzzy-finder, to build helpful Git utilities in Bash to improve your Git workflow.
 keywords:
   - fzf
   - bash
+	- Git
 ---
 
 [`fzf`](https://github.com/junegunn/fzf) is a command-line fuzzy-finder you can run in your terminal to filter any list of files, command history, and more. `fzf` is versatile and can be used in combination with other tools such as grep and Git.
 
 In this blog post, we’ll explore how to create small bash helpers for Git using the power of `fzf`.
-By the end of this post, you’ll have a good understanding of what fzf is, how to combine its power with other tools, and, hopefully, lots of ideas on how to use it in your workflow. Let’s get started!
+By the end of this post, you’ll understand what fzf is, how to combine its power with other tools, and, hopefully, lots of ideas on how to use it in your workflow. Let’s get started!
 
 > **Note**: if you're looking for a prebuilt plugin with Git and fzf integrations, check out [fzf-git.sh](https://github.com/junegunn/fzf-git.sh) by the creator of fzf. This blog post focuses on building small helpers from scratch combining different programs to make the whole thing less intimidating. Playing around with Bash and fzf is a lot of fun. I hope you enjoy the post!
 
@@ -56,17 +57,7 @@ You should now be able to type <CTRL-r> (Control + r) in your terminal, and it s
 
 !["Output of using Control + r in the command line. It displays a list of commands from the command history"](../img/command_hist_fzf.png)
 
-I use this keybinding **all the time**.
-
-You can also use `<CTRL-t>` (Control key + t) to select a file and paste it into your command line. For instance, you could type `nvim` (and a space after):
-
-```sh
-nvim
-```
-
-And then, type <CTRL-t> to select a file you want to open.
-
-Now, let’s move to the next level and see how we can build useful utilities with `fzf`.
+I use this keybinding **all the time**. Now, let’s move to the next level and see how we can build useful utilities with `fzf`.
 
 ## Combine the power of fzf with Git to create small helpers
 
@@ -77,7 +68,9 @@ Now, let’s move to the next level and see how we can build useful utilities wi
 source ~/.bash_helpers
 ```
 
-It is a good way to keep things more organized. Don't forget to source your bashrc (`source ~/.bashrc`) any time you modify the bash_helpers file or the bashrc to see the changes in your current shell.
+It is a good way to keep things more organized.
+
+> After modifying `.bashrc` or `.bash_helpers`, don't forget to source your shell config (`source ~/.bashrc`) to apply the changes.
 
 ### Let’s create a helper to check out a specific git branch
 
@@ -116,7 +109,13 @@ Let's dissect this function:
 - `line` stores the full row selected from the fzf list, which includes extra info like the tracking status.
 - `branch` stores the branch name extracted from the `line` variable.
 - We use `sed` to take the branch name. If you do a `git branch`, you’ll see an asterisk in front of your current branch. This intermediary variable allows us to store the user selection and then clean up any extra characters or spaces to use the branch name.
-- Let's look at what this scary command `sed -E 's/^[* ]+([^ ]+).*/\1/‘` does. `sed` is called a stream editor. It is a way to modify a stream of text. `-E` enables us to pass a regular expression to sed to edit a given string. In the regular expression, we start by matching any asterisk or space at the start of the line. Then, we have a capture group for the branch name. It takes any subsequent character that is not a space. And it will stop the capture group once it encounters a space. And then, we match with `.*` any other character that follows the branch name. With `\1`, we tell `sed` to replace the input string with the capture group that contains the branch name.
+- Let's look at what this scary command `sed -E 's/^[* ]+([^ ]+).*/\1/‘` does.
+  - `sed` is called a stream editor. It is a way to modify a stream of text.
+  - `-E` enables us to pass a regular expression to sed to edit a given string.
+  - `^[* ]+`: We start by matching any asterisk or space at the start of the line.
+  - `([^ ]+)`: It is a capture group for the branch name. It takes any subsequent character that is not a space. And it will stop the capture group once it encounters a space.
+  - `.*`: We match with `.*` any other character that follows the branch name.
+  - With `\1`, we tell `sed` to replace the input string with the capture group that contains the branch name.
 - `git switch` is equivalent to `git checkout` and will checkout the branch we selected.
 
 Next, before testing it, we could add an extra check to make sure the command is run in a Git repository. Let's use the handy command `git rev-parse --is-inside-work-tree`. [This Git command](https://git-scm.com/docs/git-rev-parse#Documentation/git-rev-parse.txt---is-inside-git-dir) returns a boolean indicating whether we are in a Git repository or not.
@@ -311,7 +310,7 @@ You should see a menu with your commits. If you select one, you’ll be taken to
 
 In this post, we explored the power of fzf, taking `git` as an example. But you can use it with many other programs. One recent use case I had was that I wanted to select a Docker container to execute a command inside of it. At work, I have at times 60 containers running simultaneously, so it can be tricky to find the one I’m looking for.
 
-I ended up doing a command that looked like that.
+I ended up doing a command that looked like that:
 
 {% raw %} `docker exec -it $(docker ps --format "{{.Names}}" | fzf)` {% endraw %}
 
@@ -320,11 +319,15 @@ I ended up doing a command that looked like that.
 - `sh` is the program I want to launch within the container.
 - {%raw%}`docker ps --format “{{.Names}}”`{%endraw%} lists out only the names of the containers.
 
-We could wrap this command in a bash function, too. There are so many useful use cases of using `fzf`. The sky is really the limit!
+We could wrap this command in a Bash function, too. There are so many useful use cases of using `fzf`. The sky is really the limit!
+
+## Complete code from this post
+
+You can find all the code from this post in the [fzf-git-tutorial repository](https://github.com/liv7c/fzf-git-tutorial) on Github.
 
 ## Conclusion
 
-In this blog post, we explored `fzf` and built together a couple of bash utils combining the power of `fzf` with `git`. We built one to check out a Git branch, being able to pick from the available local branches. We also looked at how to build a helper to rebase onto a commit by using `fzf` to see a list of the different commits. We only really brushed the surface of all the useful things we could do with `fzf`. I hope this blog post gives you some ideas! Like always, if you have any questions or would like to share some of your own utils, don’t hesitate to reach out on [Bluesky](https://bsky.app/profile/oliviac.dev)!
+In this blog post, we explored `fzf` and built together a couple of Bash utils combining the power of `fzf` with `Git`. We built one to check out a Git branch, being able to pick from the available local branches. We also looked at how to build a helper to rebase onto a commit by using `fzf` to see a list of the different commits. We only really brushed the surface of all the useful things we could do with `fzf`. I hope this blog post gives you some ideas! You can find all the code examples from this tutorial in the [fzf-git-tutorial repository](https://github.com/liv7c/fzf-git-tutorial). Like always, if you have any questions or would like to share some of your own utils, don’t hesitate to reach out on [Bluesky](https://bsky.app/profile/oliviac.dev)!
 
 ## Versions used in this post
 
@@ -344,5 +347,6 @@ You don't need these exact versions, but if you run into any issues (particularl
 
 - [fzf Github repository](https://github.com/junegunn/fzf)
 - [Bash scripting cheatsheet](https://devhints.io/bash)
+- [fzf-git-tutorial repository](https://github.com/liv7c/fzf-git-tutorial)
 - [My bash utility functions in my dotfiles](https://github.com/liv7c/dotfiles/blob/main/sources/functions)
-- For for advanced git and fzf integration, check out [fzf-git by the creator of fzf](https://github.com/junegunn/fzf-git.sh)
+- For a more advanced Git + fzf integration, check out [fzf-git by the creator of fzf](https://github.com/junegunn/fzf-git.sh)
