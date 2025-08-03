@@ -5,7 +5,7 @@ topics:
   - bash
   - fzf
   - Git
-description: Learn how to use fzf, the command-line fuzzy-finder, to build helpful Git utilities in Bash to improve your Git workflow.
+description: Learn how to use fzf, the command-line fuzzy-finder, to build helpful Git utilities in Bash and enhance your workflow.
 keywords:
   - fzf
   - bash
@@ -14,8 +14,8 @@ keywords:
 
 [`fzf`](https://github.com/junegunn/fzf) is a command-line fuzzy-finder you can run in your terminal to filter any list of files, command history, and more. `fzf` is versatile and can be used in combination with other tools such as grep and Git.
 
-In this blog post, we’ll explore how to create small bash helpers for Git using the power of `fzf`.
-By the end of this post, you’ll understand what fzf is, how to combine its power with other tools, and, hopefully, lots of ideas on how to use it in your workflow. Let’s get started!
+In this blog post, we’ll explore how to create small bash helpers for Git using `fzf`.
+By the end of this post, you’ll understand what `fzf` is and how to combine its power with other tools. I hope this tutorial also gives you lots of ideas for applying similar techniques to build your own helpers. Let's get started!
 
 > **Note**: if you're looking for a prebuilt plugin with Git and fzf integrations, check out [fzf-git.sh](https://github.com/junegunn/fzf-git.sh) by the creator of fzf. This blog post focuses on building small helpers from scratch combining different programs to make the whole thing less intimidating. Playing around with Bash and fzf is a lot of fun. I hope you enjoy the post!
 
@@ -37,7 +37,7 @@ Once you’ve installed it, if you type `fzf` in your terminal, you should see a
 fzf
 ```
 
-## Integrate fzf with bash
+## Integrate fzf with Bash
 
 `fzf` integrates well with several shells, including Bash and Zsh. Integrating it with your shell activates a series of cool features, such as being able to select a command in your command-line history and paste it.
 
@@ -50,10 +50,10 @@ eval "$(fzf --bash)"
 
 If you are following along using another shell, check out [the official documentation on how to set shell integration](https://github.com/junegunn/fzf?tab=readme-ov-file#setting-up-shell-integration).
 
-Don’t forget to source your shell config after modifying it (e.g, `source ~/.bashrc` ).
+Don’t forget to source your shell config after modifying it (e.g., `source ~/.bashrc`).
 
 Now, what does adding shell integration do?
-You should now be able to type <CTRL-r> (Control + r) in your terminal, and it should enable you to select a command from your history and paste it straight away in your terminal.
+You should now be able to type `<Ctrl-r>` (Control key + r) in your terminal, select a command from your history, and paste it directly into your terminal.
 
 !["Output of using Control + r in the command line. It displays a list of commands from the command history"](../img/command_hist_fzf.png)
 
@@ -61,7 +61,14 @@ I use this keybinding **all the time**. Now, let’s move to the next level and 
 
 ## Combine the power of fzf with Git to create small helpers
 
-`fzf` is a fuzzy-finder, and you can pipe data from many sources, including Git, into it. It can make it easy to create small helpers. Let’s build a couple of helpers to use Git more efficiently. If you want to play around with those helpers, you can create a new file next to your `bashrc`, like `.bash_helpers`. And you can then source it in your bashrc:
+`fzf` is a fuzzy-finder, and you can pipe data from many sources, including Git, into it. This makes it easy to create small helpers. Let’s build a couple of helpers to use Git more efficiently.
+To follow along, create a new file in your home directory called `.bash_helpers` (you can call it whatever you want!):
+
+```sh
+touch ~/.bash_helpers
+```
+
+Then, source it in your `.bashrc`. Sourcing it tells your shell to import all the functions from the `~/.bash_helpers` so you can use them.
 
 ```sh
 # Add this to your ~/.bashrc
@@ -70,11 +77,11 @@ source ~/.bash_helpers
 
 It is a good way to keep things more organized.
 
-> After modifying `.bashrc` or `.bash_helpers`, don't forget to source your shell config (`source ~/.bashrc`) to apply the changes.
+> After modifying `.bashrc` or `.bash_helpers`, don't forget to source your shell config (`source ~/.bashrc`) in your terminal to apply the changes.
 
 ### Let’s create a helper to check out a specific git branch
 
-If you go into a local Git repository, you can list all of your branches using:
+If you navigate to a local Git repository, you can list all of your branches using:
 
 ```sh
 git --no-pager branch
@@ -103,20 +110,20 @@ function sfb() {
 }
 ```
 
-Let's dissect this function:
+Let's break down what this function does:
 
 - With `local`, we create two local variables scoped to the function: `branch` and `line`.
 - `line` stores the full row selected from the fzf list, which includes extra info like the tracking status.
 - `branch` stores the branch name extracted from the `line` variable.
-- We use `sed` to take the branch name. If you do a `git branch`, you’ll see an asterisk in front of your current branch. This intermediary variable allows us to store the user selection and then clean up any extra characters or spaces to use the branch name.
-- Let's look at what this scary command `sed -E 's/^[* ]+([^ ]+).*/\1/‘` does.
+- We use `sed` to extract the branch name. When you run `git branch`, you’ll see output like this: an asterisk in front of your current branch and some extra information like tracking details. The `sed` command strips away all this extra formatting to get a clean branch name.
+- Let's look at what this `sed` command `sed -E 's/^[* ]+([^ ]+).*/\1/'` does.
   - `sed` is called a stream editor. It is a way to modify a stream of text.
   - `-E` enables us to pass a regular expression to sed to edit a given string.
   - `^[* ]+`: We start by matching any asterisk or space at the start of the line.
   - `([^ ]+)`: It is a capture group for the branch name. It takes any subsequent character that is not a space. And it will stop the capture group once it encounters a space.
   - `.*`: We match with `.*` any other character that follows the branch name.
   - With `\1`, we tell `sed` to replace the input string with the capture group that contains the branch name.
-- `git switch` is equivalent to `git checkout` and will checkout the branch we selected.
+- `git switch` is equivalent to `git checkout` and will check out the branch we selected.
 
 Next, before testing it, we could add an extra check to make sure the command is run in a Git repository. Let's use the handy command `git rev-parse --is-inside-work-tree`. [This Git command](https://git-scm.com/docs/git-rev-parse#Documentation/git-rev-parse.txt---is-inside-git-dir) returns a boolean indicating whether we are in a Git repository or not.
 
@@ -201,7 +208,7 @@ function dfb() {
 }
 ```
 
-Now, because it is a destructive operation, let’s add a confirmation step. With bash, we can use `read -p` to get user input and confirm that the user wants to delete the branch:
+Now, because it is a destructive operation, let’s add a confirmation step. With Bash, we can use `read -p` to get user input and confirm that the user wants to delete the branch:
 
 ```bash
 function dfb() {
@@ -242,7 +249,7 @@ It should show you a list of branches. If you select one, you will be prompted t
 
 One of my favorite Git + fzf utilities is one I call `gri`. It enables me to choose the commit I want to rebase my branch on. Let’s build this one together.
 
-First, let’s create another bash function and call it `gri` (it stands for “git rebase interactive”).
+First, let’s create a Bash function called `gri` (it stands for “git rebase interactive”).
 
 ```bash
 function gri() {
@@ -296,7 +303,7 @@ function gri() {
 ```
 
 - We use a capture group in the regular expression in `sed` to capture the commit hash only.
-- `-z` is a string test operator in bash. It checks if the string is empty. We would enter this condition if we don’t select a commit.
+- `-z` is a string test operator in Bash. It checks if the string is empty. This condition handles the case when the user doesn’t select a commit.
 
 Now test it in your terminal:
 
@@ -312,14 +319,14 @@ In this post, we explored the power of fzf, taking `git` as an example. But you 
 
 I ended up doing a command that looked like that:
 
-{% raw %} `docker exec -it $(docker ps --format "{{.Names}}" | fzf)` {% endraw %}
+{% raw %} `docker exec -it $(docker ps --format "{{.Names}}" | fzf) sh` {% endraw %}
 
 - `docker container exec` allows you to execute a command inside a running container.
 - `-it` means that I want to have an interactive mode within the container.
 - `sh` is the program I want to launch within the container.
 - {%raw%}`docker ps --format “{{.Names}}”`{%endraw%} lists out only the names of the containers.
 
-We could wrap this command in a Bash function, too. There are so many useful use cases of using `fzf`. The sky is really the limit!
+We could put this command in a Bash function, too. There are so many useful use cases of using `fzf`. The sky is really the limit!
 
 ## Complete code from this post
 
@@ -327,7 +334,7 @@ You can find all the code from this post in the [fzf-git-tutorial repository](ht
 
 ## Conclusion
 
-In this blog post, we explored `fzf` and built together a couple of Bash utils combining the power of `fzf` with `Git`. We built one to check out a Git branch, being able to pick from the available local branches. We also looked at how to build a helper to rebase onto a commit by using `fzf` to see a list of the different commits. We only really brushed the surface of all the useful things we could do with `fzf`. I hope this blog post gives you some ideas! You can find all the code examples from this tutorial in the [fzf-git-tutorial repository](https://github.com/liv7c/fzf-git-tutorial). Like always, if you have any questions or would like to share some of your own utils, don’t hesitate to reach out on [Bluesky](https://bsky.app/profile/oliviac.dev)!
+In this blog post, we explored `fzf` and built together a couple of Bash utils combining the power of `fzf` with `Git`. We built one to check out a Git branch, being able to pick from the available local branches. We also looked at how to build a helper to rebase onto a commit by using `fzf` to see a list of the different commits. We've only really scratched the surface of all the useful things we could do with `fzf`. I hope this blog post gives you some ideas! You can find all the code examples from this tutorial in the [fzf-git-tutorial repository](https://github.com/liv7c/fzf-git-tutorial). Like always, if you have any questions or would like to share some of your own utils, don’t hesitate to reach out on [Bluesky](https://bsky.app/profile/oliviac.dev)!
 
 ## Versions used in this post
 
@@ -339,6 +346,9 @@ bash --version
 
 fzf --version
 # 0.65.0
+
+git --version
+# git version 2.50.0
 ```
 
 You don't need these exact versions, but if you run into any issues (particularly with Bash), try updating Bash or fzf.
@@ -348,5 +358,5 @@ You don't need these exact versions, but if you run into any issues (particularl
 - [fzf Github repository](https://github.com/junegunn/fzf)
 - [Bash scripting cheatsheet](https://devhints.io/bash)
 - [fzf-git-tutorial repository](https://github.com/liv7c/fzf-git-tutorial)
-- [My bash utility functions in my dotfiles](https://github.com/liv7c/dotfiles/blob/main/sources/functions)
+- [My Bash utility functions in my dotfiles](https://github.com/liv7c/dotfiles/blob/main/sources/functions)
 - For a more advanced Git + fzf integration, check out [fzf-git by the creator of fzf](https://github.com/junegunn/fzf-git.sh)
