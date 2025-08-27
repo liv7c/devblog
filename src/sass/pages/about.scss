@@ -49,6 +49,7 @@
     @include mixins.laptopAndUp {
       display: flex;
       gap: 2rem;
+      position: relative;
 
       &::before {
         content: '';
@@ -63,20 +64,20 @@
       }
 
       &::after {
-          content: '';
-          position: absolute;
-          left: 9px; 
-          top: 35px; 
-          width: 2px;
-          height: 500px;
-          background-image: repeating-linear-gradient(
-            to bottom,
-            var(--primary-green),
-            var(--primary-green) 2px,
-            transparent 2px,
-            transparent 6px
-          );
-          z-index: 0;
+        content: '';
+        position: absolute;
+        left: 9px;
+        top: 24px;
+        width: 2px;
+        height: calc(100% + 3rem);
+        background-image: repeating-linear-gradient(
+          to bottom,
+          var(--primary-green),
+          var(--primary-green) 3px,
+          transparent 3px,
+          transparent 7px
+        );
+        z-index: 0;
       }
 
       &:last-child::after {
