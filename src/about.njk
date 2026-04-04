@@ -1,6 +1,6 @@
 ---
 title: About
-description: Olivia Coumans, front-end developer in Paris
+description: Olivia Coumans, front-end developer in Paris, relocating to Toronto, Ontario in August 2026
 layout: base.njk
 ---
 
@@ -10,7 +10,7 @@ layout: base.njk
     <p id="tidbits" class="about-page__tidbits">A few tidbits:</p>
     <ul aria-labelledby="tidbits" class="about-page__tidbits-list" role="list">
       <li>
-        I’ve been working as a front-end developer for the past six years,
+        I’ve been working as a front-end developer for the past 7 years,
         building products for both B2C and B2B.
       </li>
       <li>
@@ -19,21 +19,21 @@ layout: base.njk
         am I doing?" moments.
       </li>
       <li>
-        Professionally, I’ve worked extensively with React and its evolving
-        ecosystem, from (vanilla) Redux and class components to migrating
-        codebases to hooks and TypeScript.
-      </li>
+        Professionally, I've worked extensively with React and its evolving ecosystem, from Redux and class components to hooks, TypeScript, and modern tooling like TanStack Query and Vite. 
       <li>
         Web accessibility is something I care deeply about. With every project,
         I try to dig deeper and build things that are as inclusive and
         user-friendly as possible.
       </li>
       <li>
-        I also love branching out and experimenting. Lately, that means learning
-        Go to build small tools that improve my dev workflow. And for the past
-        three years, I’ve been using Vim (still a basic user, but editing this
+        <span>
+        I also love branching out and experimenting. Lately, that means learning Rust and 
+        building <a href="https://github.com/liv7c/nemcss" target="_blank">NemCSS</a>, an open source CSS tooling project built in Rust. And for the past
+        three years, I’ve been using Vim and Neovim (editing this
         way makes me happy).
+        </span>
       </li>
+      <li><span>After being very lucky to live and work in Paris for the past 7 years, I will be starting a new chapter <strong>relocating to Toronto, Ontario in August 2026.</strong></span></li>
     </ul>
   </div>
 </div>
@@ -43,16 +43,17 @@ layout: base.njk
     <ol reversed="reversed" class="about-page__experience-list" role="list">
       <li>
         <div>
-          <h3>Software Engineer - Evaneos</h3>
+          <h3>Frontend Developer - Evaneos</h3>
           <p>
-            <strong>Since June 2025</strong>, I have been working as a <strong>Software Engineer</strong> at 
+            <strong>Since June 2025</strong>, I have been working as a <strong>Frontend Developer</strong> at 
             <a href="https://www.evaneos.fr/" target="_blank">Evaneos</a>, an online platform that connects travelers with local travel agencies to co-create tailor-made journeys.
           </p>
 
         <ul>
-          <li>Develop and maintain front-end features for a suite of B2B web applications used by travel agents.</li>
-          <li>Work primarily with React, TypeScript, MUI, and CSS modules to implement user-facing user interfaces.</li>
-          <li>Collaborate closely with designers, backend developers, and product managers to deliver user-centered solutions.</li>
+          <li>Contributed to implementing the redesign of the homepage and dossier page, ensuring full responsiveness using an internal MUI-based component library and design tokens.</li>
+          <li>Refactored the in-app calling feature using a state machine architecture to improve robustness and error handling, and added Datadog logging to better track and diagnose call issues.</li>
+          <li>Improved test infrastructure by migrating to MSW for API mocking and helping introduce Playwright for end-to-end coverage.</li>
+          <li>Migrated parts of the codebase from Redux Saga to TanStack Query, and independently migrated the WebSocket layer to PartySocket for improved connection resilience.</li>
         </ul>
 
           <ul class="tech-stack-list">
@@ -61,7 +62,7 @@ layout: base.njk
             <li>CSS Modules</li>
             <li>Jest</li>
             <li>@tanstack/react-query</li>
-            <li>Next.js</li>
+            <li>MSW</li>
           </ul>
         </div>
       </li>
@@ -75,11 +76,10 @@ layout: base.njk
           </p>
 
         <ul>
-          <li>Led front-end development of two candidate-facing products: an application tracker and a job comparison tool using micro-frontend architecture.</li>
-          <li>Collaborated with product and design teams to build a sourcing tool from scratch, emphasizing performance, accessibility, and polished UX.</li>
-          <li>Led a small team of two, iterated based on user feedback, adding search filters and integrating a responsive card layout to present candidate info.</li>
-          <li>Improved test reliability by introducing Vitest and MSW, implemented parallel test execution on CircleCI, and maintained high code coverage.</li>
-          <li>Led accessibility improvements through targeted code reviews and internal knowledge-sharing demos.</li>
+          <li>Co-built a Kanban board for candidates to track job applications with real-time WebSocket support, delivered as a micro-frontend using Webpack Module Federation for independent deployment.</li>
+          <li>Co-built the frontend of a new B2B sourcing application for recruiters from the ground up, covering the landing page, candidate search with Algolia filtering, and detail view, working in cycles with a cross-functional team from MVP through to v1.</li>
+          <li>Configured the project's testing setup with MSW, Vitest, test factories, and parallel test execution on CircleCI.</li>
+          <li>Contributed to accessibility improvements across the codebase, including a refactor of the rich text editor with better keyboard support, targeted code reviews, and ESLint configuration improvements.</li>
         </ul>
 
           <ul class="tech-stack-list">
@@ -102,14 +102,14 @@ layout: base.njk
             <a href="https://www.meilleursagents.com/" target="_blank"
               >Meilleurs Agents</a
             >, where I contributed to building new products and improving
-            existing ones.
+            existing ones over 4 years.
           </p>
           <ul>
-            <li>Worked on the rework of <em>Connect</em>, a platform connecting sellers and real estate agencies, including developing an interactive map for intuitive zone selection.</li>
-            <li>Built responsive applications using React, TypeScript, and Redux, migrating to Redux Toolkit and React Testing Library for improved maintainability and testing reliability.</li>
-            <li>Mentored and onboarded new team members.</li>
-            <li>Ensured feature quality with Jest, React Testing Library, and Cypress, enhancing product stability.</li>
-            <li>Led the rebuild of the B2B app layout with an accessibility-first approach, focusing on the application menu, and created a guide on accessibility best practices as part of the accessibility guild.</li>
+            <li>Worked on the frontend rework of <em>Connect</em>, a B2B product connecting sellers and real estate agencies, including developing an interactive map for intuitive zone selection.</li>
+            <li>Maintained and improved the main B2B web app using React, TypeScript, and Redux, progressively migrating to Redux Toolkit over time.</li>
+            <li>Introduced React Testing Library to the main B2B web app and started the migration from Enzyme, documenting best practices to help the team adopt it; also co-wrote the first Cypress end-to-end tests for the application.</li>
+            <li>Contributed to reworking the B2B application menu and overall layout using CSS Grid, with a focus on keyboard navigation.</li>
+            <li>Helped onboard and mentor developers through pair programming, ticket ramp-up, and knowledge sharing.</li>
           </ul>
           <ul class="tech-stack-list">
             <li>React</li>
@@ -146,44 +146,68 @@ layout: base.njk
       />
     </div>
 
-    <article class="project-card">
-      <header class="project-card__header">
-        <div class="project-card__header-meta-info">
-          <h3>Pierre Coumans - Rare Books</h3>
-          <a
-            href="https://www.pierrecoumansbooks.com/"
-            class="button-link button-link--small"
-            target="_blank"
-            >Visit website &rarr;</a
-          >
-        </div>
-        <div class="project-card__image-wrapper">
-          <img
-            src="/img/pierre_coumans_screenshot.png"
-            alt="Hero section of the homepage where Pierre Coumans is written in large and bold letters. There is also a portion of a slideshow with current news about the bookshop."
-          />
-        </div>
-      </header>
-      <div>
+    <div class="projects-grid">
+      <article class="project-card project-card--with-decoration">
+        <header class="project-card__header">
+          <div class="project-card__header-meta-info">
+            <h3>NemCSS</h3>
+            <a
+              href="https://liv7c.github.io/nemcss/"
+              class="button-link button-link--small"
+              target="_blank"
+              >Visit project &rarr;</a
+            >
+          </div>
+        </header>
+        <div>
         <ul>
-          <li>Designed and coded the website from scratch.</li>
-          <li>
-            Developed a custom WordPress theme using PHP templates, Sass for styling, and vanilla JavaScript.
-          </li>
-          <li>Integrated WPML plugins for internationalization.</li>
-          <li>
-            Integrated the website with MailChimp, enabling the website owner to
-            build momentum with their newsletter and email campaigns.
-          </li>
+          <li>A design-token-driven CSS generator that turns your design tokens into CSS custom properties and utility classes, using your own naming conventions.</li>
+          <li>Built in Rust with Node.js bindings.</li>
+          <li>Ships with a CLI, a Vite plugin with HMR support, a PostCSS plugin, an LSP, and a VS Code extension for autocomplete and hover docs.</li>
         </ul>
-        <ul class="project-card__tech-stack">
-          <li>Wordpress</li>
-          <li>HTML</li>
-          <li>SASS</li>
-          <li>JavaScript</li>
-        </ul>
-      </div>
-    </article>
+          <ul class="project-card__tech-stack">
+            <li>Rust</li>
+            <li>Node.js</li>
+            <li>Vite</li>
+            <li>PostCSS</li>
+            <li>Napi-rs</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <header class="project-card__header">
+          <div class="project-card__header-meta-info">
+            <h3>Pierre Coumans - Rare Books</h3>
+            <a
+              href="https://www.pierrecoumansbooks.com/"
+              class="button-link button-link--small"
+              target="_blank"
+              >Visit website &rarr;</a
+            >
+          </div>
+        </header>
+        <div>
+          <ul>
+            <li>Designed and coded the website from scratch.</li>
+            <li>
+              Developed a custom WordPress theme using PHP templates, Sass for styling, and vanilla JavaScript.
+            </li>
+            <li>Integrated WPML plugins for internationalization.</li>
+            <li>
+              Integrated the website with MailChimp, enabling the website owner to
+              build momentum with their newsletter and email campaigns.
+            </li>
+          </ul>
+          <ul class="project-card__tech-stack">
+            <li>Wordpress</li>
+            <li>HTML</li>
+            <li>SASS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
