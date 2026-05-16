@@ -6,7 +6,8 @@
     {
       "matchManagers": ["npm"],
       "matchUpdateTypes": ["patch", "minor", "major"],
-      "groupName": "npm dependencies"
+      "groupName": "npm dependencies",
+      "minimumReleaseAge": "7 days"
     }
   ]
 }
