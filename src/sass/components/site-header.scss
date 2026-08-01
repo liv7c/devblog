@@ -1,6 +1,7 @@
 @use "../abstract/mixins";
 
 .site-header {
+  isolation: isolate;
   margin-bottom: 1rem;
   color: var(--text-color-dark);
 
