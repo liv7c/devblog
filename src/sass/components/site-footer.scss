@@ -3,6 +3,7 @@
 .site-footer {
   margin-top: auto;
   color: var(--text-color-dark);
+  isolation: isolate;
 
   &__content-wrapper {
     background-color: var(--footer-bg-color);

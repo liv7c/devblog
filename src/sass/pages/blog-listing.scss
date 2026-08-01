@@ -77,7 +77,7 @@
 
 .blog-listing__flower {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
 
   @include mixins.desktopAndUp {
