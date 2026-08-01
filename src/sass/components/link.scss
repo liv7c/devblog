@@ -20,14 +20,19 @@
   background-color: var(--text-color-dark);
   color: var(--text-color-light);
   padding: 1rem 0.5rem;
+  display: inline-block;
   border-radius: 7px;
 
   text-decoration: none;
-  transition: opacity 0.2 cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), transform ease 200ms;
 
   &:hover,
   &:active {
     opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 
   &--small {
