@@ -7,6 +7,10 @@ const pluginTOC = require('eleventy-plugin-toc');
 const {eleventyImageTransformPlugin} = require('@11ty/eleventy-img');
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setServerOptions({
+    showAllHosts: true,
+  });
+
   eleventyConfig.setLibrary(
     'md',
     markdownIt({
