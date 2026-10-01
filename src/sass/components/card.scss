@@ -20,7 +20,7 @@
     display: flex;
     padding: var(--card-padding, 2rem 1rem);
     flex-direction: column;
-    text-decoration: none;
+    text-decoration-color: transparent;
 
     /* we disable the outline as the card has a rule of &:has(a:focus-visible) that handles
     adding the focus styles */
