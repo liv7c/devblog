@@ -17,7 +17,9 @@ If you maintain an npm package, you might want to test changes locally in an app
 
 In this tutorial, we’ll use a common real-world example: a shared frontend configuration package consumed by an application. We’ll add new configuration settings to the frontend config package and test how those changes affect the app that uses it without publishing or pushing any code on GitHub.
 
-> This tutorial uses a React-based example, but the workflow using yalc is the same regardless of whether you use Vue, Svelte, or another framework.
+::: aside
+This tutorial uses a React-based example, but the workflow using yalc is the same regardless of whether you use Vue, Svelte, or another framework.
+:::
 
 ## Initial setup
 
@@ -94,9 +96,7 @@ cd tutorial-frontend-config/packages/configs
 
 ### Let’s add the Perfectionist plugin to our ESLint config
 
-The goal is to modify the ESLint config to use a new plugin: [eslint-plugin-perfectionist](https://github.com/azat-io/eslint-plugin-perfectionist).
-
-> Make sure you are in the correct directory (`tutorial-frontend-config/packages/configs`).
+The goal is to modify the ESLint config to use a new plugin: [eslint-plugin-perfectionist](https://github.com/azat-io/eslint-plugin-perfectionist). Make sure you are still in the configs directory (`tutorial-frontend-config/packages/configs`) from the previous section.
 
 If we examine the `eslint.js` file, we currently use `eslint-plugin-import` with a few rules. With eslint-plugin-perfectionist, we can remove `eslint-plugin-import` and the rules we had for this plugin, as the perfectionist plugin will handle those functionalities. In the `packages/configs` directory, run:
 

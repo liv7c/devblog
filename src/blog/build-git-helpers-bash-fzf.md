@@ -17,7 +17,9 @@ keywords:
 In this blog post, we’ll explore how to create small bash helpers for Git using `fzf`.
 By the end of this post, you’ll understand what `fzf` is and how to combine its power with other tools. I hope this tutorial also gives you lots of ideas for applying similar techniques to build your own helpers. Let's get started!
 
-> **Note**: if you're looking for a prebuilt plugin with Git and fzf integrations, check out [fzf-git.sh](https://github.com/junegunn/fzf-git.sh) by the creator of fzf. This blog post focuses on building small helpers from scratch combining different programs to make the whole thing less intimidating. Playing around with Bash and fzf is a lot of fun. I hope you enjoy the post!
+::: aside
+If you're looking for a prebuilt plugin with Git and fzf integrations, check out [fzf-git.sh](https://github.com/junegunn/fzf-git.sh) by the creator of fzf. This blog post focuses on building small helpers from scratch combining different programs to make the whole thing less intimidating. Playing around with Bash and fzf is a lot of fun. I hope you enjoy the post!
+:::
 
 ## What fzf is and how to install it
 
@@ -77,7 +79,7 @@ source ~/.bash_helpers
 
 It is a good way to keep things more organized.
 
-> After modifying `.bashrc` or `.bash_helpers`, don't forget to source your shell config (`source ~/.bashrc`) in your terminal to apply the changes.
+After modifying `.bashrc` or `.bash_helpers`, **don't forget to source your shell config (`source ~/.bashrc`) in your terminal to apply the changes**.
 
 ### Let’s create a helper to check out a specific git branch
 
