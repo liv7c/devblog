@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Personal dev blog",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "watch:sass": "sass --no-source-map --watch src/sass/styles.scss:public/css/styles.css src/sass/pages/home.scss:public/css/pages/home.css src/sass/pages/blog-listing.scss:public/css/pages/blog-listing.css src/sass/pages/about.scss:public/css/pages/about.css src/sass/pages/blog-post.scss:public/css/pages/blog-post.css",
     "watch:js": "rollup -c -w --bundleConfigAsCjs",
@@ -39,6 +40,7 @@
   "dependencies": {
     "@11ty/eleventy-img": "^7.0.0",
     "eleventy-plugin-toc": "^1.1.5",
-    "markdown-it-anchor": "^10.0.0"
+    "markdown-it-anchor": "^10.0.0",
+    "markdown-it-container": "^4.0.0"
   }
 }

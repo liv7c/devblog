@@ -166,7 +166,7 @@ In a former blog post [“Build Git helpers from scratch with Bash and fzf”](h
 - [`dfb`](https://oliviac.dev/blog/build-git-helpers-bash-fzf/#let's-create-a-helper-to-delete-a-git-branch-using-fzf): a helper function to delete a Git branch more easily
 - [`gri`](https://oliviac.dev/blog/build-git-helpers-bash-fzf/#let%E2%80%99s-create-a-helper-to-choose-a-commit-to-rebase-a-branch-onto): With this function, you can choose via `fzf` which commit you want to rebase your branch onto. Then you get the classic Git rebase-interactive menu.
 
-> You can add shell functions directly in your `~/.bashrc`, `~/.zshrc`, or any file loaded by your shell config file. To test the following function, you can add it directly for now in your bashrc or zshrc, reload your config file via a `source ~/.bashrc` or `source ~/.zshrc`, and then you should be able to use it.
+You can add shell functions directly in your `~/.bashrc`, `~/.zshrc`, or any file loaded by your shell config file. To test the following function, you can add it directly for now in your bashrc or zshrc, reload your config file via a `source ~/.bashrc` or `source ~/.zshrc`, and then you should be able to use it.
 
 Another common Git task is staging a file or specific changes in a modified file. Let’s create a small helper that follows the same technique as the ones mentioned before.
 
