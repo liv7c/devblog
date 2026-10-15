@@ -1,5 +1,6 @@
 import markdownIt from 'markdown-it';
 import markdownItAnchor from 'markdown-it-anchor';
+import markdownItContainer from 'markdown-it-container';
 import {DateTime} from 'luxon';
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import {rssPlugin as pluginRss} from '@11ty/eleventy-plugin-rss';
@@ -11,12 +12,14 @@ export default function (eleventyConfig) {
     showAllHosts: true,
   });
 
-  eleventyConfig.setLibrary(
-    'md',
-    markdownIt({
-      html: true,
-    }).use(markdownItAnchor)
-  );
+  const md = markdownIt({html: true}).use(markdownItAnchor);
+  md.use(markdownItContainer, 'aside', {
+    render(tokens, idx) {
+      return tokens[idx].nesting === 1 ? '<aside role="note">\n' : '</aside>\n';
+    },
+  });
+
+  eleventyConfig.setLibrary('md', md);
   eleventyConfig.addPlugin(pluginTOC, {
     wrapper: 'div',
   });

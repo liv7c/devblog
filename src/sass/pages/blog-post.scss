@@ -53,7 +53,7 @@
     font-family: var(--font-body);
   }
 
-  blockquote {
+  aside[role="note"] {
     background-color: #ffd7a8;
     margin: 0;
     padding: 0.5rem 1.5rem;
