@@ -54,11 +54,10 @@
   }
 
   aside[role="note"] {
-    background-color: #ffd7a8;
+    background-color: var(--beige-10);
     margin: 0;
     padding: 0.5rem 1.5rem;
     border-radius: 4px;
-    border-left: 4px solid #ff8904;
   }
 
   &__date {
