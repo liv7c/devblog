@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Personal dev blog",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "watch:sass": "sass --no-source-map --watch src/sass/styles.scss:public/css/styles.css src/sass/pages/home.scss:public/css/pages/home.css src/sass/pages/blog-listing.scss:public/css/pages/blog-listing.css src/sass/pages/about.scss:public/css/pages/about.css src/sass/pages/blog-post.scss:public/css/pages/blog-post.css",
     "watch:js": "rollup -c -w --bundleConfigAsCjs",

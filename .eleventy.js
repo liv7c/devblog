@@ -1,12 +1,12 @@
-const markdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
-const {DateTime} = require('luxon');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const {rssPlugin: pluginRss} = require('@11ty/eleventy-plugin-rss');
-const pluginTOC = require('eleventy-plugin-toc');
-const {eleventyImageTransformPlugin} = require('@11ty/eleventy-img');
+import markdownIt from 'markdown-it';
+import markdownItAnchor from 'markdown-it-anchor';
+import {DateTime} from 'luxon';
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+import {rssPlugin as pluginRss} from '@11ty/eleventy-plugin-rss';
+import pluginTOC from 'eleventy-plugin-toc';
+import {eleventyImageTransformPlugin} from '@11ty/eleventy-img';
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.setServerOptions({
     showAllHosts: true,
   });
@@ -55,4 +55,4 @@ module.exports = function (eleventyConfig) {
       output: 'public',
     },
   };
-};
+}
